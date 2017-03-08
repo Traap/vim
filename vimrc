@@ -10,7 +10,7 @@
 "    Tim Pope
 "      https://github.com/tpope/
 "
-let s:vim_home = '~/git/dotfiles/vim/'
+let s:vim_home = '~/git/vim/'
 
 let config_list = ['vim-plug.vim', 'settings.vim']
 

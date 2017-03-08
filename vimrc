@@ -12,7 +12,7 @@
 "
 let s:vim_home = '~/git/vim/'
 
-let config_list = ['vim-plug.vim', 'settings.vim']
+let config_list = ['vim-plug.vim', 'settings.vim', '~/.config.vim']
 
 for files in config_list
   for f in split(glob(s:vim_home.files), '\n')

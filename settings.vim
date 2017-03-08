@@ -316,12 +316,18 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
-nnoremap <leader>eS :e ~/git/dotfiles/setup.hs<cr>
+nnoremap <leader>eb :e ~/git/bootstrap/bootstrap.yaml<cr>
+
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
-nnoremap <leader>ed :e ~/git/dotfiles/vim/custom-dictionary.utf-8.add<cr>
-nnoremap <leader>eg :e ~/git/dotfiles/gitconfig<cr>
-nnoremap <leader>ep :e ~/git/dotfiles/vim/vim-plug.vim<cr>
-nnoremap <leader>es :e ~/git/dotfiles/vim/settings.vim<cr>
+
+nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
+
+nnoremap <leader>et :e ~/git/tmux/tmux.con<cr>
+
+nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
+nnoremap <leader>ep :e ~/git/vim/vim-plug.vim<cr>
+nnoremap <leader>es :e ~/git/vim/settings.vim<cr>
+
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>.  :e.<cr>
 nnoremap <leader>ad :set filetype=asciidoc<cr>
@@ -436,7 +442,6 @@ nnoremap <leader>gs :Gstatus<cr>gg<c-n>
 nnoremap <leader>gD :Gvdiff<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ github-issues
-let g:github_access_token = "a61ea234cd6662ad2988dc6cf57dd763b74af462"
 let g:github_issues_no_omni = 1
 let g:gissues_lazy_load = 1
 " -------------------------------------------------------------------------- }}}

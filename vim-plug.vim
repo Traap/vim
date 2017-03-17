@@ -18,6 +18,7 @@ Plug 'moll/vim-bbye'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'tkhoa2711/vim-togglenumber'
+Plug 'Traap/vim-ide'
 
 " Git
 Plug 'int3/vim-extradite'

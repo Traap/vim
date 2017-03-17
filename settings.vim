@@ -322,7 +322,7 @@ nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
 
 nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
 
-nnoremap <leader>et :e ~/git/tmux/tmux.con<cr>
+nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
 
 nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
 nnoremap <leader>ep :e ~/git/vim/vim-plug.vim<cr>
@@ -350,6 +350,7 @@ fun! ToggleDimInactiveWin()
     let g:opt_DimInactiveWin=!g:opt_DimInactiveWin
 endfun
 nnoremap dim :call ToggleDimInactiveWin()<cr>
+
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION
@@ -671,4 +672,4 @@ let g:vimtex_latexmk_build_dir = '_build'
 "     \ ]
 
 " -------------------------------------------------------------------------- }}}
-" BUNDLES SECTION END ------------------------------------------------------ }}}
+" BUNDLES SECTION END -----------------------------------------    command:

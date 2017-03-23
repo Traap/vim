@@ -442,28 +442,6 @@ nnoremap <leader>gp :Gpull<cr>
 nnoremap <leader>gs :Gstatus<cr>gg<c-n>
 nnoremap <leader>gD :Gvdiff<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ github-issues
-let g:github_issues_no_omni = 1
-let g:gissues_lazy_load = 1
-" -------------------------------------------------------------------------- }}}
-" {{{ ghcmod-vim
-" https://github.com/eagletmt/ghcmod-vim/wiki/Customize
-let &l:statusline = '%{empty(getqflist())
-      \ ? "[No Errors]" : "[Errors Found]"}'
-      \ . (empty(&l:statusline) ? &statusline : &l:statusline)
-
-let g:ghcmod_hlint_options = ['--ignore=Redundant $']
-let g:ghcmod_type_highlight = 'ghcmodType'
-
-highlight ghcmodtype ctermbg=yellow
-
-nnoremap <silent> tw :GhcModTypeInsert<CR>
-nnoremap <silent> ts :GhcModSplitFunCase<CR>
-nnoremap <silent> tq :GhcModType<CR>
-nnoremap <silent> te :GhcModTypeClear<CR>
-
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
-" -------------------------------------------------------------------------- }}}
 " {{{ haskell-vim
 let g:haskell_enable_quantification = 1       " Highlite forall
 let g:haskell_enable_recursivedo = 1          " Highlite mdo and rec

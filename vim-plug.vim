@@ -78,8 +78,14 @@ Plug 'Traap/vim-helptags'
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'vim-utils/vim-man'
 
+" Java
+Plug 'tpope/vim-classpath'
+
 " Grammar
 Plug 'rhysd/vim-grammarous'
+
+" Operating system helpers 
+Plug 'tpope/vim-eunuch'
 
 " Add plugins to runtimepath
 

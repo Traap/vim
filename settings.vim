@@ -346,7 +346,7 @@ fun! ToggleDimInactiveWin()
             autocmd BufEnter * syntax clear Inactive
             autocmd BufLeave * syntax region Inactive start='^' end='$'
         augroup end
-    en
+    endif
     let g:opt_DimInactiveWin=!g:opt_DimInactiveWin
 endfun
 nnoremap dim :call ToggleDimInactiveWin()<cr>

@@ -281,7 +281,7 @@ inoremap <c-l> <c-x><c-l>
 " {{{ Execute the current line of text as a shell command.
 noremap <leader>E !!$SHELL<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ junegunn:  chmod
+" {{{ junegunn: chmod
 "
 " EX | chmod +x " | https://github.com/junegunn/dotfiles/blob/master/vimrc
 "
@@ -618,36 +618,30 @@ let g:vitality_fix_cursor = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ vimtex
 let g:tex_flavor = 'latex'
-" let g:vimtex_complete_enabled = 1
-" let g:vimtex_disable_version_warning = 1
-" let g:vimtex_enable = 1
-" let g:vimtex_fold_comments = 0
-" let g:vimtex_fold_documentclass = 0
-" let g:vimtex_fold_enabled = 0
-" let g:vimtex_fold_envs = 0
-" let g:vimtex_fold_levelmarker = '*'
-" let g:vimtex_fold_manual = 0
-" let g:vimtex_fold_preamble = 0
-" let g:vimtex_fold_usepackage = 0
-" let g:vimtex_format_enabled = 1
-" let g:vimtex_imaps_enabled = 0
-" let g:vimtex_latexmk_background = 0
-let g:vimtex_latexmk_build_dir = '_build'
-" let g:vimtex_latexmk_callback = 1
-" let g:vimtex_latexmk_continuous = 1
-" let g:vimtex_latexmk_enabled = 1
-" let g:vimtex_quickfix_autojump = 0
-" let g:vimtex_quickfix_ignore_all_warnings = 0
-" let g:vimtex_quickfix_mode = 2
-" let g:vimtex_view_enabled = 1
-
-" let g:vimtex_quickfix_ignored_warnings = [
-"     \ 'Underfull',
-"     \ 'Overfull',
-"     \ 'specifier changed to',
-"     \ 'Font warning',
-"     \ 'Empty glossary'
-"     \ ]
-
+let g:vimtex_latexmk_callback = 1
+let g:vimtex_latexmk_continuous = 1
+let g:vimtex_latexmk_enabled = 1
+let g:vimtex_quickfix_mode = 2
+let g:vimtex_view_enabled = 1
+let g:vimtex_quickfix_latexlog = {
+      \ 'empty glossary' : 0,
+      \ 'font warning' : 0,
+      \ 'overfull' : 0,
+      \ 'specifier change to' : 0,
+      \ 'underfill' : 0,
+      \ }
+let g:vimtex_compiler_latexmk = {
+      \ 'background' : 0,
+      \ 'build_dir' : '_build',
+      \ 'callback' : 1,
+      \ 'continuous' : 1,
+      \ 'options' : [
+      \   '-pdf',
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \ ],
+      \}
 " -------------------------------------------------------------------------- }}}
 " BUNDLES SECTION END -----------------------------------------    command:

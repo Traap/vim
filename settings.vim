@@ -628,7 +628,7 @@ let g:vimtex_quickfix_latexlog = {
       \ 'font warning' : 0,
       \ 'overfull' : 0,
       \ 'specifier change to' : 0,
-      \ 'underfill' : 0,
+      \ 'underfull' : 0,
       \ }
 let g:vimtex_compiler_latexmk = {
       \ 'background' : 0,

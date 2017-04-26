@@ -77,6 +77,10 @@ Plug 'Traap/vim-helptags'
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'vim-utils/vim-man'
 
+" Clang
+Plug 'rhysd/vim-clang-format'
+Plug 'kana/vim-operator-user'
+
 " Java
 Plug 'tpope/vim-classpath'
 

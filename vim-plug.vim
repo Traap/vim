@@ -87,6 +87,9 @@ Plug 'tpope/vim-classpath'
 " Grammar
 Plug 'rhysd/vim-grammarous'
 
+" Rubhy
+Plug 'vim-ruby/vim-ruby'
+
 " Operating system helpers 
 Plug 'tpope/vim-eunuch'
 

@@ -186,6 +186,8 @@ autocmd BufRead,BufNewFile *.adoc,*adoci,*.txt,*.asciidoc,README
 autocmd BufRead,BufNewFile *.tex,*.bbl,*.bib,*.texx,*.texb,*.cls
         \ setlocal filetype=tex
 
+autocmd BufRead,BufNewFile *.muttrc setlocal filetype=muttrc
+
 autocmd BufRead,BufNewFile *.csv setlocal nowrap tw=0
 
 autocmd FileType tex inoremap <leader>ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>

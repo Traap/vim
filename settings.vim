@@ -178,6 +178,7 @@ iab pritn    print
 iab moer     more
 iab retrun   return
 iab teh      the
+iab verboase verbose
 " -------------------------------------------------------------------------  }}}
 " {{{ Auto commands for filetypes.
 autocmd BufRead,BufNewFile *.adoc,*adoci,*.txt,*.asciidoc,README
@@ -227,7 +228,8 @@ vnoremap <leader>u :sort u<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
-" -------------------------------------------------------------------------- }}}
+" --------------------------------------------------------------------------
+"  }}}
 " {{{ Select entire buffer
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
@@ -334,10 +336,14 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>.  :e.<cr>
 nnoremap <leader>ad :set filetype=asciidoc<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Print options
+set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
+" -------------------------------------------------------------------------- }}}
 " {{{ Extremely volatile
-let opt_DimInactiveWin=0
+
+let g:opt_DimInactiveWin=0
 hi Inactive ctermfg=108
-fun! ToggleDimInactiveWin()
+function! ToggleDimInactiveWin()
     if g:opt_DimInactiveWin
         autocmd! DimWindows
         windo syntax clear Inactive
@@ -352,7 +358,38 @@ fun! ToggleDimInactiveWin()
     let g:opt_DimInactiveWin=!g:opt_DimInactiveWin
 endfun
 nnoremap dim :call ToggleDimInactiveWin()<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Toggle my resume application.
+let g:resume_toggle= 0
+function! ToggleResumeEditor()
+  if !g:resume_toggle
+    e ~/git/resume/jobs/jobs.csv
+    split ~/git/resume/letter/coverletter.tex
+    vsplit ~/git/resume/jobs/jobnbr.tex
+    :VideToggleIde
+  end
+  let g:resume_toggle =! g:resume_toggle
+endfun
+nnoremap <leader>idr :call ToggleResumeEditor()<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Wipeout all buffers.
+function! Wipeout()
+  if exists("g:opt_diminactivewin")
+    let g:opt_diminactivewin = 0
+  endif 
+  
+  if exists("g:resume_toggle")
+    let g:resume_toggle = 0
+  endif 
+  
+  if g:vide_is_on
+    :VideToggleIde
+  endif 
 
+
+  silent execute '%bwipeout!'
+endfun
+nnoremap idx :call Wipeout()<cr>
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION
@@ -436,11 +473,11 @@ nmap ga <Plug>(EasyAlign)
 nmap <bar> gaip*<bar>
 " -------------------------------------------------------------------------- }}}
 " {{{ Fugitive
-nnoremap <leader>gP :Gpush<cr>
+nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gh :silent vert bo help fugitive<cr>
 nnoremap <leader>gl :Glog<cr>
-nnoremap <leader>gp :Gpull<cr>
+nnoremap <leader>gP :Gpull<cr>
 nnoremap <leader>gs :Gstatus<cr>gg<c-n>
 nnoremap <leader>gD :Gvdiff<cr>
 " -------------------------------------------------------------------------- }}}

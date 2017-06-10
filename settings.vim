@@ -194,6 +194,7 @@ autocmd BufRead,BufNewFile *.csv setlocal nowrap tw=0
 autocmd FileType tex inoremap <leader>ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
 autocmd FileType tex nnoremap <leader>ul i\begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
 
+autocmd FileType help setlocal number tw=78
 " -------------------------------------------------------------------------- }}}
 " {{{ Obfuscate screen contents
 nnoremap <F1> mzggg?G`z
@@ -370,7 +371,9 @@ function! ToggleResumeEditor()
   end
   let g:resume_toggle =! g:resume_toggle
 endfun
-nnoremap <leader>idr :call ToggleResumeEditor()<cr>
+nnoremap crr :call ToggleResumeEditor()<cr>
+
+nnoremap cvl :call VimtexCompileSS(~/git/resume/letter/coverletter.tex)<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 function! Wipeout()

@@ -27,7 +27,7 @@ Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
 "Plug 'jaxbot/github-issues.vim'
 
-" Bars, pannels and files
+" Bars, panels and files
 Plug 'bling/vim-airline'
 
 " Text manipulation
@@ -42,7 +42,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
-" Iterm2
+" iTerm2
 Plug 'sjl/vitality.vim'
 
 " Haskell
@@ -67,7 +67,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/vimshell.vim'
 
-" Yaml
+" YAML
 Plug 'mkasa/neco-yaml-kwalify-schema'
 Plug 'Shougo/neocomplete.vim'
 Plug 'sunaku/kwalify'
@@ -87,12 +87,10 @@ Plug 'tpope/vim-classpath'
 " Grammar
 Plug 'rhysd/vim-grammarous'
 
-" Rubhy
+" Ruby
 Plug 'vim-ruby/vim-ruby'
 
 " Operating system helpers 
 Plug 'tpope/vim-eunuch'
-
-" Add plugins to runtimepath
 
 call plug#end()

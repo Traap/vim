@@ -64,12 +64,12 @@ Plug 'lervag/vimtex'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/vimshell.vim'
+" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/vimshell.vim'
 
 " YAML
 Plug 'mkasa/neco-yaml-kwalify-schema'
-Plug 'Shougo/neocomplete.vim'
+" Plug 'Shougo/neocomplete.vim'
 Plug 'sunaku/kwalify'
 
 " Help
@@ -89,6 +89,9 @@ Plug 'rhysd/vim-grammarous'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-projectionist'
 
 " Operating system helpers 
 Plug 'tpope/vim-eunuch'

@@ -711,10 +711,12 @@ function! Wipeout()
   if g:vide_is_on
     :VideToggleIde
   endif 
-
-
   silent execute '%bwipeout!'
 endfun
 nnoremap idx :call Wipeout()<cr>
 " -------------------------------------------------------------------------- }}}
-" BUNDLES SECTION END -----------------------------------------    command:
+" {{{ Docbld
+nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_files<cr>:copen<cr>
+nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
+" -------------------------------------------------------------------------- }}}
+" BUNDLES SECTION END ------------------------------------------------------ }}}

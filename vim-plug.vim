@@ -96,4 +96,6 @@ Plug 'tpope/vim-projectionist'
 " Operating system helpers 
 Plug 'tpope/vim-eunuch'
 
+" Read Unix man pages...
+Plug 'jez/vim-superman'
 call plug#end()

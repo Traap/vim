@@ -1,5 +1,4 @@
 " {{{ LEADER SECTION
-let mapleader = ","
 let g:mapleader = ","
 let maplocalleader = ","
 set tm=2000                                   " Leader key timeout.
@@ -229,6 +228,7 @@ vnoremap <leader>u :sort u<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
+nnoremap <leader>wo :%bwipeout<cr>
 " --------------------------------------------------------------------------
 "  }}}
 " {{{ Select entire buffer

@@ -109,6 +109,9 @@ set signcolumn=yes
 hi clear Conceal
 set t_Co=256
 
+" Disable visual flash.
+set t_vb=
+
 " Use visible search hilighting
 hi! link Visual Search
 

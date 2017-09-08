@@ -43,14 +43,18 @@ Plug 'christoomey/vim-tmux-runner'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " iTerm2
-Plug 'sjl/vitality.vim'
+if has('maxunix')
+  Plug 'sjl/vitality.vim'
+endif
 
 " Haskell
-Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
-Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+if $HOSTNAME == "Stooges"
+  Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+  Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+  Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
+  Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
+  Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+endif
 
 " Colors
 Plug 'chriskempson/base16-vim'
@@ -60,7 +64,7 @@ Plug 'luochen1990/rainbow'
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
- Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
@@ -98,4 +102,7 @@ Plug 'tpope/vim-eunuch'
 
 " Read Unix man pages...
 Plug 'jez/vim-superman'
+
+" Experimental
+Plug 'junegunn/vim-journal'
 call plug#end()

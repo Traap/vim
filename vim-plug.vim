@@ -104,5 +104,8 @@ Plug 'tpope/vim-eunuch'
 Plug 'jez/vim-superman'
 
 " Experimental
-Plug 'junegunn/vim-journal'
+"Plug 'junegunn/vim-journal'
+"Plug 'jceb/vim-orgmode', {'do': 'make'}
+Plug 'vimoutliner/vimoutliner'
+
 call plug#end()

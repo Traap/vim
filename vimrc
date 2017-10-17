@@ -11,11 +11,15 @@
 "      https://github.com/tpope/
 "
 let s:vim_home = '~/git/vim/'
+let s:vim_ssh = '~/git/ssh/'
 
-let config_list = ['vim-plug.vim', 'settings.vim', '~/.config.vim']
+let config_list = [ s:vim_home . 'vim-plug.vim'
+                \ , s:vim_home . 'settings.vim'
+                \ , s:vim_ssh  . 'config.vim'
+                \ ]
 
 for files in config_list
-  for f in split(glob(s:vim_home.files), '\n')
+  for f in split(expand(files), '\n')
     exec 'source '.f
   endfor
 endfor

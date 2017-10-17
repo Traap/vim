@@ -232,6 +232,7 @@ vnoremap <leader>u :sort u<cr>
 " {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 nnoremap <leader>wo :%bwipeout<cr>
+nnoremap <leader>wr :%s/\r//g
 " --------------------------------------------------------------------------
 "  }}}
 " {{{ Select entire buffer
@@ -308,11 +309,19 @@ command! EX if !empty(expand('%'))
 " <Leader>?/! | Google it / Feeling luckey | junegunn/dotfiles
 "
 function! s:goog(pat, lucky)
+
+
   let q = '"'.substitute(a:pat, '["\n]', ' ', 'g').'"'
   let q = substitute(q, '[[:punct:] ]',
        \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
-  call system(printf('open "https://www.google.com/search?%sq=%s"',
+  if has("win32unix")
+    call system(printf('cygstart --open "https://www.google.com/search?%sq=%s"',
                    \ a:lucky ? 'btnI&' : '', q))
+  else
+    call system(printf('open "https://www.google.com/search?%sq=%s"',
+                   \ a:lucky ? 'btnI&' : '', q))
+  endif
+
 endfunction
 
 nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
@@ -324,21 +333,15 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
-nnoremap <leader>eb :e ~/git/bootstrap/bootstrap.yaml<cr>
-
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
-
 nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
-
+nnoremap <leader>ec :e ~/git/ssh/config.vim<cr>
 nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
-
 nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
 nnoremap <leader>ep :e ~/git/vim/vim-plug.vim<cr>
 nnoremap <leader>es :e ~/git/vim/settings.vim<cr>
-
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>.  :e.<cr>
-nnoremap <leader>ad :set filetype=asciidoc<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
@@ -435,6 +438,10 @@ let g:dispatch_compilers = {
      \ 'haskell': 'cabal install'
      \ }
 " -------------------------------------------------------------------------- }}}
+" {{{ Docbld
+nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_files<cr>:copen<cr>
+nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
+" -------------------------------------------------------------------------- }}}
 " {{{ EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -452,6 +459,11 @@ nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gP :Gpull<cr>
 nnoremap <leader>gs :Gstatus<cr>gg<c-n>
 nnoremap <leader>gD :Gvdiff<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ github-issues
+let g:gissues_lazy_load = 1
+let g:gissues_async_omni = 1
+let g:gissues_same_window = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ haskell-vim
 let g:haskell_enable_quantification = 1       " Highlite forall
@@ -497,7 +509,7 @@ nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ neocomplete
-let g:neocomplete#enable_at_startup = 0
+let g:neocomplete#enable_at_startup = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ Rainbow
 let g:rainbow_active = 1
@@ -616,6 +628,9 @@ au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
 " {{{ vim-most-minimal-folds
 let g:most_minimal_folds_line_count = 1
 " -------------------------------------------------------------------------- }}}
+" {{{ vim-system-copy
+let g:system_copy#paste_command='paste1'
+" -------------------------------------------------------------------------- }}}
 " {{{ vimshell
 let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt = $USER."$ "
@@ -628,12 +643,14 @@ let g:vitality_fix_focus = 1
 let g:vitality_fix_cursor = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ vimtex
+
 let g:tex_flavor = 'latex'
-let g:vimtex_latexmk_callback = 1
-let g:vimtex_latexmk_continuous = 1
+
 let g:vimtex_latexmk_enabled = 1
+
 let g:vimtex_quickfix_mode = 2
 let g:vimtex_view_enabled = 1
+
 let g:vimtex_quickfix_latexlog = {
       \ 'empty glossary' : 0,
       \ 'font warning' : 0,
@@ -641,19 +658,43 @@ let g:vimtex_quickfix_latexlog = {
       \ 'specifier change to' : 0,
       \ 'underfull' : 0,
       \ }
-let g:vimtex_compiler_latexmk = {
-      \ 'background' : 0,
-      \ 'build_dir' : '_build',
-      \ 'callback' : 1,
-      \ 'continuous' : 1,
-      \ 'options' : [
-      \   '-pdf',
-      \   '-verbose',
-      \   '-file-line-error',
-      \   '-synctex=1',
-      \   '-interaction=nonstopmode',
-      \ ],
-      \}
+
+if has("win32unix")
+  let g:vimtex_view_general_viewer = 'cygstart'
+  let g:vimtex_view_general_options = '--open @pdf'
+
+  let g:vimtex_compiler_latexmk = {
+        \ 'background' : 0,
+        \ 'build_dir' : '_build',
+        \ 'executable' : 'latexmk',
+        \ 'callback' : 0,
+        \ 'continuous' : 0,
+        \ 'options' : [
+        \   '-pdf',
+        \   '-verbose',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
+else
+  let g:vimtex_compiler_latexmk = {
+        \ 'background' : 0,
+        \ 'build_dir' : '_build',
+        \ 'executable' : 'latexmk',
+        \ 'callback' : 1,
+        \ 'continuous' : 1,
+        \ 'options' : [
+        \   '-pdf',
+        \   '-verbose',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
+endif
+
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle my resume application.
 let g:resume_toggle= 0
@@ -688,13 +729,13 @@ function! CompileSS(file)
   echom l:options.target
   echom l:options.target_path
 
-  let g:vimtex_compiler_enabled = 1  
+  let g:vimtex_compiler_enabled = 1
   "let l:compiler = vimtex#compiler#{g:vimtex_compiler_latexmk}#init(l:options)
-  
+
   call vimtex#echo#status([
         \ ['VimtexInfo', 'vimtex: '],
         \ ['VimtexMsg', 'compiling file ' . l:options.target]])
-  
+
   "call l:compiler.start()
   call vimtex#compiler#compile_ss()
 endfunction
@@ -705,21 +746,17 @@ nnoremap t0 :call CompileSS('~/git/resume/letter/coverletter.tex')<cr>
 function! Wipeout()
   if exists("g:opt_diminactivewin")
     let g:opt_diminactivewin = 0
-  endif 
-  
+  endif
+
   if exists("g:resume_toggle")
     let g:resume_toggle = 0
-  endif 
-  
+  endif
+
   if g:vide_is_on
     :VideToggleIde
-  endif 
+  endif
   silent execute '%bwipeout!'
 endfun
 nnoremap idx :call Wipeout()<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Docbld
-nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_files<cr>:copen<cr>
-nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
 " -------------------------------------------------------------------------- }}}
 " BUNDLES SECTION END ------------------------------------------------------ }}}

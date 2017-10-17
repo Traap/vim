@@ -25,7 +25,7 @@ Plug 'int3/vim-extradite'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
-"Plug 'jaxbot/github-issues.vim'
+Plug 'jaxbot/github-issues.vim'
 
 " Bars, panels and files
 Plug 'bling/vim-airline'
@@ -73,7 +73,7 @@ Plug 'tpope/vim-dispatch'
 
 " YAML
 Plug 'mkasa/neco-yaml-kwalify-schema'
-" Plug 'Shougo/neocomplete.vim'
+Plug 'Shougo/neocomplete.vim'
 Plug 'sunaku/kwalify'
 
 " Help
@@ -103,9 +103,10 @@ Plug 'tpope/vim-eunuch'
 " Read Unix man pages...
 Plug 'jez/vim-superman'
 
-" Experimental
-"Plug 'junegunn/vim-journal'
-"Plug 'jceb/vim-orgmode', {'do': 'make'}
+" Outlines with Check-Boxes. 
 Plug 'vimoutliner/vimoutliner'
+
+" Experimental
+Plug 'dkprice/vim-easygrep'
 
 call plug#end()

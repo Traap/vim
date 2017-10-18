@@ -171,6 +171,9 @@ if exists('$TMUX')
   set term=screen-256color
 endif
 
+" Default background is dark.  Colors work well shell/vim and tmux/shell/vim.
+set background=dark
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling corrections.
 

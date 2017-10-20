@@ -235,7 +235,7 @@ vnoremap <leader>u :sort u<cr>
 " {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 nnoremap <leader>wo :%bwipeout<cr>
-nnoremap <leader>wr :%s/\r//g
+nnoremap <leader>wr :%s/\r//g<cr>
 " --------------------------------------------------------------------------
 "  }}}
 " {{{ Select entire buffer
@@ -466,7 +466,7 @@ nnoremap <leader>gD :Gvdiff<cr>
 " {{{ github-issues
 let g:gissues_lazy_load = 1
 let g:gissues_async_omni = 1
-let g:gissues_same_window = 1
+let g:github_same_window = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ haskell-vim
 let g:haskell_enable_quantification = 1       " Highlite forall

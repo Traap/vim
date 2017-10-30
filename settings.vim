@@ -464,8 +464,10 @@ nnoremap <leader>gs :Gstatus<cr>gg<c-n>
 nnoremap <leader>gD :Gvdiff<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ github-issues
-let g:gissues_lazy_load = 1
 let g:gissues_async_omni = 1
+let g:gissues_lazy_load = 1
+let g:gissues_new_assignee = 'Traap'
+let g:gissues_new_label = 'enhancement'
 let g:github_same_window = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ haskell-vim

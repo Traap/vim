@@ -25,7 +25,7 @@ Plug 'int3/vim-extradite'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
-Plug 'jaxbot/github-issues.vim'
+Plug 'traap/github-issues.vim'
 
 " Bars, panels and files
 Plug 'bling/vim-airline'

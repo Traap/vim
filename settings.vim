@@ -469,6 +469,8 @@ let g:gissues_lazy_load = 1
 let g:gissues_new_assignee = 'Traap'
 let g:gissues_new_label = 'enhancement'
 let g:github_same_window = 1
+nnoremap <leader>gi :Gissues<cr>
+nnoremap <leader>ga :Giadd<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ haskell-vim
 let g:haskell_enable_quantification = 1       " Highlite forall

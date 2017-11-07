@@ -25,7 +25,7 @@ Plug 'int3/vim-extradite'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
-Plug 'traap/github-issues.vim'
+Plug 'Traap/github-issues.vim'
 
 " Bars, panels and files
 Plug 'bling/vim-airline'
@@ -34,7 +34,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'traap/vim-dragvisuals'
+Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
 
 " Tmux 

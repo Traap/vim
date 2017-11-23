@@ -85,6 +85,9 @@ Plug 'vim-utils/vim-man'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
 
+" C# 
+"Plug 'OrangeT/vim-csharp'
+
 " Java
 Plug 'tpope/vim-classpath'
 
@@ -93,6 +96,7 @@ Plug 'rhysd/vim-grammarous'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-projectionist'

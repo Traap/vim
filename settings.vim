@@ -11,21 +11,17 @@ filetype on
 filetype plugin indent on
 " -------------------------------------------------------------------------- }}}
 " {{{ Alphabetical listing of things I set.
-set autoindent
-set autoread
 set autowrite
 set complete=.,w,b,u,t,i,kspell
 set cmdheight=1                               " Height of the command bar.
 set encoding=utf-8
 set fileformats=unix,mac,dos
-set history=1000
 set matchtime=3
 set modelines=0
 set mouse=a
 set nocompatible
 set norelativenumber
 set notimeout
-set ttimeout
 set ttimeoutlen=10
 set ttyfast
 set virtualedit=block
@@ -39,7 +35,6 @@ if &listchars ==# 'eol:$'                     " But only interesting whitespace
 endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer visualization settings
-set backspace=indent,eol,start
 set colorcolumn=+1
 set foldmethod=marker
 set laststatus=2
@@ -47,8 +42,6 @@ set lazyredraw
 set linebreak
 set number
 set numberwidth=1
-set ruler
-set scrolloff=3
 set showbreak=↪
 set showcmd
 set showmatch
@@ -65,7 +58,6 @@ syntax on
 " {{{ Searching
 set hlsearch                                     " Hilight previous search
 set ignorecase                                   " Ignore case when searching
-set incsearch                                    " Incremental searching
 set smartcase                                    " Be smart about case.
 " -------------------------------------------------------------------------- }}}
 " {{{ The wild, wild, west
@@ -80,7 +72,6 @@ set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=migrations                       " Django migrations
-set wildmenu                                     " Turn on wild ment
 set wildmode=list:longest,full                   " Tab0-complete files.
 " -------------------------------------------------------------------------- }}}
 " {{{ Tabs, spaces and wrapping
@@ -88,7 +79,6 @@ set expandtab
 set formatoptions=qrn1t
 set shiftround
 set shiftwidth=2
-set smarttab
 set softtabstop=2
 set tabstop=2
 set textwidth=80

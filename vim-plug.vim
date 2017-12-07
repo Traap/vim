@@ -8,9 +8,10 @@ call plug#begin('~/.vim/bundle')
 " Finders
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ivalkeen/nerdtree-execute'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
+"Plug 'dkprice/vim-easygrep'
 
 " Buffers
 Plug 'christoomey/vim-system-copy'
@@ -34,8 +35,10 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-sensible'
 Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-peekaboo'
 
 " Tmux 
 Plug 'christoomey/vim-tmux-navigator'
@@ -68,8 +71,8 @@ Plug 'vim-syntastic/syntastic'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
-" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" Plug 'Shougo/vimshell.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/vimshell.vim'
 
 " YAML
 Plug 'mkasa/neco-yaml-kwalify-schema'
@@ -99,7 +102,9 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rake'
-Plug 'tpope/vim-projectionist'
+
+"Plug 'tpope/vim-projectionist'
+	" Very slow.  Probably not configured correctly.
 
 " Operating system helpers 
 Plug 'tpope/vim-eunuch'
@@ -109,8 +114,5 @@ Plug 'jez/vim-superman'
 
 " Outlines with Check-Boxes. 
 Plug 'vimoutliner/vimoutliner'
-
-" Experimental
-Plug 'dkprice/vim-easygrep'
 
 call plug#end()

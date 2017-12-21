@@ -11,7 +11,7 @@ Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
-"Plug 'dkprice/vim-easygrep'
+Plug 'dkprice/vim-easygrep'
 
 " Buffers
 Plug 'christoomey/vim-system-copy'
@@ -67,7 +67,8 @@ Plug 'luochen1990/rainbow'
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
+	" Very slow.  Probably not configured correctly.
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
@@ -75,7 +76,7 @@ Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/vimshell.vim'
 
 " YAML
-Plug 'mkasa/neco-yaml-kwalify-schema'
+" Plug 'mkasa/neco-yaml-kwalify-schema'
 Plug 'Shougo/neocomplete.vim'
 Plug 'sunaku/kwalify'
 

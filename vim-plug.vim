@@ -29,7 +29,8 @@ Plug 'vim-scripts/gitignore'
 Plug 'Traap/github-issues.vim'
 
 " Bars, panels and files
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Text manipulation
 Plug 'tpope/vim-commentary'

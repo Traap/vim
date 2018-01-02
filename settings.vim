@@ -704,8 +704,9 @@ function! ToggleResumeEditor()
   end
   let g:resume_toggle =! g:resume_toggle
 endfunction
-nnoremap crr :call ToggleResumeEditor()<cr>
-
+nnoremap ]r :call ToggleResumeEditor()<cr>
+" -------------------------------------------------------------------------- }}}
+" {{{ Compile my resume.
 function! CompileSS(file)
   if empty(glob(a:file))
     echom a:file . " does not exist."
@@ -737,7 +738,7 @@ function! CompileSS(file)
   call vimtex#compiler#compile_ss()
 endfunction
 
-nnoremap t0 :call CompileSS('~/git/resume/letter/coverletter.tex')<cr>
+nnoremap [r :call CompileSS('~/git/resume/letter/coverletter.tex')<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 function! Wipeout()
@@ -754,6 +755,6 @@ function! Wipeout()
   endif
   silent execute '%bwipeout!'
 endfun
-nnoremap idx :call Wipeout()<cr>
+nnoremap ]w :call Wipeout()<cr>
 " -------------------------------------------------------------------------- }}}
 " BUNDLES SECTION END ------------------------------------------------------ }}}

@@ -39,7 +39,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-sensible'
 Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-peekaboo'
 
 " Tmux 
 Plug 'christoomey/vim-tmux-navigator'

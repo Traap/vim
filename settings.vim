@@ -186,6 +186,8 @@ autocmd BufRead,BufNewFile *.muttrc setlocal filetype=muttrc
 
 autocmd BufRead,BufNewFile *.csv setlocal nowrap tw=0
 
+autocmd BufRead,BufNewFile *.yaml setlocal nowrap tw=80
+
 autocmd FileType tex inoremap <leader>ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
 autocmd FileType tex nnoremap <leader>ul i\begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
 

@@ -26,7 +26,7 @@ Plug 'int3/vim-extradite'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
-Plug 'Traap/github-issues.vim'
+"Plug 'Traap/github-issues.vim'
 
 " Bars, panels and files
 Plug 'vim-airline/vim-airline'
@@ -42,7 +42,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Tmux 
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
+"Plug 'christoomey/vim-tmux-runner'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " iTerm2
@@ -72,7 +72,7 @@ Plug 'lervag/vimtex'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+"Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/vimshell.vim'
 
 " YAML
@@ -86,8 +86,10 @@ Plug 'beloglazov/vim-online-thesaurus'
 Plug 'vim-utils/vim-man'
 
 " Clang
-Plug 'rhysd/vim-clang-format'
-Plug 'kana/vim-operator-user'
+if $HOSTNAME == "Stooges"
+  Plug 'rhysd/vim-clang-format'
+  Plug 'kana/vim-operator-user'
+endif
 
 " C# 
 "Plug 'OrangeT/vim-csharp'
@@ -96,7 +98,7 @@ Plug 'kana/vim-operator-user'
 Plug 'tpope/vim-classpath'
 
 " Grammar
-Plug 'rhysd/vim-grammarous'
+"Plug 'rhysd/vim-grammarous'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'

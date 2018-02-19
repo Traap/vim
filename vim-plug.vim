@@ -72,7 +72,7 @@ Plug 'lervag/vimtex'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
-"Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/vimshell.vim'
 
 " YAML

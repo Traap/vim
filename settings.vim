@@ -509,6 +509,7 @@ nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ neocomplete
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#auto_complete_delay = 1000
 " -------------------------------------------------------------------------- }}}
 " {{{ Rainbow
 let g:rainbow_active = 1

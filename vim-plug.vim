@@ -6,25 +6,25 @@ runtime ~/.vim/autoload/vim-plug/plug.vim
 call plug#begin('~/.vim/bundle')
 
 " Finders
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
-Plug 'dkprice/vim-easygrep'
+" Plug 'dkprice/vim-easygrep'
 
 " Buffers
 Plug 'christoomey/vim-system-copy'
-Plug 'moll/vim-bbye'
+" Plug 'moll/vim-bbye'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
-Plug 'tkhoa2711/vim-togglenumber'
+" Plug 'tkhoa2711/vim-togglenumber'
 Plug 'Traap/vim-ide'
 
 " Git
 Plug 'int3/vim-extradite'
 Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim'
+" Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
 "Plug 'Traap/github-issues.vim'
 
@@ -42,7 +42,7 @@ Plug 'junegunn/vim-easy-align'
 
 " Tmux 
 Plug 'christoomey/vim-tmux-navigator'
-"Plug 'christoomey/vim-tmux-runner'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " iTerm2
@@ -60,29 +60,29 @@ if $HOSTNAME == "Stooges"
 endif
 
 " Colors
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 Plug 'luochen1990/rainbow'
 
 " LaTeX
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
 " Plug 'vim-syntastic/syntastic'
 	" Very slow.  Probably not configured correctly.
 
 " Dispatchers
-Plug 'tpope/vim-dispatch'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'Shougo/vimshell.vim'
+" Plug 'tpope/vim-dispatch'
+" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/vimshell.vim'
 
 " YAML
-" Plug 'mkasa/neco-yaml-kwalify-schema'
 Plug 'Shougo/neocomplete.vim'
-Plug 'sunaku/kwalify'
+" Plug 'mkasa/neco-yaml-kwalify-schema'
+" Plug 'sunaku/kwalify'
 
 " Help
 Plug 'Traap/vim-helptags'
-Plug 'beloglazov/vim-online-thesaurus'
+" Plug 'beloglazov/vim-online-thesaurus'
 Plug 'vim-utils/vim-man'
 
 " Clang
@@ -92,19 +92,19 @@ if $HOSTNAME == "Stooges"
 endif
 
 " C# 
-"Plug 'OrangeT/vim-csharp'
+" Plug 'OrangeT/vim-csharp'
 
 " Java
 Plug 'tpope/vim-classpath'
 
 " Grammar
-"Plug 'rhysd/vim-grammarous'
+" Plug 'rhysd/vim-grammarous'
 
 " Ruby
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rake'
+" Plug 'vim-ruby/vim-ruby'
+" Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-rake'
 
 "Plug 'tpope/vim-projectionist'
 	" Very slow.  Probably not configured correctly.

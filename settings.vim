@@ -228,8 +228,7 @@ vnoremap <leader>u :sort u<cr>
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 nnoremap <leader>wo :%bwipeout<cr>
 nnoremap <leader>wr :%s/\r//g<cr>
-" --------------------------------------------------------------------------
-"  }}}
+" -------------------------------------------------------------------------- }}}
 " {{{ Select entire buffer
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
@@ -305,7 +304,6 @@ command! EX if !empty(expand('%'))
 "
 function! s:goog(pat, lucky)
 
-
   let q = '"'.substitute(a:pat, '["\n]', ' ', 'g').'"'
   let q = substitute(q, '[[:punct:] ]',
        \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
@@ -340,26 +338,6 @@ nnoremap <leader>.  :e.<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
-" -------------------------------------------------------------------------- }}}
-" {{{ Extremely volatile
-
-let g:opt_DimInactiveWin=0
-hi Inactive ctermfg=108
-function! ToggleDimInactiveWin()
-    if g:opt_DimInactiveWin
-        autocmd! DimWindows
-        windo syntax clear Inactive
-    else
-        windo syntax region Inactive start='^' end='$'
-        syntax clear Inactive
-        augroup DimWindows
-            autocmd BufEnter * syntax clear Inactive
-            autocmd BufLeave * syntax region Inactive start='^' end='$'
-        augroup end
-    endif
-    let g:opt_DimInactiveWin=!g:opt_DimInactiveWin
-endfun
-nnoremap dim :call ToggleDimInactiveWin()<cr>
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION
@@ -579,14 +557,14 @@ let rainbow_conf = {
     \}
 " -------------------------------------------------------------------------- }}}
 " {{{ Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 " -------------------------------------------------------------------------- }}}
 " {{{ Tmux Runner
 "

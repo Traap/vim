@@ -6,12 +6,12 @@ runtime ~/.vim/autoload/vim-plug/plug.vim
 call plug#begin('~/.vim/bundle')
 
 " Finders
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
-" Plug 'dkprice/vim-easygrep'
+Plug 'dkprice/vim-easygrep'
 
 " Buffers
 Plug 'christoomey/vim-system-copy'

@@ -15,7 +15,7 @@ Plug 'dkprice/vim-easygrep'
 
 " Buffers
 Plug 'christoomey/vim-system-copy'
-" Plug 'moll/vim-bbye'
+Plug 'moll/vim-bbye'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
 " Plug 'tkhoa2711/vim-togglenumber'
@@ -64,7 +64,7 @@ endif
 Plug 'luochen1990/rainbow'
 
 " LaTeX
-" Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
 " Plug 'vim-syntastic/syntastic'
@@ -73,7 +73,6 @@ Plug 'luochen1990/rainbow'
 " Dispatchers
 " Plug 'tpope/vim-dispatch'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-" Plug 'Shougo/vimshell.vim'
 
 " YAML
 Plug 'Shougo/neocomplete.vim'

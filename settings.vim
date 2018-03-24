@@ -5,7 +5,6 @@ set tm=2000                                   " Leader key timeout.
 " LEADER SECTION END ------------------------------------------------------- }}}
 " {{{ SETTINGS SECTION
 " {{{ First things ...
-
 " Set things that should come first.
 filetype on
 filetype plugin indent on
@@ -85,7 +84,7 @@ set textwidth=80
 set wrap
 " ---------------------------------------------------------------------------}}}
 " {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
-
+" if
 if filereadable(expand("~./vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
@@ -166,7 +165,6 @@ set background=dark
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling corrections.
-
 iab liek     like
 iab liekwise likewise
 iab pritn    print
@@ -197,7 +195,6 @@ autocmd FileType help setlocal number tw=78
 nnoremap <F1> mzggg?G`z
 " -------------------------------------------------------------------------- }}}
 " {{{ Delete line and more
-
 "Delete line
 map - dd
 
@@ -342,7 +339,6 @@ set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION
 " {{{ Air line
-
 if !exists('g:airline_symbols')               " Use powerline fonts for airline
   let g:airline_symbols = {}
 endif
@@ -382,7 +378,6 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
-
 " -------------------------------------------------------------------------  }}}
 " {{{ Bbye (Buffer Bye) for Vim
 nnoremap <leader>q :Bdelete<cr>
@@ -407,8 +402,9 @@ let g:DVB_TrimWS = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ Dispatch
 let g:dispatch_compilers = {
+     \ 'haskell': 'cabal install',
      \ 'pdflatex': 'tex',
-     \ 'haskell': 'cabal install'
+     \ 'ruby': 'rake'
      \ }
 " -------------------------------------------------------------------------- }}}
 " {{{ Docbld
@@ -609,10 +605,6 @@ let g:most_minimal_folds_line_count = 1
 " {{{ vim-system-copy
 let g:system_copy#paste_command='paste1'
 " -------------------------------------------------------------------------- }}}
-" {{{ vimshell
-let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
-let g:vimshell_prompt = $USER."$ "
-" -------------------------------------------------------------------------- }}}
 " {{{ vitality
 let g:vitality_fix_cursor = 1
 let g:vitality_normal_cursor = 0
@@ -621,7 +613,6 @@ let g:vitality_fix_focus = 1
 let g:vitality_fix_cursor = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ vimtex
-
 let g:tex_flavor = 'latex'
 
 let g:vimtex_latexmk_enabled = 1
@@ -671,8 +662,6 @@ else
         \ ],
         \}
 endif
-
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle my resume application.
 let g:resume_toggle= 0

@@ -1,6 +1,6 @@
 " Tell Vim where our plugin manager is located.
-source  ~/.vim/autoload/vim-plug/plug.vim
-runtime ~/.vim/autoload/vim-plug/plug.vim
+"source  ~/.vim/autoload/vim-plug/plug.vim
+"runtime ~/.vim/autoload/vim-plug/plug.vim
 
 " Plugin
 call plug#begin('~/.vim/bundle')
@@ -18,13 +18,11 @@ Plug 'christoomey/vim-system-copy'
 Plug 'moll/vim-bbye'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
-" Plug 'tkhoa2711/vim-togglenumber'
 Plug 'Traap/vim-ide'
 
 " Git
 Plug 'int3/vim-extradite'
 Plug 'tpope/vim-fugitive'
-" Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
 "Plug 'Traap/github-issues.vim'
 
@@ -60,7 +58,6 @@ if $HOSTNAME == "Stooges"
 endif
 
 " Colors
-" Plug 'chriskempson/base16-vim'
 Plug 'luochen1990/rainbow'
 
 " LaTeX

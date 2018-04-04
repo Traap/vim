@@ -13,7 +13,8 @@
 let s:vim_home = '~/git/vim/'
 let s:vim_ssh = '~/git/ssh/'
 
-let config_list = [ s:vim_home . 'vim-plug.vim'
+let config_list = [ s:vim_home . 'autoload/vim-plug/plug.vim'
+                \ , s:vim_home . 'vim-plug.vim'
                 \ , s:vim_home . 'settings.vim'
                 \ , s:vim_ssh  . 'config.vim'
                 \ ]

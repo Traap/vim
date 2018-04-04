@@ -21,10 +21,10 @@ set mouse=a
 set nocompatible
 set norelativenumber
 set notimeout
+set path+=**
 set ttimeoutlen=10
 set ttyfast
 set virtualedit=block
-set tm=2000                                   " Leader key timeout.
 nnoremap Q <no>                               " Don't allow Ex mode.
 " -------------------------------------------------------------------------- }}}
 " {{{ Show trailing whitespaces

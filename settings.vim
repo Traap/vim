@@ -379,6 +379,9 @@ let g:airline_mode_map = {
     \ '' : 'S',
     \ }
 " -------------------------------------------------------------------------  }}}
+" {{{ base16-vim 
+let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
+" -------------------------------------------------------------------------- }}}
 " {{{ Bbye (Buffer Bye) for Vim
 nnoremap <leader>q :Bdelete<cr>
 nnoremap <leader>Q :bufdo :Bdelete<cr>
@@ -478,6 +481,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " {{{ NERDtree
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
+let NERDTreeWinSize=40
 nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
 " -------------------------------------------------------------------------- }}}
@@ -603,7 +607,9 @@ au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
 let g:most_minimal_folds_line_count = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-system-copy
-let g:system_copy#paste_command='paste1'
+if has("win32unix")
+  let g:system_copy#paste_command='paste'
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ vitality
 let g:vitality_fix_cursor = 1

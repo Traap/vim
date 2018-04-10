@@ -1,8 +1,4 @@
 " Tell Vim where our plugin manager is located.
-"source  ~/.vim/autoload/vim-plug/plug.vim
-"runtime ~/.vim/autoload/vim-plug/plug.vim
-
-" Plugin
 call plug#begin('~/.vim/bundle')
 
 " Finders
@@ -38,7 +34,7 @@ Plug 'tpope/vim-sensible'
 Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
 
-" Tmux 
+" Tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -59,13 +55,15 @@ endif
 
 " Colors
 Plug 'luochen1990/rainbow'
+Plug 'chriskempson/base16-vim'
+Plug 'joeytwiddle/vim-diff-traffic-lights-colors'
 
 " LaTeX
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
 " Plug 'vim-syntastic/syntastic'
-	" Very slow.  Probably not configured correctly.
+	" Very slow.  Pr'chriskempson/base16-vim'obably not configured correctly.
 
 " Dispatchers
 " Plug 'tpope/vim-dispatch'
@@ -85,13 +83,14 @@ Plug 'vim-utils/vim-man'
 if $HOSTNAME == "Stooges"
   Plug 'rhysd/vim-clang-format'
   Plug 'kana/vim-operator-user'
+  Plug 'chriskempson/base16-vim'
+  " Java
+  Plug 'tpope/vim-classpath'
 endif
 
-" C# 
+" C#
 " Plug 'OrangeT/vim-csharp'
 
-" Java
-Plug 'tpope/vim-classpath'
 
 " Grammar
 " Plug 'rhysd/vim-grammarous'
@@ -105,13 +104,13 @@ Plug 'tpope/vim-endwise'
 "Plug 'tpope/vim-projectionist'
 	" Very slow.  Probably not configured correctly.
 
-" Operating system helpers 
+" Operating system helpers
 Plug 'tpope/vim-eunuch'
 
 " Read Unix man pages...
 Plug 'jez/vim-superman'
 
-" Outlines with Check-Boxes. 
+" Outlines with Check-Boxes.
 Plug 'vimoutliner/vimoutliner'
 
 call plug#end()

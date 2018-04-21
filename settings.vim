@@ -378,6 +378,8 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+
+let g:airline_theme='base16_chalk'
 " -------------------------------------------------------------------------  }}}
 " {{{ base16-vim 
 let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"

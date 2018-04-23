@@ -66,7 +66,7 @@ Plug 'lervag/vimtex'
 	" Very slow.  Pr'chriskempson/base16-vim'obably not configured correctly.
 
 " Dispatchers
-" Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " YAML
@@ -97,6 +97,7 @@ endif
 
 " Ruby
 Plug 'tpope/vim-endwise'
+Plug 'ngmy/vim-rubocop'
 " Plug 'vim-ruby/vim-ruby'
 " Plug 'tpope/vim-bundler'
 " Plug 'tpope/vim-rake'

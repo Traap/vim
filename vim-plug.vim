@@ -98,9 +98,9 @@ endif
 " Ruby
 Plug 'tpope/vim-endwise'
 Plug 'ngmy/vim-rubocop'
-" Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 " Plug 'tpope/vim-bundler'
-" Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rake'
 
 "Plug 'tpope/vim-projectionist'
 	" Very slow.  Probably not configured correctly.

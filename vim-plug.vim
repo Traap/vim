@@ -10,7 +10,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'dkprice/vim-easygrep'
 
 " Buffers
-Plug 'christoomey/vim-system-copy'
+" Plug 'christoomey/vim-system-copy'
 Plug 'moll/vim-bbye'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
@@ -99,10 +99,11 @@ endif
 Plug 'tpope/vim-endwise'
 Plug 'ngmy/vim-rubocop'
 Plug 'vim-ruby/vim-ruby'
-" Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rake'
-
-"Plug 'tpope/vim-projectionist'
+Plug 'thoughtbot/vim-rspec'
+Plug 'ecomba/vim-ruby-refactoring'
+" Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-projectionist'
 	" Very slow.  Probably not configured correctly.
 
 " Operating system helpers

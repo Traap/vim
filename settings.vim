@@ -230,8 +230,12 @@ nnoremap <leader>wr :%s/\r//g<cr>
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 " -------------------------------------------------------------------------- }}}
+" {{{ Copy and Paste
+vnoremap xc "+y
+nnoremap xv "+p
+" -------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.
-nnoremap zh mzzt10<c-u>`z
+nnoremap zh mzzt10<c-u>
 " -------------------------------------------------------------------------- }}}
 " {{{ Easier linewise reselection of what you just pasted.
 nnoremap <leader>V V`]
@@ -609,9 +613,9 @@ au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
 let g:most_minimal_folds_line_count = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-system-copy
-if has("win32unix")
-  let g:system_copy#paste_command='paste'
-endif
+" if has("win32unix")
+"   let g:system_copy#paste_command='paste'
+" endif
 " -------------------------------------------------------------------------- }}}
 " {{{ vitality
 let g:vitality_fix_cursor = 1

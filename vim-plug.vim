@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
 Plug 'dkprice/vim-easygrep'
+Plug 'tpope/vim-vinegar'
 
 " Buffers
 " Plug 'christoomey/vim-system-copy'
@@ -62,7 +63,8 @@ Plug 'joeytwiddle/vim-diff-traffic-lights-colors'
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
-" Plug 'vim-syntastic/syntastic'
+" Plug 'valloric/youcompleteme'
+Plug 'vim-syntastic/syntastic'
 	" Very slow.  Pr'chriskempson/base16-vim'obably not configured correctly.
 
 " Dispatchers
@@ -93,7 +95,7 @@ endif
 
 
 " Grammar
-" Plug 'rhysd/vim-grammarous'
+Plug 'rhysd/vim-grammarous'
 
 " Ruby
 Plug 'tpope/vim-endwise'

@@ -233,6 +233,12 @@ nnoremap Vaa ggVG
 " {{{ Copy and Paste
 vnoremap xc "+y
 nnoremap xv "+p
+
+if has('macunix')
+  " pbcopy for OSX copy/paste
+  vmap <C-x> :!pbcopy<CR>
+  vmap <C-c> :w !pbcopy<CR><CR>
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.
 nnoremap zh mzzt10<c-u>
@@ -562,15 +568,27 @@ let rainbow_conf = {
     \   }
     \}
 " -------------------------------------------------------------------------- }}}
+" {{{ rspec 
+let g:rspec_command = "Dispatch rspec {spec}"
+map <leader><leader>t :call RunCurrentSpecFile()<CR>
+map <leader><leader>s :call RunNearestSpec()<CR>
+map <leader><leader>l :call RunLastSpec()<CR>
+map <leader><leader>a :call RunAllSpecs()<CR>
+
+if has('maxunix')
+  let g:rspec_runner = "os_x_iterm2"
+endif
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " -------------------------------------------------------------------------- }}}
 " {{{ Tmux Runner
 "

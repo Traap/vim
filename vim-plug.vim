@@ -35,6 +35,10 @@ Plug 'tpope/vim-sensible'
 Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
 
+" Command-line fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install -all'}
+Plug 'junegunn/fzf.vim'
+
 " Tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
@@ -47,7 +51,7 @@ endif
 
 " Haskell
 if $HOSTNAME == "Stooges"
-  Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
+  Plug '}Twinside/vim-hoogle', { 'for': 'haskell' }
   Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
   Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
   Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }

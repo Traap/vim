@@ -165,10 +165,11 @@ set background=dark
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling corrections.
+iab developmetn development
 iab liek     like
 iab liekwise likewise
-iab pritn    print
 iab moer     more
+iab pritn    print
 iab retrun   return
 iab teh      the
 iab verboase verbose

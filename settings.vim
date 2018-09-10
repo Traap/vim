@@ -148,6 +148,9 @@ if !has('nvim')
   " Only set this for vim, since neovim is utf8 as default and setting it
   " causes problems when reloading the .vimrc configuration
   set encoding=utf8
+  if exists('$TMUX')
+    set term=screen-256color
+  endif
 endif
 
 " disable Background Color Erase (BCE) so that color schemes
@@ -155,9 +158,6 @@ endif
 " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
 if &term =~ '256color'
   set t_ut=
-endif
-if exists('$TMUX')
-  set term=screen-256color
 endif
 
 " Default background is dark.  Colors work well shell/vim and tmux/shell/vim.
@@ -658,6 +658,10 @@ let g:vimtex_quickfix_latexlog = {
       \ 'specifier change to' : 0,
       \ 'underfull' : 0,
       \ }
+
+if has('nvim')
+  let g:vimtex_compiler_progname="nvr"
+endif
 
 if has("win32unix")
   let g:vimtex_view_general_viewer = 'cygstart'

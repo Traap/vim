@@ -97,7 +97,6 @@ endif
 " C#
 " Plug 'OrangeT/vim-csharp'
 
-
 " Grammar
 Plug 'rhysd/vim-grammarous'
 
@@ -120,5 +119,8 @@ Plug 'jez/vim-superman'
 
 " Outlines with Check-Boxes.
 Plug 'vimoutliner/vimoutliner'
+
+" Dash search APIs wiht Dash.app
+Plug 'rizzatti/dash.vim'
 
 call plug#end()

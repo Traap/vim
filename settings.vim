@@ -166,13 +166,18 @@ set background=dark
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling corrections.
 iab developmetn development
-iab liek     like
-iab liekwise likewise
-iab moer     more
-iab pritn    print
-iab retrun   return
-iab teh      the
-iab verboase verbose
+iab heigth         heigth
+iab liek           like
+iab liekwise       likewise
+iab moer           more
+iab pritn          print
+iab retrun         return
+iab sectoin        section
+iab subsectoin     subsection
+iab subsubsectoin  subsubsection
+iab teh            the
+iab verboase       verbose
+iab weigth         weigth
 " -------------------------------------------------------------------------  }}}
 " {{{ Auto commands for filetypes.
 autocmd BufRead,BufNewFile *.adoc,*adoci,*.txt,*.asciidoc,README
@@ -290,7 +295,7 @@ inoremap <c-]> <c-x><c-]>
 inoremap <c-l> <c-x><c-l>
 " -------------------------------------------------------------------------- }}}
 " {{{ Execute the current line of text as a shell command.
-noremap <leader>E !!$SHELL<cr>
+noremap <leader>E !!$HELL<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ junegunn: chmod
 "
@@ -406,6 +411,14 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_custom_ignore = { 'dir': '\v[\/](.git|.cabal-sandbox|.stack-work)$' }
 
 nnoremap <silent> <leader>ff :CtrlP<CR> "Fuzzy find
+" -------------------------------------------------------------------------- }}}
+" {{{ Dash
+" Search documentation using Dash.app like app.
+if has('macunix')
+  nmap <silent> <leader>ds <Plug>DashSearch
+  nmap <silent> <leader>gs <Plug>DashGlobalSearch
+endif
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Drag Visual Block
 " Remove any introduced trailing whitespace after moving.

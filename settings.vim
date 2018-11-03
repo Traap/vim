@@ -14,7 +14,7 @@ set autowrite
 set complete=.,w,b,u,t,i,kspell
 set cmdheight=1                               " Height of the command bar.
 set encoding=utf-8
-set fileformats=unix,mac,dos
+set fileformats=unix
 set matchtime=3
 set modelines=0
 set mouse=a
@@ -348,6 +348,13 @@ nnoremap <leader>ep :e ~/git/vim/vim-plug.vim<cr>
 nnoremap <leader>es :e ~/git/vim/settings.vim<cr>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>.  :e.<cr>
+
+nnoremap <leader>ma :e ~/git/dotfiles/my_aliases<cr>
+nnoremap <leader>mc :e ~/git/dotfiles/my_completions<cr>
+nnoremap <leader>me :e ~/git/dotfiles/my_exports<cr>
+nnoremap <leader>mf :e ~/git/dotfiles/my_functions<cr>
+nnoremap <leader>mp :e ~/git/dotfiles/my_paths<cr>
+nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
@@ -628,11 +635,6 @@ let g:vtr_filetype_runner_overrides = {
 let g:VtrOrientation = "h"
 let g:VtrPercentage = 50
 
-nnoremap <leader>db  :VtrSendCommand stack exec -- doc-build<cr>
-nnoremap <leader>dc  :VtrSendCommand stack exec -- doc-build clean<cr>
-nnoremap <leader>hb  :VtrSendCommand stack build hmst-documentation<cr>
-nnoremap <leader>mb  :VtrSendCommand stack exec -- math-build<cr>
-nnoremap <leader>mc  :VtrSendCommand stack exec -- math-build clean<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-hoogle
 let g:hoogle_search_buf_name = 'HoogleSearch'
@@ -676,11 +678,17 @@ if has('nvim')
   let g:vimtex_compiler_progname="nvr"
 endif
 
+            
 if has("win32unix")
-  let g:vimtex_view_general_viewer = 'cygstart'
-  let g:vimtex_view_general_options = '--open @pdf'
+  " let g:vimtex_view_general_viewer = 'cygstart'
+  " let g:vimtex_view_general_options = '--open @pdf'
+
+  let g:vimtex_view_general_viewer = 'okular.exe'
+  " let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+  " let g:vimtex_view_general_options_latexmk = '--unique'
 
   let g:vimtex_compiler_latexmk = {
+        \ 'backend' : 'jobs',
         \ 'background' : 0,
         \ 'build_dir' : '_build',
         \ 'executable' : 'latexmk',
@@ -691,7 +699,7 @@ if has("win32unix")
         \   '-verbose',
         \   '-file-line-error',
         \   '-synctex=1',
-        \   '-interaction=nonstopmode',
+        \   '-interaction=nonstopmode'
         \ ],
         \}
 else

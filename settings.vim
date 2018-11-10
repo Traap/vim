@@ -4,8 +4,7 @@ let maplocalleader = ","
 set tm=2000                                   " Leader key timeout.
 " LEADER SECTION END ------------------------------------------------------- }}}
 " {{{ SETTINGS SECTION
-" {{{ First things ...
-" Set things that should come first.
+" {{{ Filetype and plugin defaults.
 filetype on
 filetype plugin indent on
 " -------------------------------------------------------------------------- }}}

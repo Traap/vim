@@ -76,9 +76,11 @@ Plug 'tpope/vim-dispatch'
 " Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " YAML
-Plug 'Shougo/neocomplete.vim'
-" Plug 'mkasa/neco-yaml-kwalify-schema'
-" Plug 'sunaku/kwalify'
+if has('lua')
+  Plug 'Shougo/neocomplete.vim'
+  " Plug 'mkasa/neco-yaml-kwalify-schema'
+  " Plug 'sunaku/kwalify
+endif
 
 " Help
 Plug 'Traap/vim-helptags'

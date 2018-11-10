@@ -245,6 +245,11 @@ if has('macunix')
   vmap <C-c> :w !pbcopy<CR><CR>
 endif
 " -------------------------------------------------------------------------- }}}
+" {{{ vim-system-copy
+" if has("win32unix")
+"   let g:system_copy#paste_command='paste'
+" endif
+" -------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.
 nnoremap zh mzzt10<c-u>
 " -------------------------------------------------------------------------- }}}
@@ -618,7 +623,7 @@ nnoremap <leader>rr  :VtrResizeRunner<cr>
 nnoremap <leader>ror :VtrReorientRunner<cr>
 nnoremap <leader>sc  :VtrSendCommandToRunner<cr>
 nnoremap <leader>sf  :VtrSendFile!<cr>
-nnoremap <leader>sl  :VtrSendLineToRunner<cr>
+nnoremap <leader>sl  :VtrSendLinesToRunner<cr>
 nnoremap <leader>or  :VtrOpenRunner<cr>
 nnoremap <leader>kr  :VtrKillRunner<cr>
 nnoremap <leader>fr  :VtrFocusRunner<cr>
@@ -644,11 +649,6 @@ au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-most-minimal-folds
 let g:most_minimal_folds_line_count = 1
-" -------------------------------------------------------------------------- }}}
-" {{{ vim-system-copy
-" if has("win32unix")
-"   let g:system_copy#paste_command='paste'
-" endif
 " -------------------------------------------------------------------------- }}}
 " {{{ vitality
 let g:vitality_fix_cursor = 1

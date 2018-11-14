@@ -639,6 +639,7 @@ let g:vtr_filetype_runner_overrides = {
 let g:VtrOrientation = "h"
 let g:VtrPercentage = 50
 let g:VtrClearSequence = ""
+let g:VtrClearBeforeSend = 1
 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-hoogle

@@ -435,3 +435,5 @@ RSpec
 docbld
 yaml
 texx
+workingdir
+AutoExample

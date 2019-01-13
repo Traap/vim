@@ -40,6 +40,7 @@ set lazyredraw
 set linebreak
 set number
 set numberwidth=1
+set novisualbell
 set showbreak=↪
 set showcmd
 set showmatch
@@ -128,7 +129,7 @@ if has("gui_running")
   endif
 
   " Colors
-  colorscheme base16-solarized-dark
+  colorscheme base16-chalk
 
   set guitablabel=%M\ %t
   hi Directory guifg=#8ac6f2

@@ -11,7 +11,7 @@ Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-vinegar'
 
 " Buffers
-" Plug 'christoomey/vim-system-copy'
+Plug 'christoomey/vim-system-copy'
 Plug 'moll/vim-bbye'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'

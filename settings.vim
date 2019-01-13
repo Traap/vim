@@ -83,7 +83,7 @@ set textwidth=80
 set wrap
 " ---------------------------------------------------------------------------}}}
 " {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
-" if
+" 
 if filereadable(expand("~./vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
@@ -236,14 +236,26 @@ nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
-vnoremap xc "+y
-nnoremap xv "+p
 
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
+" if has("win32unix")
+"   vnoremap xc "+y
+"   nnoremap xv "+p
+" endif
+
+" " Linux
+" if has('unix')
+"   vnoremap xc "*y
+"   nnoremap xv "*p
+"   if has('clipboard')
+"     set clipboard=unnamed
+"   endif
+" endif
+
+" if has('macunix')
+"   vmap <C-x> :!pbcopy<CR>
+"   vmap <C-c> :w !pbcopy<CR><CR>
+" endif
+
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-system-copy
 " if has("win32unix")

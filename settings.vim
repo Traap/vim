@@ -176,8 +176,10 @@ iab sectoin        section
 iab subsectoin     subsection
 iab subsubsectoin  subsubsection
 iab teh            the
+iab thier          their
 iab verboase       verbose
 iab weigth         weigth
+
 " -------------------------------------------------------------------------  }}}
 " {{{ Auto commands for filetypes.
 autocmd BufRead,BufNewFile *.adoc,*adoci,*.txt,*.asciidoc,README

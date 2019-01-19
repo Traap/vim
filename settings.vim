@@ -160,7 +160,7 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-" Default background is dark.  Colors work well shell/vim and tmux/shell/vim.
+" Default background is dark.  Colors work well with shell/vim and tmux/shell/vim.
 set background=dark
 
 " -------------------------------------------------------------------------- }}}
@@ -171,6 +171,7 @@ iab liek           like
 iab liekwise       likewise
 iab moer           more
 iab pritn          print
+iab reprot         report
 iab retrun         return
 iab sectoin        section
 iab subsectoin     subsection
@@ -179,6 +180,11 @@ iab teh            the
 iab thier          their
 iab verboase       verbose
 iab weigth         weigth
+
+" -------------------------------------------------------------------------  }}}
+" {{{ grep experiment 
+" Yank visually selected test and search for it in any file.
+vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>
 
 " -------------------------------------------------------------------------  }}}
 " {{{ Auto commands for filetypes.
@@ -195,6 +201,7 @@ autocmd BufRead,BufNewFile *.csv setlocal nowrap tw=0
 autocmd BufRead,BufNewFile *.yaml setlocal nowrap tw=80
 
 autocmd FileType tex inoremap <leader>ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
+
 autocmd FileType tex nnoremap <leader>ul i\begin{itemize}<Enter><Enter>\end{itemize}<Enter><Esc>2kA\item<Space>
 
 autocmd FileType help setlocal number tw=78
@@ -216,6 +223,10 @@ vnoremap Q gq
 " Substitute
 nnoremap <c-s> :%s/
 vnoremap <c-s> :s/
+
+" Map O to :only so that only one view is visable.
+nnoremap <silent> O :only<cr>
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
 nmap ; :
@@ -240,24 +251,19 @@ nnoremap Vaa ggVG
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
 
-" if has("win32unix")
-"   vnoremap xc "+y
-"   nnoremap xv "+p
-" endif
-
-" " Linux
-" if has('unix')
-"   vnoremap xc "*y
-"   nnoremap xv "*p
-"   if has('clipboard')
-"     set clipboard=unnamed
-"   endif
-" endif
-
-" if has('macunix')
-"   vmap <C-x> :!pbcopy<CR>
-"   vmap <C-c> :w !pbcopy<CR><CR>
-" endif
+if has('win32unix')
+  vnoremap <c-c> "+y
+  nnoremap <c-v> "+p
+elseif has('unix')
+  vnoremap <c-c> "*y
+  nnoremap xv "*p
+  if has('clipboard')
+    set clipboard=unnamed
+  endif
+elseif has('macunix')
+  vnoremap <c-c> :!pbcopy<CR>
+  nnoremap <c-v> :!pbpaste<CR> 
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-system-copy

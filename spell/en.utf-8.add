@@ -437,3 +437,6 @@ yaml
 texx
 workingdir
 AutoExample
+newdoc
+AUTODOCPATH
+DOCBLDPATH

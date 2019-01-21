@@ -164,11 +164,12 @@ endif
 set background=dark
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Automatic spelling corrections.
+" {{{ Automatic spelling and typo corrections.
 iab developmetn development
 iab heigth         heigth
-iab liek           like
+iab liek           likewisee
 iab liekwise       likewise
+iab manditory      mandatory
 iab moer           more
 iab pritn          print
 iab reprot         report
@@ -179,7 +180,11 @@ iab subsubsectoin  subsubsection
 iab teh            the
 iab thier          their
 iab verboase       verbose
-iab weigth         weigth
+iab widht          width
+iab wiegh          weigh 
+iab weihg          weigh 
+iab wiegth         weigth
+iab weight         weigth
 
 " -------------------------------------------------------------------------  }}}
 " {{{ grep experiment 
@@ -253,16 +258,16 @@ nnoremap Vaa ggVG
 
 if has('win32unix')
   vnoremap <c-c> "+y
-  nnoremap <c-v> "+p
+  nnoremap ]v "+p
 elseif has('unix')
   vnoremap <c-c> "*y
-  nnoremap xv "*p
+  nnoremap ]v "*p
   if has('clipboard')
     set clipboard=unnamed
   endif
 elseif has('macunix')
   vnoremap <c-c> :!pbcopy<CR>
-  nnoremap <c-v> :!pbpaste<CR> 
+  nnoremap ]v :!pbpaste<CR> 
 endif
 
 " -------------------------------------------------------------------------- }}}

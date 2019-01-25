@@ -442,6 +442,10 @@ nnoremap <leader>q :Bdelete<cr>
 nnoremap <leader>Q :bufdo :Bdelete<cr>
 nnoremap <leader>X :bdelete<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Buffer Size 
+nnoremap bb :resize -1<cr> 
+nnoremap BB :resize +1<cr> 
+" -------------------------------------------------------------------------- }}}
 " {{{ CTRL-P
 let g:ctrlp_max_files = 0
 let g:ctrlp_show_hidden=1

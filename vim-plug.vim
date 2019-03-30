@@ -99,9 +99,10 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
-" Plug 'tpope/vim-bundler'
-" Plug 'tpope/vim-projectionist'
-	" Very slow.  Probably not configured correctly.
+
+" Very slow.  Probably not configured correctly.
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-projectionist'
 
 " Operating system helpers
 Plug 'tpope/vim-eunuch'
@@ -112,4 +113,13 @@ Plug 'jez/vim-superman'
 " Outlines with Check-Boxes.
 Plug 'vimoutliner/vimoutliner'
 
+" Experiments ... not sure if I'll keep these plugins. 
+" Vim REST Console
+Plug 'diepm/vim-rest-console'
+
+" Ranger ... woot woot
+Plug 'francoiscabrol/ranger.vim'
+
+" Must be listed last.
+Plug 'ryanoasis/vim-devicons'
 call plug#end()

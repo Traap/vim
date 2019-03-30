@@ -12,7 +12,7 @@ filetype plugin indent on
 set autowrite
 set complete=.,w,b,u,t,i,kspell
 set cmdheight=1                               " Height of the command bar.
-set encoding=utf-8
+set encoding=UTF-8
 set fileformats=unix
 set matchtime=3
 set modelines=0
@@ -143,11 +143,11 @@ else
 endif
 
 
-" Set utf8 as standard encoding and en_US as the standard language
+" Set utf-8 as standard encoding and en_US as the standard language
 if !has('nvim')
   " Only set this for vim, since neovim is utf8 as default and setting it
   " causes problems when reloading the .vimrc configuration
-  set encoding=utf8
+  set encoding=utf-8
   if exists('$TMUX')
     set term=screen-256color
   endif
@@ -691,6 +691,10 @@ let g:vitality_fix_cursor = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ vimtex
 let g:tex_flavor = 'latex'
+
+
+let g:vimtex_complete_enabled = 1
+let g:vimtex_complete_close_braces = 1 
 
 let g:vimtex_latexmk_enabled = 1
 

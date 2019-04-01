@@ -114,12 +114,13 @@ if has("gui_running")
   set guicursor=n-v-c:block-Cursor
   set guicursor+=n-v-c:blinkon0
 
-  set guioptions-=T
   set guioptions-=e
-  set guioptions-=r
-  set guioptions-=R
   set guioptions-=l
   set guioptions-=L
+  set guioptions-=m
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=T
 
   " Set fonts.
   if has("gui_macvim")

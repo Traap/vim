@@ -3,6 +3,7 @@ call plug#begin('~/.vim/bundle')
 
 " Finders
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'wincent/command-t'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -61,13 +62,13 @@ endif
 " Colors
 Plug 'luochen1990/rainbow'
 Plug 'chriskempson/base16-vim'
-Plug 'joeytwiddle/vim-diff-traffic-lights-colors'
+" Plug 'joeytwiddle/vim-diff-traffic-lights-colors'
 
 " LaTeX
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
@@ -98,11 +99,13 @@ Plug 'ngmy/vim-rubocop'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'thoughtbot/vim-rspec'
-Plug 'ecomba/vim-ruby-refactoring'
+" Plug 'ecomba/vim-ruby-refactoring'
 
 " Very slow.  Probably not configured correctly.
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-projectionist'
+" Plug 'tpope/vim-bundler'
+
+" Very slow.
+" Plug 'tpope/vim-projectionist'
 
 " Operating system helpers
 Plug 'tpope/vim-eunuch'
@@ -118,8 +121,8 @@ Plug 'vimoutliner/vimoutliner'
 Plug 'diepm/vim-rest-console'
 
 " Ranger ... woot woot
-Plug 'francoiscabrol/ranger.vim'
+" Plug 'francoiscabrol/ranger.vim'
 
 " Must be listed last.
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 call plug#end()

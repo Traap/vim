@@ -369,6 +369,12 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 " {{{ Display help in vertical buffer.
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ vimdiff colors 
+highlight DiffAdd    term=bold    ctermbg=81  guibg=LightBlue
+highlight DiffChange term=bold    ctermbg=225 guibg=LightMagenta 
+highlight DiffDelete term=bold    ctermbg=159 guibg=LightCyan guifg=Blue gui=bold ctermfg=12 
+highlight DiffText   term=reverse ctermbg=9   guibg=Red cterm=bold gui=bold 
+" -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
 nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>

@@ -35,7 +35,7 @@ Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
 
 " Command-line fuzzy finder
-if has('macunix')
+if has('unix')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
   Plug 'junegunn/fzf.vim'
 endif

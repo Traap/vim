@@ -3,7 +3,7 @@ call plug#begin('~/.vim/bundle')
 
 " Finders
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'wincent/command-t'
+" Plug 'wincent/command-t'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'

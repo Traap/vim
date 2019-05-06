@@ -8,6 +8,7 @@ Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/vim-asterisk'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-vinegar'
 

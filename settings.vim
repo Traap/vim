@@ -47,7 +47,7 @@ set showmatch
 set showmode
 set sidescroll=1
 set sidescrolloff=10
-set splitbelow
+set splitbelow splitright
 set synmaxcol=800
 set title
 set virtualedit+=block

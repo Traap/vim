@@ -41,7 +41,7 @@ set title
 set ttimeoutlen=10
 set ttyfast
 set virtualedit+=block
-"set visualbell
+set visualbell
 syntax on
 " -------------------------------------------------------------------------- }}}
 " {{{ Show trailing whitespaces

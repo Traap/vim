@@ -10,37 +10,25 @@ filetype plugin indent on
 " -------------------------------------------------------------------------- }}}
 " {{{ Alphabetical listing of things I set.
 set autowrite
-set complete=.,w,b,u,t,i,kspell
 set cmdheight=1                               " Height of the command bar.
+set colorcolumn=+1
+set complete=.,w,b,u,t,i,kspell
 set encoding=UTF-8
 set fileformats=unix
+set foldmethod=marker
+set laststatus=2
+set lazyredraw
+set linebreak
 set matchtime=3
 set modelines=0
 set mouse=a
 set nocompatible
 set norelativenumber
 set notimeout
-set path+=**
-set ttimeoutlen=10
-set ttyfast
-set virtualedit=block
-nnoremap Q <no>                               " Don't allow Ex mode.
-" -------------------------------------------------------------------------- }}}
-" {{{ Show trailing whitespaces
-set nolist                                    " Show trailing whitespaces
-if &listchars ==# 'eol:$'                     " But only interesting whitespace
-  set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:-,nbsp:+
-endif
-" -------------------------------------------------------------------------- }}}
-" {{{ Buffer visualization settings
-set colorcolumn=+1
-set foldmethod=marker
-set laststatus=2
-set lazyredraw
-set linebreak
+set novisualbell
 set number
 set numberwidth=1
-set novisualbell
+set path+=**
 set showbreak=↪
 set showcmd
 set showmatch
@@ -50,9 +38,20 @@ set sidescrolloff=10
 set splitbelow splitright
 set synmaxcol=800
 set title
+set ttimeoutlen=10
+set ttyfast
 set virtualedit+=block
-set visualbell
+"set visualbell
 syntax on
+" -------------------------------------------------------------------------- }}}
+" {{{ Show trailing whitespaces
+set nolist                                    " Show trailing whitespaces
+if &listchars ==# 'eol:$'                     " But only interesting whitespace
+  set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:-,nbsp:+
+endif
+" -------------------------------------------------------------------------- }}}
+" {{{ Don't allow Ex mode. 
+nnoremap Q <no>                               " Don't allow Ex mode.
 " -------------------------------------------------------------------------- }}}
 " {{{ Searching
 set hlsearch                                     " Hilight previous search
@@ -714,6 +713,9 @@ let g:vimtex_quickfix_latexlog = {
       \ 'overfull' : 0,
       \ 'specifier change to' : 0,
       \ 'underfull' : 0,
+      \ 'packages' : {
+      \   'tocloft' : 0,
+      \  },
       \ }
 
 if has('nvim')

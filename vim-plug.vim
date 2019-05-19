@@ -35,10 +35,11 @@ Plug 'tpope/vim-sensible'
 Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
 
-" Command-line fuzzy finder
+" Command-line fuzzy finder and ack
 if has('unix')
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
   Plug 'junegunn/fzf.vim'
+  Plug 'mileszs/ack.vim'
 endif
 
 " Tmux

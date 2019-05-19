@@ -84,13 +84,13 @@ set wrap
 " ---------------------------------------------------------------------------}}}
 " {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
 " 
-if filereadable(expand("~./vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+" if filereadable(expand("~./vimrc_background"))
+"   let base16colorspace=256
+"   source ~/.vimrc_background
+" endif
 
-highlight ColorColumn ctermbg=18
-highlight SignColumn ctermbg=18
+highlight ColorColumn ctermbg=235
+highlight SignColumn ctermbg=235
 set signcolumn=yes
 
 " Use same color behind concealed unicode characters
@@ -125,11 +125,11 @@ if has("gui_running")
   if has("gui_macvim")
     set guifont=Menlo:h13
   else
-    set guifont=DejaVu\ Sans\ Mono\ 10
+    set guifont=DejaVu\ Sans\ Mono\ 9 
   endif
 
   " Colors
-  colorscheme base16-chalk
+  " colorscheme base16-chalk
 
   set guitablabel=%M\ %t
   hi Directory guifg=#8ac6f2
@@ -161,7 +161,7 @@ if &term =~ '256color'
 endif
 
 " Default background is dark.  Colors work well with shell/vim and tmux/shell/vim.
-set background=dark
+" set background=dark
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling and typo corrections.
@@ -201,7 +201,7 @@ autocmd BufRead,BufNewFile *.tex,*.bbl,*.bib,*.texx,*.texb,*.cls
 
 autocmd BufRead,BufNewFile *.muttrc setlocal filetype=muttrc
 
-autocmd BufRead,BufNewFile *.csv setlocal nowrap tw=0
+autocmd BufRead,BufNewFile *.csv,*.md setlocal nowrap tw=0
 
 autocmd BufRead,BufNewFile *.yaml setlocal nowrap tw=80
 
@@ -391,6 +391,10 @@ nnoremap <leader>me :e ~/git/dotfiles/my_exports<cr>
 nnoremap <leader>mf :e ~/git/dotfiles/my_functions<cr>
 nnoremap <leader>mp :e ~/git/dotfiles/my_paths<cr>
 nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
+
+nnoremap <leader>i3 :e ~/git/dotfiles/i3-config<cr>
+nnoremap <leader>xi :e ~/git/dotfiles/xinitrc<cr>
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
@@ -677,6 +681,9 @@ let g:VtrPercentage = 50
 let g:VtrClearSequence = ""
 let g:VtrClearBeforeSend = 1
 
+" -------------------------------------------------------------------------- }}}
+" {{{ The Silver Search through ack.vim 
+let g:ackprg = 'ag --nogroup --nocolor --column' 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-hoogle
 let g:hoogle_search_buf_name = 'HoogleSearch'

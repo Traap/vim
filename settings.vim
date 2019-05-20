@@ -21,7 +21,6 @@ set lazyredraw
 set linebreak
 set matchtime=3
 set modelines=0
-set mouse=a
 set nocompatible
 set norelativenumber
 set notimeout
@@ -105,6 +104,10 @@ hi! link Visual Search
 
 " Establish setting for gui and non-gui vim sessions.
 if has("gui_running")
+  if has('nvim)
+    set mouse=nvi
+    behave xterm 
+  endif
 
   " Set searching colors.
   hi search guifg=#ffffff guibg=#e5786d gui=none
@@ -142,7 +145,6 @@ else
   hi search ctermfg=white ctermbg=173 cterm=none
 endif
 
-
 " Set utf-8 as standard encoding and en_US as the standard language
 if !has('nvim')
   " Only set this for vim, since neovim is utf8 as default and setting it
@@ -165,7 +167,7 @@ endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling and typo corrections.
-iab developmetn development
+iab developmetn    development
 iab heigth         heigth
 iab liek           likewisee
 iab liekwise       likewise
@@ -256,25 +258,16 @@ nnoremap Vaa ggVG
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
 
-if has('win32unix')
-  vnoremap <c-c> "+y
-  nnoremap ]v "+p
-elseif has('unix')
-  vnoremap <c-c> "*y
-  nnoremap ]v "*p
-  if has('clipboard')
-    set clipboard=unnamed
-  endif
-elseif has('macunix')
-  vnoremap <c-c> :!pbcopy<CR>
-  nnoremap ]v :!pbpaste<CR> 
+if has('nvim')
+  " Normal mode copy & paste 
+  nnoremap YY "+y
+  nnoremap PP "+p
+
+  " Visual mode copy & paste 
+  vnoremap YY "+y
+  vnoremap PP "+p
 endif
 
-" -------------------------------------------------------------------------- }}}
-" {{{ vim-system-copy
-" if has("win32unix")
-"   let g:system_copy#paste_command='paste'
-" endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.
 nnoremap zh mzzt10<c-u>

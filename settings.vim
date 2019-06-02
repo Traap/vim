@@ -69,7 +69,7 @@ set wildignore+=*.spl                            " compiled spelling word lists
 set wildignore+=*.sw?                            " Vim swap files
 set wildignore+=.hg,.git,.svn                    " Version control
 set wildignore+=migrations                       " Django migrations
-set wildmode=list:longest,full                   " Tab0-complete files.
+set wildmode=list:longest,full                   " Tab-complete files.
 " -------------------------------------------------------------------------- }}}
 " {{{ Tabs, spaces and wrapping
 set expandtab
@@ -104,10 +104,6 @@ hi! link Visual Search
 
 " Establish setting for gui and non-gui vim sessions.
 if has("gui_running")
-  if has('nvim)
-    set mouse=nvi
-    behave xterm 
-  endif
 
   " Set searching colors.
   hi search guifg=#ffffff guibg=#e5786d gui=none
@@ -391,6 +387,13 @@ nnoremap <leader>xi :e ~/git/dotfiles/xinitrc<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
+" -------------------------------------------------------------------------- }}}
+" {{{ neovim
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  set mouse=nvi
+  behave xterm 
+endif
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION

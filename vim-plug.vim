@@ -70,7 +70,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
-" Plug 'vim-syntastic/syntastic'
+Plug 'vim-syntastic/syntastic'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'
@@ -120,7 +120,7 @@ Plug 'vimoutliner/vimoutliner'
 
 " Experiments ... not sure if I'll keep these plugins. 
 " Vim REST Console
-Plug 'diepm/vim-rest-console'
+" Plug 'diepm/vim-rest-console'
 
 " Ranger ... woot woot
 " Plug 'francoiscabrol/ranger.vim'

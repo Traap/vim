@@ -358,10 +358,22 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ vimdiff colors 
+<<<<<<< Updated upstream
+highlight DiffAdd    term=bold guibg=LightBlue
+highlight DiffChange term=bold guibg=LightMagenta 
+highlight DiffDelete term=bold guibg=LightCyan guifg=Blue gui=bold ctermfg=12 
+highlight DiffText             guibg=Red cterm=bold gui=bold 
+||||||| merged common ancestors
 highlight DiffAdd    term=bold    ctermbg=81  guibg=LightBlue
 highlight DiffChange term=bold    ctermbg=225 guibg=LightMagenta 
 highlight DiffDelete term=bold    ctermbg=159 guibg=LightCyan guifg=Blue gui=bold ctermfg=12 
 highlight DiffText   term=reverse ctermbg=9   guibg=Red cterm=bold gui=bold 
+=======
+highlight DiffAdd    term=bold ctermbg=81  guibg=LightBlue
+highlight DiffChange term=bold ctermbg=8  guibg=LightMagenta 
+highlight DiffDelete term=bold ctermbg=159 guibg=LightCyan guifg=Blue gui=bold ctermfg=12 
+highlight DiffText   term=bold ctermbg=9   guibg=Red cterm=bold gui=bold 
+>>>>>>> Stashed changes
 " -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
@@ -449,8 +461,8 @@ nnoremap <leader>Q :bufdo :Bdelete<cr>
 nnoremap <leader>X :bdelete<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer Size 
-nnoremap bb :resize -1<cr> 
-nnoremap BB :resize +1<cr> 
+nnoremap <silent> bb :resize -1<cr> 
+nnoremap <silent> BB :resize +1<cr> 
 " -------------------------------------------------------------------------- }}}
 " {{{ CTRL-P
 let g:ctrlp_max_files = 0

@@ -358,10 +358,10 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ vimdiff colors 
-highlight DiffAdd    term=bold guibg=LightBlue
-highlight DiffChange term=bold guibg=LightMagenta 
-highlight DiffDelete term=bold guibg=LightCyan guifg=Blue gui=bold ctermfg=12 
-highlight DiffText             guibg=Red cterm=bold gui=bold 
+highlight DiffAdd    cterm=bold ctermfg=10  ctermbg=235 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold ctermfg=100 ctermbg=235 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold ctermfg=200 ctermbg=235 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold ctermfg=155 ctermbg=235 gui=none guifg=bg guibg=Red
 " -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>

@@ -90,7 +90,7 @@ set wrap
 
 highlight ColorColumn ctermbg=235
 highlight SignColumn ctermbg=235
-set signcolumn=yes
+"set signcolumn=yes
 
 " Use same color behind concealed unicode characters
 hi clear Conceal
@@ -750,6 +750,7 @@ if has("win32unix")
         \ ],
         \}
 else
+  let g:vimtex_view_general_viewer = 'zathura'
   let g:vimtex_compiler_latexmk = {
         \ 'background' : 0,
         \ 'build_dir' : '_build',

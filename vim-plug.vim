@@ -3,7 +3,6 @@ call plug#begin('~/.vim/bundle')
 
 " Finders
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'wincent/command-t'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -64,7 +63,7 @@ endif
 " Colors
 Plug 'luochen1990/rainbow'
 Plug 'chriskempson/base16-vim'
-" Plug 'joeytwiddle/vim-diff-traffic-lights-colors'
+Plug 'mechatroner/rainbow_csv'
 
 " LaTeX
 Plug 'lervag/vimtex'
@@ -119,9 +118,6 @@ Plug 'jez/vim-superman'
 Plug 'vimoutliner/vimoutliner'
 
 " Experiments ... not sure if I'll keep these plugins. 
-" Vim REST Console
-" Plug 'diepm/vim-rest-console'
-
 " Ranger ... woot woot
 " Plug 'francoiscabrol/ranger.vim'
 

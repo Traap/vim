@@ -452,12 +452,17 @@ nnoremap <leader>X :bdelete<cr>
 nnoremap <silent> bb :resize -1<cr> 
 nnoremap <silent> BB :resize +1<cr> 
 " -------------------------------------------------------------------------- }}}
-" {{{ CTRL-P
-let g:ctrlp_max_files = 0
-let g:ctrlp_show_hidden=1
-let g:ctrlp_custom_ignore = { 'dir': '\v[\/](.git|.cabal-sandbox|.stack-work)$' }
-
-nnoremap <silent> <leader>ff :CtrlP<CR> "Fuzzy find
+" {{{ Fuzzy file finders 
+if has('unix')
+  if has('nvim')
+    nnoremap <silent> <leader>ff :FZF<CR>
+  else
+    let g:ctrlp_max_files = 0
+    let g:ctrlp_show_hidden=1
+    let g:ctrlp_custom_ignore = { 'dir': '\v[\/](.git|.cabal-sandbox|.stack-work)$' }
+    nnoremap <silent> <leader>ff :CtrlP<CR>
+  endif
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Dash
 " Search documentation using Dash.app like app.

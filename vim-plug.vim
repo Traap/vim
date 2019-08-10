@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/bundle')
 
 " Finders
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ivalkeen/nerdtree-execute'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -36,15 +35,19 @@ Plug 'junegunn/vim-easy-align'
 
 " Command-line fuzzy finder and ack
 if has('unix')
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
-  Plug 'junegunn/fzf.vim'
-  Plug 'mileszs/ack.vim'
+  if has('nvim')
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+    Plug 'junegunn/fzf.vim'
+    Plug 'mileszs/ack.vim'
+  else
+    Plug 'ctrlpvim/ctrlp.vim'
+  endif
 endif
 
-" Tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+" Tmux
 
 " iTerm2
 if has('macunix')

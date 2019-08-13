@@ -357,11 +357,13 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 " {{{ Display help in vertical buffer.
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ vimdiff colors 
+" {{{ vimdiff and spelling colors 
 highlight DiffAdd    cterm=bold ctermfg=10  ctermbg=235 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=100 ctermbg=235 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=200 ctermbg=235 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=155 ctermbg=235 gui=none guifg=bg guibg=Red
+highlight clear SpellBad
+highlight SpellBad cterm=underline gui=undercurl
 " -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>

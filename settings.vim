@@ -256,12 +256,12 @@ nnoremap Vaa ggVG
 
 if has('nvim')
   " Normal mode copy & paste 
-  nnoremap YY "+y
-  nnoremap PP "+p
+  nnoremap <c-c> "*y
+  nnoremap <c-v> "*p
 
   " Visual mode copy & paste 
-  vnoremap YY "+y
-  vnoremap PP "+p
+  vnoremap <c-c> "+y
+  vnoremap <c-p> "+p
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -753,7 +753,7 @@ if has("win32unix")
         \   '-verbose',
         \   '-file-line-error',
         \   '-synctex=1',
-        \   '-interaction=nonstopmode'
+        \   '-interaction=nonstopmode',
         \ ],
         \}
 else

@@ -95,7 +95,8 @@ endif
 " Plug 'OrangeT/vim-csharp'
 
 " Grammar
-Plug 'rhysd/vim-grammarous'
+" May not work with linux.  Requires JAVA.
+" Plug 'rhysd/vim-grammarous'
 
 " Ruby
 Plug 'tpope/vim-endwise'

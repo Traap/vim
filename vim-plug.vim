@@ -9,6 +9,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-vinegar'
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " Buffers
 Plug 'moll/vim-bbye'
@@ -19,7 +20,7 @@ Plug 'Traap/vim-ide'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/gitignore'
-"Plug 'Traap/github-issues.vim'
+" Plug 'Traap/github-issues.vim'
 
 " Bars, panels and files
 Plug 'vim-airline/vim-airline'
@@ -72,6 +73,11 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
+if has('nvim')
+  Plug 'neomake/neomake'
+else
+  Plug 'vim-syntastic/syntastic'
+endif
 Plug 'vim-syntastic/syntastic'
 
 " Dispatchers
@@ -80,7 +86,7 @@ Plug 'tpope/vim-dispatch'
 " Help
 Plug 'Traap/vim-helptags'
 
-" Plug 'beloglazov/vim-online-thesaurus'
+Plug 'beloglazov/vim-online-thesaurus'
 Plug 'vim-utils/vim-man'
 
 " Clang
@@ -116,15 +122,15 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-eunuch'
 
 " Read Unix man pages...
-Plug 'jez/vim-superman'
+" Plug 'jez/vim-superman'
 
 " Outlines with Check-Boxes.
 Plug 'vimoutliner/vimoutliner'
 
 " Experiments ... not sure if I'll keep these plugins. 
 " Ranger ... woot woot
-" Plug 'francoiscabrol/ranger.vim'
+Plug 'francoiscabrol/ranger.vim'
 
 " Must be listed last.
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()

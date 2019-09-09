@@ -133,4 +133,6 @@ Plug 'francoiscabrol/ranger.vim'
 
 " Must be listed last.
 Plug 'ryanoasis/vim-devicons'
+
+" Done loading plugins.
 call plug#end()

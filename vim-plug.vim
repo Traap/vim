@@ -9,7 +9,13 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-vinegar'
-Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+" Sweetheart is my ArchLinux machine on OSX hardware.  Build coc.
+if $HOSTNAME == "Sweetheart"
+  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+else
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 " Buffers
 Plug 'moll/vim-bbye'

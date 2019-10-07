@@ -86,7 +86,6 @@ if has('nvim')
 else
   Plug 'vim-syntastic/syntastic'
 endif
-Plug 'vim-syntastic/syntastic'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'

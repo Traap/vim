@@ -11,10 +11,12 @@ Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-vinegar'
 
 " Sweetheart is my ArchLinux machine on OSX hardware.  Build coc.
-if $HOSTNAME == "Sweetheart"
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-else
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if has('nvim')
+  if $HOSTNAME == "Sweetheart"
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+  else
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  endif
 endif
 
 " Buffers

@@ -1,4 +1,5 @@
-" {{{ LEADER SECTION let g:mapleader = ","
+" {{{ LEADER SECTION
+let g:mapleader = ","
 let maplocalleader = ","
 set tm=2000                                   " Leader key timeout.
 " LEADER SECTION END ------------------------------------------------------- }}}
@@ -251,23 +252,13 @@ nnoremap Vaa ggVG
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
 
-if has('nvim')
-  " Normal mode copy & paste 
-  nnoremap cc "*y
-  nnoremap cv "*p
+" Normal mode copy & paste 
+nnoremap cc "+y
+nnoremap cv "+p
 
-  " Visual mode copy & paste 
-  vnoremap cc "*y
-  vnoremap cp "*p
-else
-  " Normal mode copy & paste 
-  nnoremap cc "+y
-  nnoremap cv "+p
-
-  " Visual mode copy & paste 
-  vnoremap cc "+y
-  vnoremap cp "+p
-endif
+" Visual mode copy & paste 
+vnoremap cc "+y
+vnoremap cp "+p
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.

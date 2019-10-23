@@ -203,7 +203,9 @@ autocmd BufRead,BufNewFile *.csv,*.md setlocal nowrap tw=0
 
 autocmd BufRead,BufNewFile *.yaml setlocal nowrap tw=80
 
-autocmd! BufReadPost,BufWritePost * Neomake
+if has('nvim')
+  autocmd! BufReadPost,BufWritePost * Neomake
+endif
 
 autocmd FileType help setlocal number tw=78
 " -------------------------------------------------------------------------- }}}

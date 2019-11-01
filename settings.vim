@@ -56,19 +56,57 @@ nnoremap Q <no>                               " Don't allow Ex mode.
 set hlsearch                                     " Hilight previous search
 set ignorecase                                   " Ignore case when searching
 set smartcase                                    " Be smart about case.
-" -------------------------------------------------------------------------- 
-"  The wild, wild, west
-set wildignore+=*.DS_Store                       " OSX
-set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
-set wildignore+=*.luac                           " Lua byte code
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.orig                           " Merge resolution files
-set wildignore+=*.pyc                            " Python byte code
-set wildignore+=*.spl                            " compiled spelling word lists
-set wildignore+=*.sw?                            " Vim swap files
-set wildignore+=.hg,.git,.svn                    " Version control
-set wildignore+=migrations                       " Django migrations
+" -------------------------------------------------------------------------- }}}
+" {{{ The wild, wild, west
+set wildignore+=Ankh.NoLoad
+set wildignore+=*.aps
+set wildignore+=*.aux
+set wildignore+=*.bak
+set wildignore+=*.bak.*
+set wildignore+=*.bmp
+set wildignore+=*.csproj.user
+set wildignore+=*.dbmdl
+set wildignore+=*.dll
+set wildignore+=*.DS_Store
+set wildignore+=*.exe
+set wildignore+=*.gif
+set wildignore+=.git
+set wildignore+=.hg
+set wildignore+=*_i.c
+set wildignore+=*.ilk
+set wildignore+=*.jpeg
+set wildignore+=*.jpg
+set wildignore+=*.lib
+set wildignore+=*.log
+set wildignore+=*.luac
+set wildignore+=*.manifest
+set wildignore+=migrations
+set wildignore+=*.ncb
+set wildignore+=*.o
+set wildignore+=*.obj
+set wildignore+=*.orig
+set wildignore+=*.out
+set wildignore+=*_p.c
+set wildignore+=*.pdb
+set wildignore+=*.png
+set wildignore+=*.pyc
+set wildignore+=*.resharper
+set wildignore+=_ReSharper.*
+set wildignore+=_ReSharper*
+set wildignore+=*.resharper.user
+set wildignore+=*.sbr
+set wildignore+=*.sdf
+set wildignore+=*.spl
+set wildignore+=*.suo
+set wildignore+=.svn
+set wildignore+=*.sw?
+set wildignore+=*.swp
+set wildignore+=*.tlb
+set wildignore+=*.tlh
+set wildignore+=*.toc
+set wildignore+=*.user
+set wildignore+=*.vspscc
+set wildignore+=*.vssscc
 set wildmode=list:longest,full                   " Tab-complete files.
 " -------------------------------------------------------------------------- 
 "  Tabs, spaces and wrapping
@@ -139,6 +177,11 @@ if has("gui_running")
 else
   hi Folded ctermbg=black ctermfg=blue
   hi search ctermfg=white ctermbg=173 cterm=none
+
+  let &t_SI.="\e[5 q" "SI = Insert
+  let &t_SR.="\e[4 q" "SR = Replace 
+  let &t_EI.="\e[6 q" "EI = Normal 
+
 endif
 
 " Set utf-8 as standard encoding and en_US as the standard language

@@ -11,13 +11,13 @@ Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-vinegar'
 
 " Sweetheart is my ArchLinux machine on OSX hardware.  Build coc.
-if has('nvim')
-  if $HOSTNAME == "Sweetheart"
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-  else
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  endif
-endif
+" if has('nvim')
+"   if $HOSTNAME == "Sweetheart"
+"     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+"   else
+"     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"   endif
+" endif
 
 " Buffers
 Plug 'moll/vim-bbye'
@@ -38,7 +38,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-sensible'
 Plug 'Traap/vim-dragvisuals'
 Plug 'junegunn/vim-easy-align'
 
@@ -50,6 +49,7 @@ if has('unix')
     Plug 'mileszs/ack.vim'
   else
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'tpope/vim-sensible'
   endif
 endif
 

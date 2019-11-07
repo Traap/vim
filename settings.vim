@@ -1,14 +1,14 @@
-"  LEADER SECTION
+" {{{LEADER SECTION
 let g:mapleader = ","
 let maplocalleader = ","
 set tm=2000                                   " Leader key timeout.
-" LEADER SECTION END ------------------------------------------------------- 
+" LEADER SECTION END ------------------------------------------------------- }}}
 "  SETTINGS SECTION
 "  Filetype and plugin defaults.
 filetype on
 filetype plugin indent on
-" -------------------------------------------------------------------------- 
-"  Alphabetical listing of things I set.
+" -------------------------------------------------------------------------- }}}
+"{{{  Alphabetical listing of things I set.
 set autowrite
 set cmdheight=1                               " Height of the command bar.
 set colorcolumn=+1
@@ -42,17 +42,17 @@ set ttyfast
 set virtualedit+=block
 set visualbell
 syntax on
-" -------------------------------------------------------------------------- 
-"  Show trailing whitespaces
+" -------------------------------------------------------------------------- }}}
+" {{{ Show trailing whitespaces
 set nolist                                    " Show trailing whitespaces
 if &listchars ==# 'eol:$'                     " But only interesting whitespace
   set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:-,nbsp:+
 endif
-" -------------------------------------------------------------------------- 
-"  Don't allow Ex mode. 
+" -------------------------------------------------------------------------- }}}
+" {{{ Don't allow Ex mode. 
 nnoremap Q <no>                               " Don't allow Ex mode.
-" -------------------------------------------------------------------------- 
-"  Searching
+" -------------------------------------------------------------------------- }}}
+" {{{ Searching
 set hlsearch                                     " Hilight previous search
 set ignorecase                                   " Ignore case when searching
 set smartcase                                    " Be smart about case.
@@ -108,7 +108,7 @@ set wildignore+=*.user
 set wildignore+=*.vspscc
 set wildignore+=*.vssscc
 set wildmode=list:longest,full                   " Tab-complete files.
-" -------------------------------------------------------------------------- 
+" -------------------------------------------------------------------------- }}}
 "  Tabs, spaces and wrapping
 set expandtab
 set formatoptions=qrn1t
@@ -118,8 +118,8 @@ set softtabstop=2
 set tabstop=2
 set textwidth=80
 set wrap
-" ---------------------------------------------------------------------------
-"  Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
+" -------------------------------------------------------------------------- }}}
+" {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
 " 
 " if filereadable(expand("~./vimrc_background"))
 "   let base16colorspace=256
@@ -204,8 +204,8 @@ endif
 " Default background is dark.  Colors work well with shell/vim and tmux/shell/vim.
 " set background=dark
 
-" -------------------------------------------------------------------------- 
-"  Automatic spelling and typo corrections.
+" -------------------------------------------------------------------------- }}}
+" {{{ Automatic spelling and typo corrections.
 iab developmetn    development
 iab heigth         heigth
 iab liek           likewisee
@@ -227,13 +227,13 @@ iab weihg          weigh
 iab wiegth         weigth
 iab weight         weigth
 
-" -------------------------------------------------------------------------  
-"  grep experiment 
+" ------------------------------------------------------------------------- }}} 
+" {{{ grep experiment 
 " Yank visually selected test and search for it in any file.
 vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>
 
-" -------------------------------------------------------------------------  
-"  Auto commands for filetypes.
+" ------------------------------------------------------------------------- }}} 
+" {{{ Auto commands for filetypes.
 autocmd BufRead,BufNewFile *.adoc,*adoci,*.txt,*.asciidoc,README
         \ setlocal filetype=asciidoc
 
@@ -251,11 +251,11 @@ autocmd BufRead,BufNewFile *.yaml setlocal nowrap tw=80
 " endif
 
 autocmd FileType help setlocal number tw=78
-" -------------------------------------------------------------------------- 
-"  Obfuscate screen contents
+" -------------------------------------------------------------------------- }}}
+" {{{ Obfuscate screen contents
 nnoremap <F1> mzggg?G`z
-" -------------------------------------------------------------------------- 
-"  Delete line and more
+" -------------------------------------------------------------------------- }}}
+" {{{ Delete line and more
 "Delete line
 map - dd
 
@@ -273,29 +273,29 @@ vnoremap <c-s> :s/
 " Map O to :only so that only one view is visable.
 nnoremap <silent> O :only<cr>
 
-" -------------------------------------------------------------------------- 
-"  Quicker access to Ex commands and sourcing.
+" -------------------------------------------------------------------------- }}}
+" {{{ Quicker access to Ex commands and sourcing.
 nmap ; :
 nnoremap <leader>sv :source $MYVIMRC<CR>
-" -------------------------------------------------------------------------- 
-"  Toggle search results
+" -------------------------------------------------------------------------- }}}
+" {{{ Toggle search results
 noremap <silent><leader><space> :set hlsearch!<CR>
-" -------------------------------------------------------------------------- 
-"  Sort lines
+" -------------------------------------------------------------------------- }}}
+" {{{ Sort lines
 nnoremap <leader>s vip:!sort<cr>
 vnoremap <leader>s :!sort<cr>
 vnoremap <leader>u :sort u<cr>
-" -------------------------------------------------------------------------- 
-"  Clean trailing whitespace
+" -------------------------------------------------------------------------- }}}
+" {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 nnoremap <leader>wo :%bwipeout<cr>
 nnoremap <leader>wr :%s/\r//g<cr>
-" -------------------------------------------------------------------------- 
-"  Select entire buffer
+" -------------------------------------------------------------------------- }}}
+" {{{ Select entire buffer
 nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
-" -------------------------------------------------------------------------- 
-"  Copy and Paste
+" -------------------------------------------------------------------------- }}}
+" {{{ Copy and Paste
 
 " Normal mode copy & paste 
 nnoremap cc "+y
@@ -305,59 +305,59 @@ nnoremap cv "+p
 vnoremap cc "+y
 vnoremap cp "+p
 
-" -------------------------------------------------------------------------- 
-"  Zoom to head level.
+" -------------------------------------------------------------------------- }}}
+" {{{ Zoom to head level.
 nnoremap zh mzzt10<c-u>
-" -------------------------------------------------------------------------- 
-"  Easier linewise reselection of what you just pasted.
+" -------------------------------------------------------------------------- }}}
+" {{{ Easier linewise reselection of what you just pasted.
 nnoremap <leader>V V`]
-" -------------------------------------------------------------------------- 
-"  Indent/dedent/autoindent what you just pasted.
+" -------------------------------------------------------------------------- }}}
+" {{{ Indent/dedent/autoindent what you just pasted.
 nnoremap <lt>> V`]<
 nnoremap ><lt> V`]>
 nnoremap =- V`]=
-" -------------------------------------------------------------------------  
-"  Join line
+" ------------------------------------------------------------------------- }}} 
+" {{{ Join line
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 
 " Join an entire paragraph
 nnoremap <leader>J myvipJ`ygq<CR>
-" -------------------------------------------------------------------------- 
-"  Split line (sister to [J]oin lines)
+" -------------------------------------------------------------------------- }}}
+" {{{ Split line (sister to [J]oin lines)
 " The normal use of S is covered by cc, so don't worry about shadowing it.
 nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
-" -------------------------------------------------------------------------- 
-"  Source lines
+" -------------------------------------------------------------------------- }}}
+" {{{ Source lines
 vnoremap <leader>S y:@"<CR>
 nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
-" -------------------------------------------------------------------------- 
-"  Marks and Quotes
+" -------------------------------------------------------------------------- }}}
+" {{{ Marks and Quotes
 noremap ' `
 noremap æ '
 noremap ` <C-^>
-" -------------------------------------------------------------------------- 
-"  Select (charwise) the contents of the current line, excluding indentation.
+" -------------------------------------------------------------------------- }}}
+" {{{ Select (charwise) the contents of the current line, excluding indentation.
 nnoremap vv ^vg_
-" -------------------------------------------------------------------------- 
-"  Sudo to write
+" -------------------------------------------------------------------------- }}}
+" {{{ Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
-" -------------------------------------------------------------------------- 
-"  Toggle [i]nvisible characters
+" -------------------------------------------------------------------------- }}}
+" {{{ Toggle [i]nvisible characters
 nnoremap <leader>i :set list!<cr>
-" -------------------------------------------------------------------------- 
-"  Redraw my screen
+" -------------------------------------------------------------------------- }}}
+" {{{ Redraw my screen
 nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
-" -------------------------------------------------------------------------- 
-"  Insert Mode Completion
+" -------------------------------------------------------------------------- }}}
+" {{{ Insert Mode Completion
 inoremap <c-f> <c-x><c-f>
 inoremap <c-]> <c-x><c-]>
 inoremap <c-l> <c-x><c-l>
-" -------------------------------------------------------------------------- 
-"  Execute the current line of text as a shell command.
+" -------------------------------------------------------------------------- }}}
+" {{{ Execute the current line of text as a shell command.
 noremap <leader>E !!$SHELL<cr>
-" -------------------------------------------------------------------------- 
-"  junegunn: chmod
+" -------------------------------------------------------------------------- }}}
+" {{{ junegunn: chmod
 "
 " EX | chmod +x " | https://github.com/junegunn/dotfiles/blob/master/vimrc
 "
@@ -370,8 +370,8 @@ command! EX if !empty(expand('%'))
   \|   echo 'Save the file first'
   \|   echohl None
   \| endif
-" -------------------------------------------------------------------------- 
-"  junegunn: Google it / Feeling Lucky
+" -------------------------------------------------------------------------- }}}
+" {{{ junegunn: Google it / Feeling Lucky
 "
 " <Leader>?/! | Google it / Feeling luckey | junegunn/dotfiles
 "
@@ -394,19 +394,19 @@ nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
 nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
 xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
 xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
-" -------------------------------------------------------------------------- 
-"  Display help in vertical buffer.
+" -------------------------------------------------------------------------- }}}
+" {{{ Display help in vertical buffer.
 nnoremap <leader>HH :silent vert bo help<cr>
-" -------------------------------------------------------------------------- 
-"  vimdiff and spelling colors 
+" -------------------------------------------------------------------------- }}}
+" {{{ vimdiff and spelling colors 
 highlight DiffAdd    cterm=bold ctermfg=10  ctermbg=235 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold ctermfg=100 ctermbg=235 gui=none guifg=bg guibg=Red
 highlight DiffDelete cterm=bold ctermfg=200 ctermbg=235 gui=none guifg=bg guibg=Red
 highlight DiffText   cterm=bold ctermfg=155 ctermbg=235 gui=none guifg=bg guibg=Red
 highlight clear SpellBad
 highlight SpellBad cterm=underline gui=undercurl
-" -------------------------------------------------------------------------- 
-"  Quick editing of my personalization files.
+" -------------------------------------------------------------------------- }}}
+" {{{ Quick editing of my personalization files.
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
 nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
 nnoremap <leader>ec :e ~/git/ssh/config.vim<cr>
@@ -427,20 +427,20 @@ nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
 nnoremap <leader>i3 :e ~/git/dotfiles/i3-config<cr>
 nnoremap <leader>xi :e ~/git/dotfiles/xinitrc<cr>
 
-" -------------------------------------------------------------------------- 
-"  Print options
+" -------------------------------------------------------------------------- }}}
+" {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
-" -------------------------------------------------------------------------- 
-"  neovim
+" -------------------------------------------------------------------------- }}}
+" {{{ neovim
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
   set mouse=nvi
   behave xterm 
 endif
-" -------------------------------------------------------------------------- 
-" SETTINGS SECTION END ----------------------------------------------------- 
+" -------------------------------------------------------------------------- }}}
+" SETTINGS SECTION END ----------------------------------------------------- }}}
 "  BUNDLES SECTION
-"  Air line
+" {{{ Air line
 if !exists('g:airline_symbols')               " Use powerline fonts for airline
   let g:airline_symbols = {}
 endif
@@ -482,20 +482,20 @@ let g:airline_mode_map = {
     \ }
 
 let g:airline_theme='base16_chalk'
-" -------------------------------------------------------------------------  
-"  base16-vim 
+" ------------------------------------------------------------------------- }}} 
+" {{{ base16-vim 
 let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
-" -------------------------------------------------------------------------- 
-"  Bbye (Buffer Bye) for Vim
+" -------------------------------------------------------------------------- }}}
+" {{{ Bbye (Buffer Bye) for Vim
 nnoremap <leader>q :Bdelete<cr>
 nnoremap <leader>Q :bufdo :Bdelete<cr>
 nnoremap <leader>X :bdelete<cr>
-" -------------------------------------------------------------------------- 
-"  Buffer Size 
+" -------------------------------------------------------------------------- }}}
+" {{{ Buffer Size 
 nnoremap <silent> bb :resize -1<cr> 
 nnoremap <silent> BB :resize +1<cr> 
-" -------------------------------------------------------------------------- 
-"  Fuzzy file finders 
+" -------------------------------------------------------------------------- }}}
+" {{{ Fuzzy file finders 
 if has('unix')
   if has('nvim')
     nnoremap <silent> <leader>ff :FZF<CR>
@@ -506,16 +506,8 @@ if has('unix')
     nnoremap <silent> <leader>ff :CtrlP<CR>
   endif
 endif
-" -------------------------------------------------------------------------- 
-"  Dash
-" Search documentation using Dash.app like app.
-if has('macunix')
-  nmap <silent> <leader>ds <Plug>DashSearch
-  nmap <silent> <leader>gs <Plug>DashGlobalSearch
-endif
-
-" -------------------------------------------------------------------------- 
-"  Drag Visual Block
+" -------------------------------------------------------------------------- }}}
+" {{{ Drag Visual Block
 " Remove any introduced trailing whitespace after moving.
 vmap  <expr>  <LEFT>   DVB_Drag('left')
 vmap  <expr>  <RIGHT>  DVB_Drag('right')
@@ -523,19 +515,19 @@ vmap  <expr>  <DOWN>   DVB_Drag('down')
 vmap  <expr>  <UP>     DVB_Drag('up')
 vmap  <expr>  D        DVB_Duplicate()
 let g:DVB_TrimWS = 1
-" -------------------------------------------------------------------------- 
-"  Dispatch
+" -------------------------------------------------------------------------- }}}
+" {{{ Dispatch
 let g:dispatch_compilers = {
      \ 'haskell': 'cabal install',
      \ 'pdflatex': 'tex',
      \ 'ruby': 'rake'
      \ }
-" -------------------------------------------------------------------------- 
-"  Docbld
+" -------------------------------------------------------------------------- }}}
+" {{{ Docbld
 nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_files<cr>:copen<cr>
 nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
-" -------------------------------------------------------------------------- 
-"  EasyAlign
+" -------------------------------------------------------------------------- }}}
+" {{{ EasyAlign
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
 
@@ -543,8 +535,8 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 nmap <bar> gaip*<bar>
-" -------------------------------------------------------------------------- 
-"  Fugitive
+" -------------------------------------------------------------------------- }}}
+" {{{ Fugitive
 nnoremap <leader>gp :Gpush<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gh :silent vert bo help fugitive<cr>
@@ -552,8 +544,8 @@ nnoremap <leader>gl :Glog<cr>
 nnoremap <leader>gP :Gpull<cr>
 nnoremap <leader>gs :Gstatus<cr>gg<c-n>
 nnoremap <leader>gD :Gvdiff<cr>
-" -------------------------------------------------------------------------- 
-"  github-issues
+" -------------------------------------------------------------------------- }}}
+" {{{ github-issues
 let g:gissues_async_omni = 1
 let g:gissues_lazy_load = 1
 let g:gissues_new_assignee = 'Traap'
@@ -561,8 +553,8 @@ let g:gissues_new_label = 'enhancement'
 let g:github_same_window = 1
 nnoremap <leader>gi :Gissues<cr>
 nnoremap <leader>ga :Giadd<cr>
-" -------------------------------------------------------------------------- 
-"  haskell-vim
+" -------------------------------------------------------------------------- }}}
+" {{{ haskell-vim
 let g:haskell_enable_quantification = 1       " Highlite forall
 let g:haskell_enable_recursivedo = 1          " Highlite mdo and rec
 let g:haskell_enable_arrowsyntax = 1          " Highlite proc
@@ -577,11 +569,11 @@ let g:haskell_indent_do = 3
 let g:haskell_indent_int = 1
 let g:haskell_indent_guard = 2
 let g:cabal_indent_selection = 2
-" -------------------------------------------------------------------------- 
-"  Helptags
+" -------------------------------------------------------------------------- }}}
+" {{{ Helptags
 noremap<leader>ph :Helptags<cr>:echo 'Helptags done!'<cr>
-" -------------------------------------------------------------------------- 
-"  incsearch.vim
+" -------------------------------------------------------------------------- }}}
+" {{{ incsearch.vim
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
@@ -593,24 +585,24 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
-" -------------------------------------------------------------------------- 
-"  neco-ghc
+" -------------------------------------------------------------------------- }}}
+" {{{ neco-ghc
 let g:haskell_completion_ghc = 0              " Disabled for neco-ghc
 let g:necoghc_enabled_detailed_browse = 1
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-" -------------------------------------------------------------------------- 
-"  NERDtree
+" -------------------------------------------------------------------------- }}}
+" {{{ NERDtree
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
 let NERDTreeWinSize=40
 nnoremap <silent><leader>nf :NERDTreeFind<CR>
 nnoremap <silent><C-n> :NERDTreeToggle<CR>
-" -------------------------------------------------------------------------- 
-"  neocomplete
+" -------------------------------------------------------------------------- }}}
+" {{{ neocomplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_complete_delay = 1000
-" -------------------------------------------------------------------------- 
-"  Rainbow
+" -------------------------------------------------------------------------- }}}
+" {{{ Rainbow
 let g:rainbow_active = 1
 
 let rainbow_conf = {
@@ -676,8 +668,8 @@ let rainbow_conf = {
     \       'css': 0,
     \   }
     \}
-" -------------------------------------------------------------------------- 
-"  rspec 
+" -------------------------------------------------------------------------- }}}
+" {{{ rspec 
 let g:rspec_command = "Dispatch rspec {spec}"
 map <leader><leader>t :call RunCurrentSpecFile()<CR>
 map <leader><leader>s :call RunNearestSpec()<CR>
@@ -688,8 +680,8 @@ if has('maxunix')
   let g:rspec_runner = "os_x_iterm2"
 endif
 
-" -------------------------------------------------------------------------- 
-"  Syntastic
+" -------------------------------------------------------------------------- }}}
+" {{{ Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -698,8 +690,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" -------------------------------------------------------------------------- 
-"  Tmux Runner
+" -------------------------------------------------------------------------- }}}
+" {{{ Tmux Runner
 "
 " Below are the suggested Tmux Runner default mappings.  I decided to explicitly
 " reference them with defaults before I start changing them.
@@ -725,28 +717,28 @@ let g:VtrPercentage = 50
 let g:VtrClearSequence = ""
 let g:VtrClearBeforeSend = 1
 
-" -------------------------------------------------------------------------- 
-"  The Silver Search through ack.vim 
+" -------------------------------------------------------------------------- }}}
+" {{{ The Silver Search through ack.vim 
 let g:ackprg = 'ag --nogroup --nocolor --column' 
-" -------------------------------------------------------------------------- 
-"  vim-hoogle
+" -------------------------------------------------------------------------- }}}
+" {{{ vim-hoogle
 let g:hoogle_search_buf_name = 'HoogleSearch'
 let g:hoogle_search_count = 20
 au BufNewFile,BufRead *.hs map <buffer> <leader>Hc :Hoogle<cr>
 au BufNewFile,BufRead *.hs map <buffer> <leader>Hh :Hoogle<cr>
 au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
-" -------------------------------------------------------------------------- 
-"  vim-most-minimal-folds
+" -------------------------------------------------------------------------- }}}
+" {{{ vim-most-minimal-folds
 let g:most_minimal_folds_line_count = 1
-" -------------------------------------------------------------------------- 
-"  vitality
+" -------------------------------------------------------------------------- }}}
+" {{{ vitality
 let g:vitality_fix_cursor = 1
 let g:vitality_normal_cursor = 0
 let g:vitality_insert_cursor = 1
 let g:vitality_fix_focus = 1
 let g:vitality_fix_cursor = 1
-" -------------------------------------------------------------------------- 
-"  vimtex
+" -------------------------------------------------------------------------- }}}
+" {{{ vimtex
 let g:tex_flavor = 'latex'
 
 
@@ -814,8 +806,8 @@ else
         \ ],
         \}
 endif
-" -------------------------------------------------------------------------- 
-"  Toggle my resume application.
+" -------------------------------------------------------------------------- }}}
+" {{{ Toggle my resume application.
 let g:resume_toggle= 0
 function! ToggleResumeEditor()
   if !g:resume_toggle
@@ -827,8 +819,8 @@ function! ToggleResumeEditor()
   let g:resume_toggle =! g:resume_toggle
 endfunction
 nnoremap ]r :call ToggleResumeEditor()<cr>
-" -------------------------------------------------------------------------- 
-"  Compile my resume.
+" -------------------------------------------------------------------------- }}}
+" {{{ Compile my resume.
 function! CompileSS(file)
   if empty(glob(a:file))
     echom a:file . " does not exist."
@@ -861,8 +853,8 @@ function! CompileSS(file)
 endfunction
 
 nnoremap [r :call CompileSS('~/git/resume/letter/coverletter.tex')<cr>
-" -------------------------------------------------------------------------- 
-"  Wipeout all buffers.
+" -------------------------------------------------------------------------- }}}
+" {{{ Wipeout all buffers.
 function! Wipeout()
   if exists("g:opt_diminactivewin")
     let g:opt_diminactivewin = 0
@@ -878,5 +870,5 @@ function! Wipeout()
   silent execute '%bwipeout!'
 endfun
 nnoremap ]w :call Wipeout()<cr>
-" -------------------------------------------------------------------------- 
-" BUNDLES SECTION END ------------------------------------------------------ 
+" -------------------------------------------------------------------------- }}}
+" BUNDLES SECTION END ------------------------------------------------------ }}}

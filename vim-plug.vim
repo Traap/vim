@@ -1,4 +1,4 @@
-" Tell Vim where our plugin manager is located.
+"  Tell Vim where our plugin manager is located.
 call plug#begin('~/.vim/bundle')
 
 " Finders

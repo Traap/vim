@@ -1,14 +1,14 @@
-" {{{LEADER SECTION
+" {{{ LEADER SECTION
 let g:mapleader = ","
 let maplocalleader = ","
 set tm=2000                                   " Leader key timeout.
 " LEADER SECTION END ------------------------------------------------------- }}}
-"  SETTINGS SECTION
-"  Filetype and plugin defaults.
+" {{{ SETTINGS SECTION
+" {{{ Filetype and plugin defaults.
 filetype on
 filetype plugin indent on
 " -------------------------------------------------------------------------- }}}
-"{{{  Alphabetical listing of things I set.
+" {{{ Alphabetical listing of things I set.
 set autowrite
 set cmdheight=1                               " Height of the command bar.
 set colorcolumn=+1
@@ -109,7 +109,7 @@ set wildignore+=*.vspscc
 set wildignore+=*.vssscc
 set wildmode=list:longest,full                   " Tab-complete files.
 " -------------------------------------------------------------------------- }}}
-"  Tabs, spaces and wrapping
+" {{{ Tabs, spaces and wrapping
 set expandtab
 set formatoptions=qrn1t
 set shiftround
@@ -439,7 +439,7 @@ if has('nvim')
 endif
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
-"  BUNDLES SECTION
+" {{{ BUNDLES SECTION
 " {{{ Air line
 if !exists('g:airline_symbols')               " Use powerline fonts for airline
   let g:airline_symbols = {}

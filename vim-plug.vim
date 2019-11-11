@@ -24,6 +24,7 @@ Plug 'moll/vim-bbye'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'Traap/vim-ide'
+Plug 'will133/vim-dirdiff'
 
 " Git
 Plug 'tpope/vim-fugitive'

@@ -303,7 +303,7 @@ nnoremap cv "+p
 
 " Visual mode copy & paste 
 vnoremap cc "+y
-vnoremap cp "+p
+vnoremap cv "+p
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.

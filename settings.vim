@@ -165,9 +165,6 @@ if has("gui_running")
     set guifont=DejaVu\ Sans\ Mono\ 9 
   endif
 
-  " Colors
-  " colorscheme base16-chalk
-
   set guitablabel=%M\ %t
   hi Directory guifg=#8ac6f2
 
@@ -201,8 +198,11 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-" Default background is dark.  Colors work well with shell/vim and tmux/shell/vim.
-" set background=dark
+" Finally we have a color scheme we can read.  Go figure.  Defautl
+" VIM color are not readable. 
+if !has("gui_running")
+  colorscheme desert
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling and typo corrections.

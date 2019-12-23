@@ -2,9 +2,9 @@
 call plug#begin('~/.vim/bundle')
 
 " Finders
-Plug 'ivalkeen/nerdtree-execute'
+Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'dkprice/vim-easygrep'
@@ -82,11 +82,8 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'lervag/vimtex'
 
 " Checkers (Lint, Syntax, etc.)
-if has('nvim')
-  Plug 'neomake/neomake'
-else
-  Plug 'vim-syntastic/syntastic'
-endif
+Plug 'dense-analysis/ale'
+"Plug 'neomake/neomake'
 
 " Dispatchers
 Plug 'tpope/vim-dispatch'

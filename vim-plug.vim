@@ -44,20 +44,15 @@ Plug 'junegunn/vim-easy-align'
 
 " Command-line fuzzy finder and ack
 if has('unix')
-  " if has('nvim')
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
-    Plug 'junegunn/fzf.vim'
-    Plug 'mileszs/ack.vim'
-  " else
-    " Plug 'ctrlpvim/ctrlp.vim'
-    " Plug 'tpope/vim-sensible'
-  " endif
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+  Plug 'junegunn/fzf.vim'
+  Plug 'mileszs/ack.vim'
 endif
 
+" Tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-" Tmux
 
 " iTerm2
 if has('macunix')

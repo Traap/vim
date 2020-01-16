@@ -53,9 +53,9 @@ endif
 nnoremap Q <no>                               " Don't allow Ex mode.
 " -------------------------------------------------------------------------- }}}
 " {{{ Searching
-set hlsearch                                     " Hilight previous search
-set ignorecase                                   " Ignore case when searching
-set smartcase                                    " Be smart about case.
+set hlsearch                                  " Hilight previous search
+set ignorecase                                " Ignore case when searching
+set smartcase                                 " Be smart about case.
 " -------------------------------------------------------------------------- }}}
 " {{{ The wild, wild, west
 set wildignore+=Ankh.NoLoad
@@ -121,10 +121,6 @@ set wrap
 " -------------------------------------------------------------------------- }}}
 " {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
 " 
-" if filereadable(expand("~./vimrc_background"))
-"   let base16colorspace=256
-"   source ~/.vimrc_background
-" endif
 
 highlight ColorColumn ctermbg=235
 highlight SignColumn ctermbg=235

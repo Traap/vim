@@ -122,17 +122,6 @@ set wrap
 " {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
 " 
 
-highlight ColorColumn ctermbg=235
-highlight SignColumn ctermbg=235
-"set signcolumn=yes
-
-" Use same color behind concealed unicode characters
-hi clear Conceal
-set t_Co=256
-
-" Disable visual flash.
-set t_vb=
-
 " Use visible search hilighting
 hi! link Visual Search
 
@@ -163,9 +152,7 @@ if has("gui_running")
 
   set guitablabel=%M\ %t
   hi Directory guifg=#8ac6f2
-
   hi Cursor guibg=cyan
-
   hi Folded guibg=black guifg=blue
 else
   hi Folded ctermbg=black ctermfg=blue
@@ -199,6 +186,20 @@ endif
 if !has("gui_running")
   colorscheme desert
 endif
+
+" I am using color 18, which will change because I use base16 functions such
+" as base16_chalk to set my terminal color.
+highlight ColorColumn ctermbg=18
+highlight SignColumn ctermbg=18
+"set signcolumn=yes
+
+" Use same color behind concealed unicode characters
+hi clear Conceal
+"set t_Co=256
+set t_Co=18
+
+" Disable visual flash.
+set t_vb=
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling and typo corrections.

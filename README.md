@@ -1,6 +1,17 @@
-# vim
-The parts needed to personalize Vim.
+# Vim
+The piece parts I use to personalize Vim.
 
-# Project Management
-Please refer to my [Lightweight Project Mangement](https://github.com/Traap/lpm)
-for the project management strategy I use.
+## vimrc
+Lists the order of vim files I source.
+
+## bootstrap.vim
+Install vim-plug when needed.
+
+## autoload/plug.vim
+Load the vim plugin manager I use.  Install plugins when needed.
+
+## settings.vim
+My Vim and plugin personalizations.
+
+## config.vim
+Connect to my private and public keys.

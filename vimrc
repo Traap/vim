@@ -1,4 +1,4 @@
-" Author: gary.a.howard@mac.com
+" {{{ Author: gary.a.howard@mac.com
 "
 " Influenced by:
 "   Steve Losh <steve@stevelosh.com>
@@ -12,14 +12,16 @@
 "
 "   Junegunn Choi
 "     https://github.com/junegunn/
-"
+" -------------------------------------------------------------------------- }}}
+" {{{ Initialize my Vim Personalization.  
+
 " I always root my GitHub repositories at ~/git.
 let s:vim_home = '~/git/vim/'
 
 " My private and public keys are maintained in a private repository.
 let s:vim_ssh = '~/git/ssh/'
 
-" A list of items and the order I want Vim to source them.
+" A list of items I want installed, and the order I want Vim to source them.
 let config_list = [ s:vim_home . 'bootstrap.vim'
                 \ , s:vim_home . 'autoload/plug.vim'
                 \ , s:vim_home . 'vim-plug.vim'
@@ -27,9 +29,10 @@ let config_list = [ s:vim_home . 'bootstrap.vim'
                 \ , s:vim_ssh  . 'config.vim'
                 \ ]
 
-" Now kick-start Vim with my personalization. 
+" Now kick-start Vim. 
 for files in config_list
   for f in split(expand(files), '\n')
     exec 'source '.f
   endfor
 endfor
+" -------------------------------------------------------------------------- }}}

@@ -121,7 +121,6 @@ set wrap
 " -------------------------------------------------------------------------- }}}
 " {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
 " 
-
 " Use visible search hilighting
 hi! link Visual Search
 
@@ -187,19 +186,18 @@ if !has("gui_running")
   colorscheme desert
 endif
 
-" I am using color 18, which will change because I use base16 functions such
-" as base16_chalk to set my terminal color.
+" Use same color behind concealed unicode characters
+hi clear Conceal
+set t_Co=18
+
+" Disable visual flash.:
+set t_vb=
+
+" I am using color 18 or 19, which will change because I use base16 functions
+" such as base16_chalk to set my terminal color.
 highlight ColorColumn ctermbg=18
 highlight SignColumn ctermbg=18
 "set signcolumn=yes
-
-" Use same color behind concealed unicode characters
-hi clear Conceal
-"set t_Co=256
-set t_Co=18
-
-" Disable visual flash.
-set t_vb=
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling and typo corrections.
@@ -328,9 +326,9 @@ vnoremap <leader>S y:@"<CR>
 nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Marks and Quotes
-noremap ' `
-noremap æ '
-noremap ` <C-^>
+" noremap ' `
+" noremap æ '
+" noremap ` <C-^>
 " -------------------------------------------------------------------------- }}}
 " {{{ Select (charwise) the contents of the current line, excluding indentation.
 nnoremap vv ^vg_

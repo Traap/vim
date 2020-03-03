@@ -100,9 +100,10 @@ endif
 " C#
 " Plug 'OrangeT/vim-csharp'
 
-" Grammar
-" May not work with linux.  Requires JAVA.
+" Grammar : LanguageTool
+" Requires JAVA.
 " Plug 'rhysd/vim-grammarous'
+" Plug 'dpelle/vim-LanguageTool'
 
 " Ruby
 Plug 'tpope/vim-endwise'

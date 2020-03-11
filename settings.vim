@@ -763,7 +763,7 @@ if has("win32unix")
   " let g:vimtex_view_general_viewer = 'cygstart'
   " let g:vimtex_view_general_options = '--open @pdf'
 
-  let g:vimtex_view_general_viewer = 'okular.exe'
+  let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
   " let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
   " let g:vimtex_view_general_options_latexmk = '--unique'
 

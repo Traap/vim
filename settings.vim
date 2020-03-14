@@ -53,7 +53,7 @@ endif
 nnoremap Q <no>                               " Don't allow Ex mode.
 " -------------------------------------------------------------------------- }}}
 " {{{ Searching
-set hlsearch                                  " Hilight previous search
+set hlsearch                                  " Highlight previous search
 set ignorecase                                " Ignore case when searching
 set smartcase                                 " Be smart about case.
 " -------------------------------------------------------------------------- }}}
@@ -119,16 +119,13 @@ set tabstop=2
 set textwidth=80
 set wrap
 " -------------------------------------------------------------------------- }}}
-" {{{ Colors and options specific to vim, gvim, and nvim, and Osx or Linux.
+" {{{ Colors and options specific to vim, gvim, and nvim, and OSX or Linux.
 " 
-" Use visible search hilighting
+" Use visible search highlighting
 hi! link Visual Search
 
 " Establish setting for gui and non-gui vim sessions.
 if has("gui_running")
-
-  " Set searching colors.
-  hi search guifg=#ffffff guibg=#e5786d gui=none
 
   " Don't blink normal mode cursor
   set guicursor=n-v-c:block-Cursor
@@ -151,11 +148,7 @@ if has("gui_running")
 
   set guitablabel=%M\ %t
   hi Directory guifg=#8ac6f2
-  hi Cursor guibg=cyan
-  hi Folded guibg=black guifg=blue
 else
-  hi Folded ctermbg=black ctermfg=blue
-  hi search ctermfg=white ctermbg=173 cterm=none
 
   let &t_SI.="\e[5 q" "SI = Insert
   let &t_SR.="\e[4 q" "SR = Replace 
@@ -180,7 +173,6 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-" Finally we have a color scheme we can read.  Go figure.  Defautl
 " VIM color are not readable. 
 if !has("gui_running")
   colorscheme desert
@@ -392,12 +384,14 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ vimdiff and spelling colors 
-highlight DiffAdd    cterm=bold ctermfg=10  ctermbg=235 gui=none guifg=bg guibg=Red
-highlight DiffChange cterm=bold ctermfg=100 ctermbg=235 gui=none guifg=bg guibg=Red
-highlight DiffDelete cterm=bold ctermfg=200 ctermbg=235 gui=none guifg=bg guibg=Red
-highlight DiffText   cterm=bold ctermfg=155 ctermbg=235 gui=none guifg=bg guibg=Red
 highlight clear SpellBad
-highlight SpellBad cterm=underline gui=undercurl
+highlight DiffAdd    cterm=bold      ctermfg=10  ctermbg=19 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold      ctermfg=5   ctermbg=19 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold      ctermfg=9   ctermbg=19 gui=none guifg=bg guibg=Red
+highlight search     cterm=bold      ctermfg=16  ctermbg=19 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold      ctermfg=155 ctermbg=19 gui=none guifg=bg guibg=Red
+highlight Folded                     ctermfg=100 ctermbg=19 gui=none guifg=bg guibg=Red
+highlight SpellBad   cterm=underline ctermfg=3   ctermbg=19 gui=undercurl
 " -------------------------------------------------------------------------- }}}
 " {{{ Quick editing of my personalization files.
 nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
@@ -438,7 +432,7 @@ if !exists('g:airline_symbols')               " Use powerline fonts for airline
   let g:airline_symbols = {}
 endif
 
-" unicode symbols
+" Unicode symbols
 let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
@@ -548,12 +542,12 @@ nnoremap <leader>gi :Gissues<cr>
 nnoremap <leader>ga :Giadd<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ haskell-vim
-let g:haskell_enable_quantification = 1       " Highlite forall
-let g:haskell_enable_recursivedo = 1          " Highlite mdo and rec
-let g:haskell_enable_arrowsyntax = 1          " Highlite proc
-let g:haskell_enable_pattern_synonyms = 1     " Highlite pattern
-let g:haskell_enable_typeroles = 1            " Highlite type roles
-let g:haskell_enable_static_pointers = 1      " Highlite static
+let g:haskell_enable_quantification = 1       " Highlight forall
+let g:haskell_enable_recursivedo = 1          " Highlight mdo and rec
+let g:haskell_enable_arrowsyntax = 1          " Highlight proc
+let g:haskell_enable_pattern_synonyms = 1     " Highlight pattern
+let g:haskell_enable_typeroles = 1            " Highlight type roles
+let g:haskell_enable_static_pointers = 1      " Highlight static
 let g:haskell_indent_if = 3
 let g:haskell_indent_case = 2
 let g:haskell_indent_let = 4
@@ -674,16 +668,6 @@ if has('maxunix')
 endif
 
 " -------------------------------------------------------------------------- }}}
-" " {{{ Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" -------------------------------------------------------------------------- }}}
 " {{{ Tmux Runner
 "
 " Below are the suggested Tmux Runner default mappings.  I decided to explicitly
@@ -725,11 +709,13 @@ au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
 let g:most_minimal_folds_line_count = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ vitality
-let g:vitality_fix_cursor = 1
-let g:vitality_normal_cursor = 0
-let g:vitality_insert_cursor = 1
-let g:vitality_fix_focus = 1
-let g:vitality_fix_cursor = 1
+if has('macunix')
+  let g:vitality_fix_cursor = 1
+  let g:vitality_normal_cursor = 0
+  let g:vitality_insert_cursor = 1
+  let g:vitality_fix_focus = 1
+  let g:vitality_fix_cursor = 1
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ vimtex
 let g:tex_flavor = 'latex'

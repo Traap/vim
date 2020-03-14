@@ -130,11 +130,17 @@ Plug 'tpope/vim-eunuch'
 " {{{ Outlines with Check-Boxes.
 Plug 'vimoutliner/vimoutliner'
 " -------------------------------------------------------------------------- }}}
+" {{{ Vim Completes me.
+Plug 'ajh17/VimCompletesMe'
+" -------------------------------------------------------------------------- }}}
+" {{{ You complete me.
+Plug 'ycm-core/YouCompleteMe'
+" -------------------------------------------------------------------------- }}}
 " {{{ Experiments ... not sure if I'll keep these plugins. 
 " Ranger ... woot woot
 Plug 'francoiscabrol/ranger.vim'
 " -------------------------------------------------------------------------- }}}
-" {{{ Must be listed last.
+" {{{ Must be listed last plugin.
 Plug 'ryanoasis/vim-devicons'
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.

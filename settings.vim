@@ -850,4 +850,17 @@ function! Wipeout()
 endfun
 nnoremap ]w :call Wipeout()<cr>
 " -------------------------------------------------------------------------- }}}
+" {{{ Vim Completes Me 
+augroup VimCompletesMeTex
+  autocmd!
+  autocmd FileType tex
+      \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
+augroup END
+" -------------------------------------------------------------------------- }}}
+" {{{ You Complete Me 
+if !exists('g:ycm_semantic_triggers')
+  let g:ycm_semantic_triggers = {}
+endif
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+" -------------------------------------------------------------------------- }}}
 " BUNDLES SECTION END ------------------------------------------------------ }}}

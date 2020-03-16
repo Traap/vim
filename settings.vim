@@ -744,22 +744,15 @@ if has('nvim')
   let g:vimtex_compiler_progname="nvr"
 endif
 
-            
 if has("win32unix")
-  " let g:vimtex_view_general_viewer = 'cygstart'
-  " let g:vimtex_view_general_options = '--open @pdf'
-
-  let g:vimtex_view_general_viewer = 'SumatraPDF.exe'
-  " let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
-  " let g:vimtex_view_general_options_latexmk = '--unique'
-
+  let g:vimtex_view_general_viewer = 'SumatraPDF'
   let g:vimtex_compiler_latexmk = {
         \ 'backend' : 'jobs',
         \ 'background' : 0,
         \ 'build_dir' : '_build',
         \ 'executable' : 'latexmk',
-        \ 'callback' : 0,
-        \ 'continuous' : 0,
+        \ 'callback' : 1,
+        \ 'continuous' : 1,
         \ 'options' : [
         \   '-pdf',
         \   '-verbose',

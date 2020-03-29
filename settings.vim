@@ -49,9 +49,6 @@ if &listchars ==# 'eol:$'                     " But only interesting whitespace
   set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:-,nbsp:+
 endif
 " -------------------------------------------------------------------------- }}}
-" {{{ Don't allow Ex mode. 
-nnoremap Q <no>                               " Don't allow Ex mode.
-" -------------------------------------------------------------------------- }}}
 " {{{ Searching
 set hlsearch                                  " Highlight previous search
 set ignorecase                                " Ignore case when searching
@@ -193,26 +190,29 @@ highlight SignColumn ctermbg=18
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling and typo corrections.
-iab developmetn    development
-iab heigth         heigth
-iab liek           likewisee
-iab liekwise       likewise
-iab manditory      mandatory
-iab moer           more
-iab pritn          print
-iab reprot         report
-iab retrun         return
-iab sectoin        section
-iab subsectoin     subsection
-iab subsubsectoin  subsubsection
-iab teh            the
-iab thier          their
-iab verboase       verbose
-iab widht          width
-iab wiegh          weigh 
-iab weihg          weigh 
-iab wiegth         weigth
-iab weight         weigth
+iabbrev efk            gary.howard@fresenius-kabi.com
+iabbrev egh            gary.a.howard@mac.com
+iabbrev developmetn    development
+iabbrev heigth         heigth
+iabbrev liek           likewisee
+iabbrev liekwise       likewise
+iabbrev manditory      mandatory
+iabbrev moer           more
+iabbrev pritn          print
+iabbrev reprot         report
+iabbrev retrun         return
+iabbrev sectoin        section
+iabbrev subsectoin     subsection
+iabbrev subsubsectoin  subsubsection
+iabbrev teh            the
+iabbrev thier          their
+iabbrev verboase       verbose
+iabbrev waht           what
+iabbrev weight         weigth
+iabbrev weihg          weigh 
+iabbrev widht          width
+iabbrev wiegh          weigh 
+iabbrev wiegth         weigth
 
 " ------------------------------------------------------------------------- }}} 
 " {{{ grep experiment 
@@ -248,7 +248,6 @@ map - dd
 noremap s :w<cr>
 
 " Reformat lines.
-nnoremap Q gqip
 vnoremap Q gq
 
 " Substitute
@@ -270,6 +269,7 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 nnoremap <leader>s vip:!sort<cr>
 vnoremap <leader>s :!sort<cr>
 vnoremap <leader>u :sort u<cr>
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
@@ -479,18 +479,25 @@ nnoremap <leader>Q :bufdo :Bdelete<cr>
 nnoremap <leader>X :bdelete<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffer Size 
-nnoremap <silent> bb :resize -1<cr> 
-nnoremap <silent> BB :resize +1<cr> 
+nnoremap <silent> <M-b> :resize -1<cr> 
+nnoremap <silent> <m-B> :resize +1<cr> 
+" -------------------------------------------------------------------------- }}}
+" {{{ Escape replacement 
+" inoremap jk <esc>
+" inoremap <esc> <nop>
+" vnoremap jk <esc>
+" vnoremap <esc> <nop> 
 " -------------------------------------------------------------------------- }}}
 " {{{ Fuzzy file finders 
 if has('unix')
   if has('nvim')
     nnoremap <silent> <leader>ff :FZF<CR>
   else
-    let g:ctrlp_max_files = 0
-    let g:ctrlp_show_hidden=1
-    let g:ctrlp_custom_ignore = { 'dir': '\v[\/](.git|.cabal-sandbox|.stack-work)$' }
-    nnoremap <silent> <leader>ff :CtrlP<CR>
+    nnoremap <silent> <leader>ff :FZF<CR>
+    " let g:ctrlp_max_files = 0
+    " let g:ctrlp_show_hidden=1
+    " let g:ctrlp_custom_ignore = { 'dir': '\v[\/](.git|.cabal-sandbox|.stack-work)$' }
+    " nnoremap <silent> <leader>ff :CtrlP<CR>
   endif
 endif
 " -------------------------------------------------------------------------- }}}

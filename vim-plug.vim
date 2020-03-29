@@ -19,6 +19,9 @@ Plug 'tpope/vim-vinegar'
 "     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "   endif
 " endif
+if v:version >= 800
+  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffers
 Plug 'moll/vim-bbye'
@@ -29,8 +32,11 @@ Plug 'will133/vim-dirdiff'
 " -------------------------------------------------------------------------- }}}
 " {{{ Git 
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'vim-scripts/gitignore'
-" Plug 'Traap/github-issues.vim'
+if has("python")
+  Plug 'Traap/github-issues.vim'
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Bars, panels and files
 Plug 'vim-airline/vim-airline'
@@ -127,18 +133,22 @@ Plug 'tpope/vim-eunuch'
 " Read Unix man pages...
 " Plug 'jez/vim-superman'
 " -------------------------------------------------------------------------- }}}
-" {{{ Outlines with Check-Boxes.
+" {{{ Outlines with Check-Boxes, and journaling.
 Plug 'vimoutliner/vimoutliner'
+Plug 'junegunn/vim-journal'
 " -------------------------------------------------------------------------- }}}
 " {{{ Vim Completes me.
 Plug 'ajh17/VimCompletesMe'
 " -------------------------------------------------------------------------- }}}
 " {{{ You complete me.
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 " -------------------------------------------------------------------------- }}}
 " {{{ Experiments ... not sure if I'll keep these plugins. 
 " Ranger ... woot woot
 Plug 'francoiscabrol/ranger.vim'
+if has('nvim')
+  Plug 'rbgrouleff/bclose.vim'
+endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Must be listed last plugin.
 Plug 'ryanoasis/vim-devicons'

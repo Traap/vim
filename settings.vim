@@ -759,7 +759,7 @@ if has("win32unix")
         \ 'build_dir' : '_build',
         \ 'executable' : 'latexmk',
         \ 'callback' : 1,
-        \ 'continuous' : 1,
+        \ 'continuous' : 0,
         \ 'options' : [
         \   '-pdf',
         \   '-verbose',

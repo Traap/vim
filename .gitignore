@@ -2,3 +2,4 @@ autoload/
 _build/
 bundle/
 .netrwhist
+undodir/

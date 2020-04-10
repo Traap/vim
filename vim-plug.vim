@@ -10,17 +10,9 @@ Plug 'haya14busa/vim-asterisk'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-vinegar'
 " -------------------------------------------------------------------------- }}}
-" {{{ Sweetheart 
-" Sweetheart is my ArchLinux machine on OSX hardware.  Build coc.
-" if has('nvim')
-"   if $HOSTNAME == "Sweetheart"
-"     Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
-"   else
-"     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"   endif
-" endif
+" {{{ Language Server Protocol 
 if v:version >= 800
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Buffers
@@ -29,6 +21,7 @@ Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'Traap/vim-ide'
 Plug 'will133/vim-dirdiff'
+Plug 'bbill/undotree'
 " -------------------------------------------------------------------------- }}}
 " {{{ Git 
 Plug 'tpope/vim-fugitive'

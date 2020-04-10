@@ -24,6 +24,8 @@ set modelines=0
 set nocompatible
 set norelativenumber
 set notimeout
+set nobackup
+set noswapfile
 set novisualbell
 set number
 set numberwidth=1
@@ -41,6 +43,8 @@ set ttimeoutlen=10
 set ttyfast
 set virtualedit+=block
 set visualbell
+set undodir=~/.vim/undodir
+set undofile
 syntax on
 " -------------------------------------------------------------------------- }}}
 " {{{ Show trailing whitespaces
@@ -55,7 +59,8 @@ set ignorecase                                " Ignore case when searching
 set smartcase                                 " Be smart about case.
 " -------------------------------------------------------------------------- }}}
 " {{{ The wild, wild, west
-set wildignore+=Ankh.NoLoad set wildignore+=*.aps
+set wildignore+=Ankh.NoLoad
+set wildignore+=*.aps
 set wildignore+=*.aux
 set wildignore+=*.bak
 set wildignore+=*.bak.*
@@ -116,7 +121,7 @@ set textwidth=80
 set wrap
 " -------------------------------------------------------------------------- }}}
 " {{{ Colors and options specific to vim, gvim, and nvim, and OSX or Linux.
-" 
+"
 " Use visible search highlighting
 hi! link Visual Search
 
@@ -139,7 +144,7 @@ if has("gui_running")
   if has("gui_macvim")
     set guifont=Menlo:h13
   else
-    set guifont=DejaVu\ Sans\ Mono\ 9 
+    set guifont=DejaVu\ Sans\ Mono\ 9
   endif
 
   set guitablabel=%M\ %t
@@ -147,8 +152,8 @@ if has("gui_running")
 else
 
   let &t_SI.="\e[5 q" "SI = Insert
-  let &t_SR.="\e[4 q" "SR = Replace 
-  let &t_EI.="\e[6 q" "EI = Normal 
+  let &t_SR.="\e[4 q" "SR = Replace
+  let &t_EI.="\e[6 q" "EI = Normal
 
 endif
 
@@ -169,7 +174,7 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-" VIM color are not readable. 
+" VIM color are not readable.
 if !has("gui_running")
   colorscheme desert
 endif
@@ -208,17 +213,17 @@ iabbrev thier          their
 iabbrev verboase       verbose
 iabbrev waht           what
 iabbrev weight         weigth
-iabbrev weihg          weigh 
+iabbrev weihg          weigh
 iabbrev widht          width
-iabbrev wiegh          weigh 
+iabbrev wiegh          weigh
 iabbrev wiegth         weigth
 
-" ------------------------------------------------------------------------- }}} 
-" {{{ grep experiment 
+" ------------------------------------------------------------------------- }}}
+" {{{ grep experiment
 " Yank visually selected test and search for it in any file.
 vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>
 
-" ------------------------------------------------------------------------- }}} 
+" ------------------------------------------------------------------------- }}}
 " {{{ Auto commands for filetypes.
 autocmd BufRead,BufNewFile *.adoc,*adoci,*.txt,*.asciidoc,README
         \ setlocal filetype=asciidoc
@@ -280,11 +285,11 @@ nnoremap Vaa ggVG
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
 
-" Normal mode copy & paste 
+" Normal mode copy & paste
 nnoremap cc "+y
 nnoremap cv "+p
 
-" Visual mode copy & paste 
+" Visual mode copy & paste
 vnoremap cc "+y
 vnoremap cv "+p
 
@@ -299,7 +304,7 @@ nnoremap <leader>V V`]
 nnoremap <lt>> V`]<
 nnoremap ><lt> V`]>
 nnoremap =- V`]=
-" ------------------------------------------------------------------------- }}} 
+" ------------------------------------------------------------------------- }}}
 " {{{ Join line
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
@@ -381,7 +386,7 @@ xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 " {{{ Display help in vertical buffer.
 nnoremap <leader>HH :silent vert bo help<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ vimdiff and spelling colors 
+" {{{ vimdiff and spelling colors
 highlight clear SpellBad
 highlight DiffAdd    cterm=bold      ctermfg=10  ctermbg=19 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold      ctermfg=5   ctermbg=19 gui=none guifg=bg guibg=Red
@@ -420,7 +425,7 @@ set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2
 if has('nvim')
   tnoremap <Esc> <C-\><C-n>
   set mouse=nvi
-  behave xterm 
+  behave xterm
 endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Using shift versus control when I'm lazy.
@@ -471,8 +476,8 @@ let g:airline_mode_map = {
     \ }
 
 let g:airline_theme='base16_chalk'
-" ------------------------------------------------------------------------- }}} 
-" {{{ base16-vim 
+" ------------------------------------------------------------------------- }}}
+" {{{ base16-vim
 let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
 " -------------------------------------------------------------------------- }}}
 " {{{ Bbye (Buffer Bye) for Vim
@@ -480,17 +485,32 @@ nnoremap <leader>q :Bdelete<cr>
 nnoremap <leader>Q :bufdo :Bdelete<cr>
 nnoremap <leader>X :bdelete<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ Buffer Size 
-nnoremap <silent> <M-b> :resize -1<cr> 
-nnoremap <silent> <m-B> :resize +1<cr> 
+" {{{ Buffer resize 
+map <m-h> :vertical resize -1<cr>
+map <m-j> :resize +1<cr>
+map <m-k> :resize -1<cr>
+map <m-l> :vertical resize +1<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ Escape replacement 
-" inoremap jk <esc>
+" {{{ coc-vim : Language Server Protocol 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ coc#refresh()
+
+nnoremap gD <Plug>(coc-definition)
+" -------------------------------------------------------------------------- }}}
+" {{{ Escape replacement
+inoremap ,, <esc>
 " inoremap <esc> <nop>
-" vnoremap jk <esc>
-" vnoremap <esc> <nop> 
+vnoremap ,, <esc>
+" vnoremap <esc> <nop>
 " -------------------------------------------------------------------------- }}}
-" {{{ Fuzzy file finders 
+" {{{ Fuzzy file finders
 if has('unix')
   if has('nvim')
     nnoremap <silent> <leader>ff :FZF<CR>
@@ -665,7 +685,7 @@ let rainbow_conf = {
     \   }
     \}
 " -------------------------------------------------------------------------- }}}
-" {{{ rspec 
+" {{{ rspec
 let g:rspec_command = "Dispatch rspec {spec}"
 map <leader><leader>t :call RunCurrentSpecFile()<CR>
 map <leader><leader>s :call RunNearestSpec()<CR>
@@ -704,8 +724,8 @@ let g:VtrClearSequence = ""
 let g:VtrClearBeforeSend = 1
 
 " -------------------------------------------------------------------------- }}}
-" {{{ The Silver Search through ack.vim 
-let g:ackprg = 'ag --nogroup --nocolor --column' 
+" {{{ The Silver Search through ack.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-hoogle
 let g:hoogle_search_buf_name = 'HoogleSearch'
@@ -735,7 +755,7 @@ let g:vimtex_fold_manual = 0
 let g:vimtex_format_enabled = 1
 
 let g:vimtex_complete_enabled = 1
-let g:vimtex_complete_close_braces = 1 
+let g:vimtex_complete_close_braces = 1
 
 let g:vimtex_latexmk_enabled = 1
 
@@ -857,14 +877,14 @@ function! Wipeout()
 endfun
 nnoremap ]w :call Wipeout()<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ Vim Completes Me 
+" {{{ Vim Completes Me
 augroup VimCompletesMeTex
   autocmd!
   autocmd FileType tex
       \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
 augroup END
 " -------------------------------------------------------------------------- }}}
-" {{{ You Complete Me 
+" {{{ You Complete Me
 if !exists('g:ycm_semantic_triggers')
   let g:ycm_semantic_triggers = {}
 endif

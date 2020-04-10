@@ -114,24 +114,22 @@ endif
 " Plug 'dpelle/vim-LanguageTool'
 " -------------------------------------------------------------------------- }}}
 " {{{ Ruby
-Plug 'tpope/vim-endwise'
+Plug 'ecomba/vim-ruby-refactoring'
 Plug 'ngmy/vim-rubocop'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rake'
 Plug 'thoughtbot/vim-rspec'
-" Plug 'ecomba/vim-ruby-refactoring'
-
-" Very slow.  Probably not configured correctly.
-" Plug 'tpope/vim-bundler'
-
-" Very slow.
-" Plug 'tpope/vim-projectionist'
+Plug 'tpope/gem-browse'
+Plug 'tpope/vim-bundler'        " Slow.  Check configuration.
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-projectionist'  "Slow. Check configuraiton.
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'vim-ruby/vim-ruby'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Operating system helpers
 Plug 'tpope/vim-eunuch'
 " Read Unix man pages...
-" Plug 'jez/vim-superman'
+Plug 'jez/vim-superman'
 " -------------------------------------------------------------------------- }}}
 " {{{ Outlines with Check-Boxes, and journaling.
 Plug 'vimoutliner/vimoutliner'
@@ -139,9 +137,6 @@ Plug 'junegunn/vim-journal'
 " -------------------------------------------------------------------------- }}}
 " {{{ Vim Completes me.
 Plug 'ajh17/VimCompletesMe'
-" -------------------------------------------------------------------------- }}}
-" {{{ You complete me.
-" Plug 'ycm-core/YouCompleteMe'
 " -------------------------------------------------------------------------- }}}
 " {{{ Experiments ... not sure if I'll keep these plugins. 
 " Ranger ... woot woot

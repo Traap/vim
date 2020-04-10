@@ -55,8 +55,7 @@ set ignorecase                                " Ignore case when searching
 set smartcase                                 " Be smart about case.
 " -------------------------------------------------------------------------- }}}
 " {{{ The wild, wild, west
-set wildignore+=Ankh.NoLoad
-set wildignore+=*.aps
+set wildignore+=Ankh.NoLoad set wildignore+=*.aps
 set wildignore+=*.aux
 set wildignore+=*.bak
 set wildignore+=*.bak.*
@@ -269,7 +268,6 @@ noremap <silent><leader><space> :set hlsearch!<CR>
 nnoremap <leader>s vip:!sort<cr>
 vnoremap <leader>s :!sort<cr>
 vnoremap <leader>u :sort u<cr>
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Clean trailing whitespace
 nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
@@ -424,6 +422,10 @@ if has('nvim')
   set mouse=nvi
   behave xterm 
 endif
+" -------------------------------------------------------------------------- }}}
+" {{{ Using shift versus control when I'm lazy.
+nnoremap B <c-b>
+nnoremap F <c-f>
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION
@@ -727,6 +729,10 @@ endif
 " {{{ vimtex
 let g:tex_flavor = 'latex'
 
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_manual = 0
+
+let g:vimtex_format_enabled = 1
 
 let g:vimtex_complete_enabled = 1
 let g:vimtex_complete_close_braces = 1 
@@ -769,7 +775,8 @@ if has("win32unix")
         \ ],
         \}
 else
-  let g:vimtex_view_general_viewer = 'zathura'
+  " let g:vimtex_view_general_viewer = 'zathura'
+  let g:vimtex_view_general_viewer = 'okular'
   let g:vimtex_compiler_latexmk = {
         \ 'background' : 0,
         \ 'build_dir' : '_build',

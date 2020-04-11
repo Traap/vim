@@ -260,7 +260,6 @@ vnoremap <c-s> :s/
 
 " Map O to :only so that only one view is visable.
 nnoremap <silent> O :only<cr>
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Quicker access to Ex commands and sourcing.
 nmap ; :
@@ -292,7 +291,6 @@ nnoremap cv "+p
 " Visual mode copy & paste
 vnoremap cc "+y
 vnoremap cv "+p
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Zoom to head level.
 nnoremap zh mzzt10<c-u>
@@ -333,9 +331,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle [i]nvisible characters
 nnoremap <leader>i :set list!<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Redraw my screen
-nnoremap U :syntax sync fromstart<cr>:redraw!<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Insert Mode Completion
 inoremap <c-f> <c-x><c-f>
@@ -534,7 +529,6 @@ let g:DVB_TrimWS = 1
 " -------------------------------------------------------------------------- }}}
 " {{{ Dispatch
 let g:dispatch_compilers = {
-     \ 'haskell': 'cabal install',
      \ 'pdflatex': 'tex',
      \ 'ruby': 'rake'
      \ }

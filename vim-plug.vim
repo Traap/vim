@@ -59,15 +59,6 @@ if has('macunix')
   Plug 'sjl/vitality.vim'
 endif
 " -------------------------------------------------------------------------- }}}
-" {{{ Haskell
-if $HOSTNAME == "Stooges"
-  Plug 'Twinside/vim-hoogle', { 'for': 'haskell' }
-  Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
-  Plug 'enomsg/vim-haskellConcealPlus', { 'for': 'haskell' }
-  Plug 'mpickering/hlint-refactor-vim', { 'for': 'haskell' }
-  Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
-endif
-" -------------------------------------------------------------------------- }}}
 " {{{ Colors
 Plug 'luochen1990/rainbow'
 Plug 'chriskempson/base16-vim'
@@ -117,7 +108,6 @@ Plug 'tpope/vim-projectionist'  "Slow. Check configuraiton.
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'vim-ruby/vim-ruby'
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Operating system helpers
 Plug 'tpope/vim-eunuch'

@@ -1,7 +1,7 @@
 " {{{ LEADER SECTION
 let g:mapleader = ","
 let maplocalleader = ","
-set tm=2000                                   " Leader key timeout.
+set tm=750                                   " Leader key timeout.
 " LEADER SECTION END ------------------------------------------------------- }}}
 " {{{ SETTINGS SECTION
 " {{{ Filetype and plugin defaults.
@@ -326,9 +326,6 @@ nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 " {{{ Select (charwise) the contents of the current line, excluding indentation.
 nnoremap vv ^vg_
 " -------------------------------------------------------------------------- }}}
-" {{{ Sudo to write
-cnoremap w!! w !sudo tee % >/dev/null
-" -------------------------------------------------------------------------- }}}
 " {{{ Toggle [i]nvisible characters
 nnoremap <leader>i :set list!<cr>
 " -------------------------------------------------------------------------- }}}
@@ -339,20 +336,6 @@ inoremap <c-l> <c-x><c-l>
 " -------------------------------------------------------------------------- }}}
 " {{{ Execute the current line of text as a shell command.
 noremap <leader>E !!$SHELL<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ junegunn: chmod
-"
-" EX | chmod +x " | https://github.com/junegunn/dotfiles/blob/master/vimrc
-"
-command! EX if !empty(expand('%'))
-  \|   write
-  \|   call system('chmod +x '.expand('%'))
-  \|   silent e
-  \| else
-  \|   echohl WarningMsg
-  \|   echo 'Save the file first'
-  \|   echohl None
-  \| endif
 " -------------------------------------------------------------------------- }}}
 " {{{ junegunn: Google it / Feeling Lucky
 "

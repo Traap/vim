@@ -120,11 +120,8 @@ set tabstop=2
 set textwidth=80
 set wrap
 " -------------------------------------------------------------------------- }}}
-" {{{ Colors and options specific to vim, gvim, and nvim, and OSX or Linux.
+" {{{ Terminal and GUI setup. 
 "
-" Use visible search highlighting
-hi! link Visual Search
-
 " Establish setting for gui and non-gui vim sessions.
 if has("gui_running")
 
@@ -178,20 +175,6 @@ endif
 if !has("gui_running")
   colorscheme desert
 endif
-
-" Use same color behind concealed unicode characters
-hi clear Conceal
-set t_Co=18
-
-" Disable visual flash.:
-set t_vb=
-
-" I am using color 18 or 19, which will change because I use base16 functions
-" such as base16_chalk to set my terminal color.
-highlight ColorColumn ctermbg=18
-highlight SignColumn ctermbg=18
-"set signcolumn=yes
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Automatic spelling and typo corrections.
 iabbrev efk            gary.howard@fresenius-kabi.com

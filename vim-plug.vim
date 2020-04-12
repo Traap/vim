@@ -1,4 +1,5 @@
-" {{{ Tell Vim where our plugin manager is located.  call plug#begin('~/.vim/bundle')
+" {{{ Tell Vim where our plugin manager is located.
+ call plug#begin('~/.vim/bundle')
 " -------------------------------------------------------------------------- }}}
 " {{{ BEGIN COMMUNITY PLUGINS
 " {{{ Navigation and searching

@@ -1,4 +1,4 @@
-"skek {{{ LEADER SECTION
+" {{{ LEADER SECTION
 let g:mapleader = ","
 let maplocalleader = ","
 set tm=750                                   " Leader key timeout.
@@ -531,73 +531,6 @@ nnoremap <silent><C-n> :NERDTreeToggle<CR>
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#auto_complete_delay = 1000
 " -------------------------------------------------------------------------- }}}
-" {{{ Rainbow
-let g:rainbow_active = 1
-
-let rainbow_conf = {
-    \   'guifgs':
-    \       ['royalblue3'
-    \       ,'darkorange3'
-    \       ,'seagreen3'
-    \       ,'firebrick'
-    \       ]
-    \,
-    \   'ctermfgs':
-    \       ['lightblue'
-    \       ,'lightyellow'
-    \       ,'lightcyan'
-    \       ,'lightmagenta'
-    \       ]
-    \,
-    \   'operators': '_,_'
-    \,
-    \   'parentheses':
-    \       ['start=/(/ end=/)/ fold'
-    \       ,'start=/\[/ end=/\]/ fold'
-    \       ,'start=/{/ end=/}/ fold'
-    \       ]
-    \,
-    \   'separately': {
-    \       '*': {}
-    \,
-    \       'tex': {
-    \           'parentheses':
-    \                ['start=/(/ end=/)/'
-    \                ,'start=/\[/ end=/\]/'
-    \                ,'start=/{/ end=/}/'
-    \                ]
-    \,
-    \       },
-    \       'lisp': {
-    \           'guifgs':
-    \                ['royalblue3'
-    \                ,'darkorange3'
-    \                ,'seagreen3'
-    \                ,'firebrick'
-    \                ,'darkorchid3'
-    \                ]
-    \,
-    \       },
-    \       'vim': {
-    \           'parentheses':
-    \                ['start=/(/ end=/)/'
-    \                ,'start=/\[/ end=/\]/'
-    \                ,'start=/{/ end=/}/ fold'
-    \                ,'start=/(/ end=/)/ containedin=vimFuncBody'
-    \                ,'start=/\[/ end=/\]/ containedin=vimFuncBody'
-    \                ,'start=/{/ end=/}/ fold containedin=vimFuncBody'
-    \                ]
-    \,
-    \       },
-    \       'html': {
-    \           'parentheses':
-    \               ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold']
-    \,
-    \       },
-    \       'css': 0,
-    \   }
-    \}
-" -------------------------------------------------------------------------- }}}
 " {{{ rspec
 let g:rspec_command = "Dispatch rspec {spec}"
 map <leader><leader>t :call RunCurrentSpecFile()<CR>
@@ -630,73 +563,6 @@ if has('macunix')
   let g:vitality_insert_cursor = 1
   let g:vitality_fix_focus = 1
   let g:vitality_fix_cursor = 1
-endif
-" -------------------------------------------------------------------------- }}}
-" {{{ vimtex
-let g:tex_flavor = 'latex'
-
-let g:vimtex_fold_enabled = 1
-let g:vimtex_fold_manual = 0
-
-let g:vimtex_format_enabled = 1
-
-let g:vimtex_complete_enabled = 1
-let g:vimtex_complete_close_braces = 1
-
-let g:vimtex_latexmk_enabled = 1
-
-let g:vimtex_quickfix_mode = 2
-let g:vimtex_view_enabled = 1
-
-let g:vimtex_quickfix_latexlog = {
-      \ 'empty glossary' : 0,
-      \ 'font warning' : 0,
-      \ 'overfull' : 0,
-      \ 'specifier change to' : 0,
-      \ 'underfull' : 0,
-      \ 'packages' : {
-      \   'tocloft' : 0,
-      \  },
-      \ }
-
-if has('nvim')
-  let g:vimtex_compiler_progname="nvr"
-endif
-
-if has("win32unix")
-  let g:vimtex_view_general_viewer = 'SumatraPDF'
-  let g:vimtex_compiler_latexmk = {
-        \ 'backend' : 'jobs',
-        \ 'background' : 0,
-        \ 'build_dir' : '_build',
-        \ 'executable' : 'latexmk',
-        \ 'callback' : 1,
-        \ 'continuous' : 0,
-        \ 'options' : [
-        \   '-pdf',
-        \   '-verbose',
-        \   '-file-line-error',
-        \   '-synctex=1',
-        \   '-interaction=nonstopmode',
-        \ ],
-        \}
-else
-  " let g:vimtex_view_general_viewer = 'zathura'
-  let g:vimtex_view_general_viewer = 'okular'
-  let g:vimtex_compiler_latexmk = {
-        \ 'background' : 0,
-        \ 'build_dir' : '_build',
-        \ 'executable' : 'latexmk',
-        \ 'callback' : 1,
-        \ 'continuous' : 1,
-        \ 'options' : [
-        \   '-pdf',
-        \   '-verbose',
-        \   '-file-line-error',
-        \   '-synctex=1',
-        \   '-interaction=nonstopmode',
-        \ ],
-        \}
 endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Toggle my resume application.

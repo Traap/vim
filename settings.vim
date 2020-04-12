@@ -452,13 +452,6 @@ let g:rspec_command = "Dispatch rspec {spec}"
 " {{{ The Silver Search through ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " -------------------------------------------------------------------------- }}}
-" {{{ vim-hoogle
-let g:hoogle_search_buf_name = 'HoogleSearch'
-let g:hoogle_search_count = 20
-au BufNewFile,BufRead *.hs map <buffer> <leader>Hc :Hoogle<cr>
-au BufNewFile,BufRead *.hs map <buffer> <leader>Hh :Hoogle<cr>
-au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
-" -------------------------------------------------------------------------- }}}
 " {{{ vim-most-minimal-folds
 let g:most_minimal_folds_line_count = 1
 " -------------------------------------------------------------------------- }}}

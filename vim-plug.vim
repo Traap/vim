@@ -134,6 +134,7 @@ endif
 " {{{ Bundle specific settings
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-coc'
+Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-haskell'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
@@ -142,7 +143,7 @@ Plug 'Traap/vim-bundle-vimtex'
 " -------------------------------------------------------------------------- }}}
 " {{{ Operating systems and keybindings 
 Plug 'Traap/vim-bundle-keybindings'
-Plug 'Traap/vim-bundle-haskell'
+Plug 'Traap/vim-bundle-macunix'
 " -------------------------------------------------------------------------- }}}
 " END MY BUNDLES ----------------------------------------------------------- }}}
 " {{{ MUST BE LISTED LAST PLUGIN.

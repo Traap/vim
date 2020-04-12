@@ -1,4 +1,4 @@
-" {{{ LEADER SECTION
+"skek {{{ LEADER SECTION
 let g:mapleader = ","
 let maplocalleader = ","
 set tm=750                                   " Leader key timeout.
@@ -547,22 +547,6 @@ let g:github_same_window = 1
 nnoremap <leader>gi :Gissues<cr>
 nnoremap <leader>ga :Giadd<cr>
 " -------------------------------------------------------------------------- }}}
-" {{{ haskell-vim
-let g:haskell_enable_quantification = 1       " Highlight forall
-let g:haskell_enable_recursivedo = 1          " Highlight mdo and rec
-let g:haskell_enable_arrowsyntax = 1          " Highlight proc
-let g:haskell_enable_pattern_synonyms = 1     " Highlight pattern
-let g:haskell_enable_typeroles = 1            " Highlight type roles
-let g:haskell_enable_static_pointers = 1      " Highlight static
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 2
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-let g:haskell_indent_do = 3
-let g:haskell_indent_int = 1
-let g:haskell_indent_guard = 2
-let g:cabal_indent_selection = 2
-" -------------------------------------------------------------------------- }}}
 " {{{ Helptags
 noremap<leader>ph :Helptags<cr>:echo 'Helptags done!'<cr>
 " -------------------------------------------------------------------------- }}}
@@ -578,11 +562,6 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
-" -------------------------------------------------------------------------- }}}
-" {{{ neco-ghc
-let g:haskell_completion_ghc = 0              " Disabled for neco-ghc
-let g:necoghc_enabled_detailed_browse = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " -------------------------------------------------------------------------- }}}
 " {{{ NERDtree
 let NERDTreeShowLineNumbers=1
@@ -862,9 +841,9 @@ augroup VimCompletesMeTex
 augroup END
 " -------------------------------------------------------------------------- }}}
 " {{{ You Complete Me
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+"if !exists('g:ycm_semantic_triggers')
+"  let g:ycm_semantic_triggers = {}
+"  au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+"endif
 " -------------------------------------------------------------------------- }}}
 " BUNDLES SECTION END ------------------------------------------------------ }}}

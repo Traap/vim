@@ -1,6 +1,7 @@
 " {{{ Tell Vim where our plugin manager is located.
 call plug#begin('~/.vim/bundle')
 " -------------------------------------------------------------------------- }}}
+" {{{ Community plugins.
 " {{{ Finders 
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -21,7 +22,7 @@ Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'Traap/vim-ide'
 Plug 'will133/vim-dirdiff'
-Plug 'bbill/undotree'
+Plug 'mbbill/undotree'
 " -------------------------------------------------------------------------- }}}
 " {{{ Git 
 Plug 'tpope/vim-fugitive'
@@ -128,13 +129,17 @@ if has('nvim')
   Plug 'rbgrouleff/bclose.vim'
 endif
 " -------------------------------------------------------------------------- }}}
+" -------------------------------------------------------------------------- }}}
+" {{{ My bundles settings.
+Plug 'Traap/vim-bundle-haskell'
+" -------------------------------------------------------------------------- }}}
 " {{{ Must be listed last plugin.
 Plug 'ryanoasis/vim-devicons'
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.
 call plug#end()
 " -------------------------------------------------------------------------- }}}
-" {{{ Install plugins. 
+" {{{ Indicate vim-plug installation is done. 
 if g:not_finish_vimplug == "yes"
   autocmd VimEnter * PlugInstall
 endif

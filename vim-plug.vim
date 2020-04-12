@@ -135,6 +135,7 @@ endif
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-coc'
 Plug 'Traap/vim-bundle-fzf'
+Plug 'Traap/vim-bundle-github-issues'
 Plug 'Traap/vim-bundle-haskell'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'

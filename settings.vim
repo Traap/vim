@@ -421,13 +421,6 @@ let g:dispatch_compilers = {
      \ 'ruby': 'rake'
      \ }
 " -------------------------------------------------------------------------- }}}
-" {{{ github-issues
-let g:gissues_async_omni = 1
-let g:gissues_lazy_load = 1
-let g:gissues_new_assignee = 'Traap'
-let g:gissues_new_label = 'enhancement'
-let g:github_same_window = 1
-" -------------------------------------------------------------------------- }}}
 " {{{ NERDtree
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1

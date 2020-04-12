@@ -1,4 +1,4 @@
-" {{{ Tell Vim where our plugin manager is located.
+"s {{{ Tell Vim where our plugin manager is located.
 call plug#begin('~/.vim/bundle')
 " -------------------------------------------------------------------------- }}}
 " {{{ BEGIN COMMUNITY PLUGINS
@@ -62,7 +62,6 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Colors
 Plug 'luochen1990/rainbow'
-Plug 'chriskempson/base16-vim'
 Plug 'mechatroner/rainbow_csv'
 " -------------------------------------------------------------------------- }}}
 " {{{ LaTeX

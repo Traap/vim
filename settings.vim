@@ -217,7 +217,6 @@ iabbrev weihg          weigh
 iabbrev widht          width
 iabbrev wiegh          weigh
 iabbrev wiegth         weigth
-
 " ------------------------------------------------------------------------- }}}
 " {{{ grep experiment
 " Yank visually selected test and search for it in any file.
@@ -361,9 +360,6 @@ nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
 xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
 xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
 " -------------------------------------------------------------------------- }}}
-" {{{ Display help in vertical buffer.
-nnoremap <leader>HH :silent vert bo help<cr>
-" -------------------------------------------------------------------------- }}}
 " {{{ vimdiff and spelling colors
 highlight clear SpellBad
 highlight DiffAdd    cterm=bold      ctermfg=10  ctermbg=19 gui=none guifg=bg guibg=Red
@@ -412,9 +408,6 @@ nnoremap F <c-f>
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION
-" {{{ base16-vim
-let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
-" -------------------------------------------------------------------------- }}}
 " {{{ rspec
 let g:rspec_command = "Dispatch rspec {spec}"
 " -------------------------------------------------------------------------- }}}

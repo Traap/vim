@@ -1,8 +1,7 @@
-" {{{ Tell Vim where our plugin manager is located.
-call plug#begin('~/.vim/bundle')
+" {{{ Tell Vim where our plugin manager is located.  call plug#begin('~/.vim/bundle')
 " -------------------------------------------------------------------------- }}}
-" {{{ Community plugins.
-" {{{ Finders 
+" {{{ BEGIN COMMUNITY PLUGINS
+" {{{ Navigation and searching
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
@@ -129,8 +128,9 @@ if has('nvim')
   Plug 'rbgrouleff/bclose.vim'
 endif
 " -------------------------------------------------------------------------- }}}
-" -------------------------------------------------------------------------- }}}
-" {{{ My bundles settings.
+" END COMMUNITY PLUGINS ---------------------------------------------------- }}}
+" {{{ BEGIN MY BUNDLES 
+" {{{ Bundle specific settings
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-coc'
 Plug 'Traap/vim-bundle-haskell'
@@ -138,8 +138,12 @@ Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-tmux'
 Plug 'Traap/vim-bundle-vimtex'
+" {{{ Operating Systems Specific settins 
 " -------------------------------------------------------------------------- }}}
-" {{{ Must be listed last plugin.
+Plug 'Traap/vim-bundle-macunix'
+" -------------------------------------------------------------------------- }}}
+" END MY BUNDLES ----------------------------------------------------------- }}}
+" {{{ MUST BE LISTED LAST PLUGIN.
 Plug 'ryanoasis/vim-devicons'
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.

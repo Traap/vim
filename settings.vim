@@ -524,11 +524,6 @@ map <leader><leader>t :call RunCurrentSpecFile()<CR>
 map <leader><leader>s :call RunNearestSpec()<CR>
 map <leader><leader>l :call RunLastSpec()<CR>
 map <leader><leader>a :call RunAllSpecs()<CR>
-
-if has('maxunix')
-  let g:rspec_runner = "os_x_iterm2"
-endif
-
 " -------------------------------------------------------------------------- }}}
 " {{{ The Silver Search through ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -542,15 +537,6 @@ au BufNewFile,BufRead *.hs map <buffer> <leader>Hl :Hoogle<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-most-minimal-folds
 let g:most_minimal_folds_line_count = 1
-" -------------------------------------------------------------------------- }}}
-" {{{ vitality
-if has('macunix')
-  let g:vitality_fix_cursor = 1
-  let g:vitality_normal_cursor = 0
-  let g:vitality_insert_cursor = 1
-  let g:vitality_fix_focus = 1
-  let g:vitality_fix_cursor = 1
-endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Wipeout all buffers.
 function! Wipeout()

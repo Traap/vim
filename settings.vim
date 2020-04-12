@@ -1,9 +1,8 @@
-" {{{ LEADER SECTION
+" {{{ Leader
 let g:mapleader = ","
 let maplocalleader = ","
 set tm=750                                   " Leader key timeout.
-" LEADER SECTION END ------------------------------------------------------- }}}
-" {{{ SETTINGS SECTION
+" -------------------------------------------------------------------------- }}}
 " {{{ Filetype and plugin defaults.
 filetype on
 filetype plugin indent on
@@ -223,79 +222,6 @@ autocmd BufRead,BufNewFile config setlocal nowrap tw=117
 
 autocmd FileType help setlocal number tw=78
 " -------------------------------------------------------------------------- }}}
-" {{{ Obfuscate screen contents
-nnoremap <F1> mzggg?G`z
-" -------------------------------------------------------------------------- }}}
-" {{{ Toggle search results
-noremap <silent><leader><space> :set hlsearch!<CR>
-" -------------------------------------------------------------------------- }}}
-" {{{ Sort lines
-nnoremap <leader>s vip:!sort<cr>
-vnoremap <leader>s :!sort<cr>
-vnoremap <leader>u :sort u<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Clean trailing whitespace
-nnoremap <leader>ww mz:%s/\s\+$//<cr>:let @/=''<cr>`z
-nnoremap <leader>wo :%bwipeout<cr>
-nnoremap <leader>wr :%s/\r//g<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Select entire buffer
-nnoremap vaa ggvGg_
-nnoremap Vaa ggVG
-" -------------------------------------------------------------------------- }}}
-" {{{ Copy and Paste
-" Normal mode copy & paste
-nnoremap cc "+y
-nnoremap cv "+p
-
-" Visual mode copy & paste
-vnoremap cc "+y
-vnoremap cv "+p
-" -------------------------------------------------------------------------- }}}
-" {{{ Zoom to head level.
-nnoremap zh mzzt10<c-u>
-" -------------------------------------------------------------------------- }}}
-" {{{ Easier linewise reselection of what you just pasted.
-nnoremap <leader>V V`]
-" -------------------------------------------------------------------------- }}}
-" {{{ Indent/dedent/autoindent what you just pasted.
-nnoremap <lt>> V`]<
-nnoremap ><lt> V`]>
-nnoremap =- V`]=
-" ------------------------------------------------------------------------- }}}
-" {{{ Join line
-" Keep the cursor in place while joining lines
-nnoremap J mzJ`z
-
-" Join an entire paragraph
-nnoremap <leader>J myvipJ`ygq<CR>
-" -------------------------------------------------------------------------- }}}
-" {{{ Split line (sister to [J]oin lines)
-" The normal use of S is covered by cc, so don't worry about shadowing it.
-nnoremap S i<cr><esc>^mwgk:silent! s/\v +$//<cr>:noh<cr>`w
-" -------------------------------------------------------------------------- }}}
-" {{{ Source lines
-vnoremap <leader>S y:@"<CR>
-nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Marks and Quotes
-" noremap ' `
-" noremap æ '
-" noremap ` <C-^>
-" -------------------------------------------------------------------------- }}}
-" {{{ Select (charwise) the contents of the current line, excluding indentation.
-nnoremap vv ^vg_
-" -------------------------------------------------------------------------- }}}
-" {{{ vim color settings 
-highlight clear SpellBad
-highlight DiffAdd    cterm=bold      ctermfg=10  ctermbg=19 gui=none guifg=bg guibg=Red
-highlight DiffChange cterm=bold      ctermfg=5   ctermbg=19 gui=none guifg=bg guibg=Red
-highlight DiffDelete cterm=bold      ctermfg=9   ctermbg=19 gui=none guifg=bg guibg=Red
-highlight search     cterm=bold      ctermfg=16  ctermbg=19 gui=none guifg=bg guibg=Red
-highlight DiffText   cterm=bold      ctermfg=155 ctermbg=19 gui=none guifg=bg guibg=Red
-highlight Folded                     ctermfg=100 ctermbg=19 gui=none guifg=bg guibg=Red
-highlight SpellBad   cterm=underline ctermfg=3   ctermbg=19 gui=undercurl
-" -------------------------------------------------------------------------- }}}
 " {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc
 " -------------------------------------------------------------------------- }}}
@@ -306,16 +232,9 @@ if has('nvim')
   behave xterm
 endif
 " -------------------------------------------------------------------------- }}}
-" {{{ Using shift versus control when I'm lazy.
-nnoremap B <c-b>
-nnoremap F <c-f>
-" -------------------------------------------------------------------------- }}}
-" SETTINGS SECTION END ----------------------------------------------------- }}}
-" {{{ BUNDLES SECTION
 " {{{ The Silver Search through ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-most-minimal-folds
 let g:most_minimal_folds_line_count = 1
 " -------------------------------------------------------------------------- }}}
-" BUNDLES SECTION END ------------------------------------------------------ }}}

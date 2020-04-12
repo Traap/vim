@@ -131,7 +131,9 @@ endif
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}
 " {{{ My bundles settings.
+Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-haskell'
+Plug 'Traap/vim-bundle-tmux'
 " -------------------------------------------------------------------------- }}}
 " {{{ Must be listed last plugin.
 Plug 'ryanoasis/vim-devicons'

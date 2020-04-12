@@ -412,49 +412,6 @@ nnoremap F <c-f>
 " -------------------------------------------------------------------------- }}}
 " SETTINGS SECTION END ----------------------------------------------------- }}}
 " {{{ BUNDLES SECTION
-" {{{ Air line
-if !exists('g:airline_symbols')               " Use powerline fonts for airline
-  let g:airline_symbols = {}
-endif
-
-" Unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.maxlinenr = '☰'
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.spell = 'Ꞩ'
-let g:airline_symbols.notexists = '∄'
-let g:airline_symbols.whitespace = 'Ξ'
-
-let g:airline_powerline_fonts = 1
-let g:airline_symbols.space = "\ua0"
-
-let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
-
-let g:airline_theme='base16_chalk'
-" ------------------------------------------------------------------------- }}}
 " {{{ base16-vim
 let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
 " -------------------------------------------------------------------------- }}}
@@ -651,33 +608,6 @@ map <leader><leader>a :call RunAllSpecs()<CR>
 if has('maxunix')
   let g:rspec_runner = "os_x_iterm2"
 endif
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Tmux Runner
-"
-" Below are the suggested Tmux Runner default mappings.  I decided to explicitly
-" reference them with defaults before I start changing them.
-nnoremap <leader>rr  :VtrResizeRunner<cr>
-nnoremap <leader>ror :VtrReorientRunner<cr>
-nnoremap <leader>sc  :VtrSendCommandToRunner<cr>
-nnoremap <leader>sf  :VtrSendFile!<cr>
-nnoremap <leader>sl  :VtrSendLinesToRunner<cr>
-nnoremap <leader>or  :VtrOpenRunner<cr>
-nnoremap <leader>kr  :VtrKillRunner<cr>
-nnoremap <leader>fr  :VtrFocusRunner<cr>
-nnoremap <leader>dr  :VtrDetachRunner<cr>
-nnoremap <leader>ar  :VtrReattachRunner<cr>
-nnoremap <leader>cr  :VtrClearRunner<cr>
-nnoremap <leader>fc  :VtrFlushCommand<cr>
-let g:vtr_filetype_runner_overrides = {
-    \  'asciidoc': 'apdf {file}'
-    \ ,'haskell': 'runhaskell {file}'
-    \ }
-
-let g:VtrOrientation = "h"
-let g:VtrPercentage = 50
-let g:VtrClearSequence = ""
-let g:VtrClearBeforeSend = 1
 
 " -------------------------------------------------------------------------- }}}
 " {{{ The Silver Search through ack.vim

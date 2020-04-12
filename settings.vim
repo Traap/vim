@@ -415,12 +415,6 @@ nnoremap F <c-f>
 " {{{ base16-vim
 let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
 " -------------------------------------------------------------------------- }}}
-" {{{ Dispatch
-let g:dispatch_compilers = {
-     \ 'pdflatex': 'tex',
-     \ 'ruby': 'rake'
-     \ }
-" -------------------------------------------------------------------------- }}}
 " {{{ rspec
 let g:rspec_command = "Dispatch rspec {spec}"
 " -------------------------------------------------------------------------- }}}

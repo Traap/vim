@@ -421,11 +421,6 @@ let g:dispatch_compilers = {
      \ 'ruby': 'rake'
      \ }
 " -------------------------------------------------------------------------- }}}
-" {{{ NERDtree
-let NERDTreeShowLineNumbers=1
-let NERDTreeWinPos=1
-let NERDTreeWinSize=40
-" -------------------------------------------------------------------------- }}}
 " {{{ rspec
 let g:rspec_command = "Dispatch rspec {spec}"
 " -------------------------------------------------------------------------- }}}

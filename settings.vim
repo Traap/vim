@@ -430,11 +430,4 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " {{{ vim-most-minimal-folds
 let g:most_minimal_folds_line_count = 1
 " -------------------------------------------------------------------------- }}}
-" {{{ Vim Completes Me
-augroup VimCompletesMeTex
-  autocmd!
-  autocmd FileType tex
-      \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
-augroup END
-" -------------------------------------------------------------------------- }}}
 " BUNDLES SECTION END ------------------------------------------------------ }}}

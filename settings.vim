@@ -415,23 +415,6 @@ nnoremap F <c-f>
 " {{{ base16-vim
 let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
 " -------------------------------------------------------------------------- }}}
-" {{{ Bbye (Buffer Bye) for Vim
-nnoremap <leader>q :Bdelete<cr>
-nnoremap <leader>Q :bufdo :Bdelete<cr>
-nnoremap <leader>X :bdelete<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Buffer resize 
-map <m-h> :vertical resize -1<cr>
-map <m-j> :resize +1<cr>
-map <m-k> :resize -1<cr>
-map <m-l> :vertical resize +1<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Escape replacement
-inoremap ,, <esc>
-" inoremap <esc> <nop>
-vnoremap ,, <esc>
-" vnoremap <esc> <nop>
-" -------------------------------------------------------------------------- }}}
 " {{{ Fuzzy file finders
 if has('unix')
   if has('nvim')
@@ -445,42 +428,11 @@ if has('unix')
   endif
 endif
 " -------------------------------------------------------------------------- }}}
-" {{{ Drag Visual Block
-" Remove any introduced trailing whitespace after moving.
-vmap  <expr>  <LEFT>   DVB_Drag('left')
-vmap  <expr>  <RIGHT>  DVB_Drag('right')
-vmap  <expr>  <DOWN>   DVB_Drag('down')
-vmap  <expr>  <UP>     DVB_Drag('up')
-vmap  <expr>  D        DVB_Duplicate()
-let g:DVB_TrimWS = 1
-" -------------------------------------------------------------------------- }}}
 " {{{ Dispatch
 let g:dispatch_compilers = {
      \ 'pdflatex': 'tex',
      \ 'ruby': 'rake'
      \ }
-" -------------------------------------------------------------------------- }}}
-" {{{ Docbld
-nnoremap <leader>tl :silent Dispatch rake --rakefile ~/git/docbld/Rakefile list_files<cr>:copen<cr>
-nnoremap <leader>tb :silent Dispatch rake --rakefile ~/git/docbld/Rakefile texx<cr>:copen<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ EasyAlign
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign in motino/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-nmap <bar> gaip*<bar>
-" -------------------------------------------------------------------------- }}}
-" {{{ Fugitive
-nnoremap <leader>gp :Gpush<cr>
-nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>gh :silent vert bo help fugitive<cr>
-nnoremap <leader>gl :Glog<cr>
-nnoremap <leader>gP :Gpull<cr>
-nnoremap <leader>gs :Gstatus<cr>gg<c-n>
-nnoremap <leader>gD :Gvdiff<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ github-issues
 let g:gissues_async_omni = 1
@@ -488,42 +440,14 @@ let g:gissues_lazy_load = 1
 let g:gissues_new_assignee = 'Traap'
 let g:gissues_new_label = 'enhancement'
 let g:github_same_window = 1
-nnoremap <leader>gi :Gissues<cr>
-nnoremap <leader>ga :Giadd<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Helptags
-noremap<leader>ph :Helptags<cr>:echo 'Helptags done!'<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ incsearch.vim
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
 " -------------------------------------------------------------------------- }}}
 " {{{ NERDtree
 let NERDTreeShowLineNumbers=1
 let NERDTreeWinPos=1
 let NERDTreeWinSize=40
-nnoremap <silent><leader>nf :NERDTreeFind<CR>
-nnoremap <silent><C-n> :NERDTreeToggle<CR>
-" -------------------------------------------------------------------------- }}}
-" {{{ neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#auto_complete_delay = 1000
 " -------------------------------------------------------------------------- }}}
 " {{{ rspec
 let g:rspec_command = "Dispatch rspec {spec}"
-map <leader><leader>t :call RunCurrentSpecFile()<CR>
-map <leader><leader>s :call RunNearestSpec()<CR>
-map <leader><leader>l :call RunLastSpec()<CR>
-map <leader><leader>a :call RunAllSpecs()<CR>
 " -------------------------------------------------------------------------- }}}
 " {{{ The Silver Search through ack.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
@@ -561,11 +485,5 @@ augroup VimCompletesMeTex
   autocmd FileType tex
       \ let b:vcm_omni_pattern = g:vimtex#re#neocomplete
 augroup END
-" -------------------------------------------------------------------------- }}}
-" {{{ You Complete Me
-"if !exists('g:ycm_semantic_triggers')
-"  let g:ycm_semantic_triggers = {}
-"  au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
-"endif
 " -------------------------------------------------------------------------- }}}
 " BUNDLES SECTION END ------------------------------------------------------ }}}

@@ -1,5 +1,5 @@
 " {{{ Tell Vim where our plugin manager is located.
- call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/bundle')
 " -------------------------------------------------------------------------- }}}
 " {{{ BEGIN COMMUNITY PLUGINS
 " {{{ Navigation and searching
@@ -139,9 +139,10 @@ Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-tmux'
 Plug 'Traap/vim-bundle-vimtex'
-" {{{ Operating Systems Specific settins 
 " -------------------------------------------------------------------------- }}}
-Plug 'Traap/vim-bundle-macunix'
+" {{{ Operating systems and keybindings 
+Plug 'Traap/vim-bundle-keybindings'
+Plug 'Traap/vim-bundle-haskell'
 " -------------------------------------------------------------------------- }}}
 " END MY BUNDLES ----------------------------------------------------------- }}}
 " {{{ MUST BE LISTED LAST PLUGIN.

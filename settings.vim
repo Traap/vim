@@ -243,27 +243,6 @@ autocmd FileType help setlocal number tw=78
 " {{{ Obfuscate screen contents
 nnoremap <F1> mzggg?G`z
 " -------------------------------------------------------------------------- }}}
-" {{{ Delete line and more
-"Delete line
-map - dd
-
-" Save file
-noremap s :w<cr>
-
-" Reformat lines.
-vnoremap Q gq
-
-" Substitute
-nnoremap <c-s> :%s/
-vnoremap <c-s> :s/
-
-" Map O to :only so that only one view is visable.
-nnoremap <silent> O :only<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Quicker access to Ex commands and sourcing.
-nmap ; :
-nnoremap <leader>sv :source $MYVIMRC<CR>
-" -------------------------------------------------------------------------- }}}
 " {{{ Toggle search results
 noremap <silent><leader><space> :set hlsearch!<CR>
 " -------------------------------------------------------------------------- }}}
@@ -282,7 +261,6 @@ nnoremap vaa ggvGg_
 nnoremap Vaa ggVG
 " -------------------------------------------------------------------------- }}}
 " {{{ Copy and Paste
-
 " Normal mode copy & paste
 nnoremap cc "+y
 nnoremap cv "+p
@@ -325,42 +303,7 @@ nnoremap <leader>S ^vg_y:execute @@<cr>:echo 'Sourced line.'<cr>
 " {{{ Select (charwise) the contents of the current line, excluding indentation.
 nnoremap vv ^vg_
 " -------------------------------------------------------------------------- }}}
-" {{{ Toggle [i]nvisible characters
-nnoremap <leader>i :set list!<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ Insert Mode Completion
-inoremap <c-f> <c-x><c-f>
-inoremap <c-]> <c-x><c-]>
-inoremap <c-l> <c-x><c-l>
-" -------------------------------------------------------------------------- }}}
-" {{{ Execute the current line of text as a shell command.
-noremap <leader>E !!$SHELL<cr>
-" -------------------------------------------------------------------------- }}}
-" {{{ junegunn: Google it / Feeling Lucky
-"
-" <Leader>?/! | Google it / Feeling luckey | junegunn/dotfiles
-"
-function! s:goog(pat, lucky)
-
-  let q = '"'.substitute(a:pat, '["\n]', ' ', 'g').'"'
-  let q = substitute(q, '[[:punct:] ]',
-       \ '\=printf("%%%02X", char2nr(submatch(0)))', 'g')
-  if has("win32unix")
-    call system(printf('cygstart --open "https://www.google.com/search?%sq=%s"',
-                   \ a:lucky ? 'btnI&' : '', q))
-  else
-    call system(printf('open "https://www.google.com/search?%sq=%s"',
-                   \ a:lucky ? 'btnI&' : '', q))
-  endif
-
-endfunction
-
-nnoremap <leader>? :call <SID>goog(expand("<cWORD>"), 0)<cr>
-nnoremap <leader>! :call <SID>goog(expand("<cWORD>"), 1)<cr>
-xnoremap <leader>? "gy:call <SID>goog(@g, 0)<cr>gv
-xnoremap <leader>! "gy:call <SID>goog(@g, 1)<cr>gv
-" -------------------------------------------------------------------------- }}}
-" {{{ vimdiff and spelling colors
+" {{{ vim color settings 
 highlight clear SpellBad
 highlight DiffAdd    cterm=bold      ctermfg=10  ctermbg=19 gui=none guifg=bg guibg=Red
 highlight DiffChange cterm=bold      ctermfg=5   ctermbg=19 gui=none guifg=bg guibg=Red
@@ -369,28 +312,6 @@ highlight search     cterm=bold      ctermfg=16  ctermbg=19 gui=none guifg=bg gu
 highlight DiffText   cterm=bold      ctermfg=155 ctermbg=19 gui=none guifg=bg guibg=Red
 highlight Folded                     ctermfg=100 ctermbg=19 gui=none guifg=bg guibg=Red
 highlight SpellBad   cterm=underline ctermfg=3   ctermbg=19 gui=undercurl
-" -------------------------------------------------------------------------- }}}
-" {{{ Quick editing of my personalization files.
-nnoremap <leader>ea :e ~/git/dotfiles/alias_and_functions<cr>
-nnoremap <leader>eg :e ~/git/ssh/gitconfig<cr>
-nnoremap <leader>ec :e ~/git/ssh/config.vim<cr>
-nnoremap <leader>et :e ${HOME}/.tmux.conf<cr>
-nnoremap <leader>ed :e ~/git/vim/custom-dictionary.utf-8.add<cr>
-nnoremap <leader>ep :e ~/git/vim/vim-plug.vim<cr>
-nnoremap <leader>es :e ~/git/vim/settings.vim<cr>
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>.  :e.<cr>
-
-nnoremap <leader>ma :e ~/git/dotfiles/my_aliases<cr>
-nnoremap <leader>mc :e ~/git/dotfiles/my_completions<cr>
-nnoremap <leader>me :e ~/git/dotfiles/my_exports<cr>
-nnoremap <leader>mf :e ~/git/dotfiles/my_functions<cr>
-nnoremap <leader>mp :e ~/git/dotfiles/my_paths<cr>
-nnoremap <leader>mt :e ~/git/dotfiles/my_prompt<cr>
-
-nnoremap <leader>i3 :e ~/git/dotfiles/i3-config<cr>
-nnoremap <leader>xi :e ~/git/dotfiles/xinitrc<cr>
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Print options
 set printoptions=paper:A4,duplex:off,collate:n,syntax:y,number:y,top:5pc,right:2pc,bottom:5pc,left:2pc

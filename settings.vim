@@ -415,19 +415,6 @@ nnoremap F <c-f>
 " {{{ base16-vim
 let g:base16_shell_path="$HOME/git/color/base16-shell/scripts"
 " -------------------------------------------------------------------------- }}}
-" {{{ Fuzzy file finders
-if has('unix')
-  if has('nvim')
-    nnoremap <silent> <leader>ff :FZF<CR>
-  else
-    nnoremap <silent> <leader>ff :FZF<CR>
-    " let g:ctrlp_max_files = 0
-    " let g:ctrlp_show_hidden=1
-    " let g:ctrlp_custom_ignore = { 'dir': '\v[\/](.git|.cabal-sandbox|.stack-work)$' }
-    " nnoremap <silent> <leader>ff :CtrlP<CR>
-  endif
-endif
-" -------------------------------------------------------------------------- }}}
 " {{{ Dispatch
 let g:dispatch_compilers = {
      \ 'pdflatex': 'tex',

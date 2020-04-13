@@ -73,6 +73,6 @@ Naming conventions are essential axioms to well-written programs.   I needed a c
 
 I spend a significant amount of time breaking and rebuilding computers.  I have had four computers physically break within the last six months: motherboards, disk drives, monitors, and more.  Rebuilding computers quickly is in my DNA.  The bottom line is simple, 'My computers are not Traap proof.'
 
-My goal was to type Vim have it automatically bootstrap itself.  I also want to experiment with plugins and Vim settings. Now that I use [vim-plug](https://github.com/junegunn/vim-plug), I can safely comment out a few [plug](https://github.com/Traap/vim/blob/master/plug.vim)  lines without much effort.
+My goal was to type Vim have it automatically bootstrap itself.  I also want to experiment with Vim plugins and settings. Now that I use [vim-plug](https://github.com/junegunn/vim-plug), I can safely comment out a few [plug](https://github.com/Traap/vim/blob/master/plug.vim)  lines without much effort.
 
 I centrally located my [vim-bundle-keybindings](https://github.com/Traap/vim-bundle-keybindings/blob/master/plugin/bundle-keybindings.vim).  LaTeX the primary language I use for writtiig documents.  I personalized [vimtex](https://github.com/lervag/vimtex) with [vim-bundle-vimtex](https://github.com/Traap/vim-bundle-vimtex/blob/master/plugin/bundle-vimtex.vim).  These simple abstractions support [loose coupling](https://en.wikipedia.org/wiki/Coupling_(computer_programming)) and [high cohesion](https://en.wikipedia.org/wiki/Cohesion_(computer_science)) I try practice.

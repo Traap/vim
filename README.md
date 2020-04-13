@@ -40,7 +40,7 @@ silent !\curl -fLo ~/.vim/autoload/plug.vim
 #### plug.vim
 [vim-plug](https://github.com/junegunn/vim-plug) is used.  I install two types of plugins:
 1. Community plugs are listed alphabetically when possible.
-2 I have public repositories for each community plugin that I customize.  I use vim-bundle-xyz for my bundle patterns.  A bundle may reference personalization for one or more community plugin.   As an example, [vim-bundle-settings](https://github.com:Traap/vim-bundle-settings) was heavily inspired by [Steve Losh](https://github.com/sjl).
+2 I have public repositories for each community plugin that I customize.  I use vim-bundle-xyz for my bundle patterns.  A bundle may reference personalization for one or more community plugin.   As an example, [vim-bundle-settings](https://github.com/Traap/vim-bundle-settings) was heavily inspired by [Steve Losh](https://github.com/sjl).
 3. When g:not_finished_vimplug is "yes", PlugInstall is used.
 
 ```vim 

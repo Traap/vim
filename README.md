@@ -69,7 +69,7 @@ I learned about dotfiles, Vim, TMUX, and so much more.  I am listing Vim contrib
 
 I learned from many others, also.  There are too many to name.
 
-Why the [vim-bundle-xxx](https://github.com/Traap/vim-bundle-settings) Pattern?
+## Why the [vim-bundle-xxx](https://github.com/Traap/vim-bundle-settings) Pattern?
 Are you Nuts?  The short answer is Yes.
 
 I spend a significant amount of time breaking and rebuilding computers.  I have had four computers physically break within the last six months: motherboards, disk drives, monitors, and more.  Rebuilding computers quickly is in my DNA.  The bottom line is simple, 'My computers are not Traap proof.'

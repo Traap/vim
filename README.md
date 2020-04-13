@@ -67,7 +67,7 @@ I learned about dotfiles, Vim, TMUX, and so much more.  I am listing Vim contrib
 I learned from many others, also.  There are too many to name.
 
 ## Why the [vim-bundle-xxx](https://github.com/Traap/vim-bundle-settings) Pattern?
-Are you Nuts?  The short answer is **Yes**.
+Are you Nuts?  The short answer is **YES**!
 
 Naming conventions are essential axioms to well-written programs.   I needed a construct that was just another Vim plugin.
 

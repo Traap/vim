@@ -144,6 +144,7 @@ Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-tmux'
 Plug 'Traap/vim-bundle-vimtex'
+Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 " -------------------------------------------------------------------------- }}}
 " {{{ Operating systems and keybindings 

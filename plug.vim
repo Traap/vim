@@ -93,12 +93,13 @@ Plug 'Traap/vim-bundle-lmgtfy'
 Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
+Plug 'Traap/vim-bundle-settings'
 Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
-" 
+
 " Operating systems and keybindings 
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-macunix'

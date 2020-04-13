@@ -18,7 +18,8 @@ Watch the magic!!!
 ### Overview
 I use different methods to install Vim and Neovim.  I use the steps listed above if I choose to reset my environment or after installing Vim or NeoVim.
 
-I files listed below are sourced by vimrc.  The installation follows a precise order to orchestrate the setup.
+
+The files listed below are sourced by vimrc.  The installation follows a precise order to orchestrate the setup.
 
 #### vimrc
 1. s:vim_home defines the location of my Vim preferences.

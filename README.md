@@ -16,10 +16,7 @@ vim
 *Watch the magic!!!*
 
 ## Overview
-I use different methods to install Vim and Neovim.  I use the steps listed above if I choose to reset my environment or after installing Vim or NeoVim.
-
-
-The files listed below are sourced by vimrc.  The installation follows a precise order to orchestrate the setup.
+I use different methods to install Vim and Neovim.  I use the steps listed above if I choose to reset my environment or after installing Vim or NeoVim.  The files listed below are sourced by vimrc.  The installation follows a precise order to orchestrate the setup.
 
 ### vimrc
 1. *s:vim_home* defines the location of my Vim preferences.
@@ -30,7 +27,7 @@ The files listed below are sourced by vimrc.  The installation follows a precise
 ### bootstrap.vim
 I use [vim-plug](https://github.com/junegunn/vim-plug) to manage Vim plugins.  bootstrap.vim installs [vim-plug](https://github.com/junegunn/vim-plug) when necessary.
 
-When g:not_finish_vimplug is **no** [vim-plug](https://github.com/junegunn/vim-plug) installed using  
+When g:not_finish_vimplug is **no** [vim-plug](https://github.com/junegunn/vim-plug) is installed using:
 ```vim
 silent !\curl -fLo ~/.vim/autoload/plug.vim
   \ --create-dirs 
@@ -51,8 +48,7 @@ autocmd VimEnter * PlugInstall
 Connect to my private and public keys.
 
 ### Symbolic links
-I use symbolic links from $HOME to .vim, .vimrc, and .vimrc_background
-so that my Vim environment is controlled.
+I use symbolic links from $HOME to .vim, .vimrc, and .vimrc_background so that my Vim environment is controlled.
 
 ## History
 I started using Vim during my Christmas 2015 work break.  I chose Vim because I needed an editor that I could use consistently across various Linux, OSX, and Windows environments.  I only know how to start and exit Vim.  I could not do the same with Emacs.  

@@ -28,13 +28,11 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/gem-browse'
-Plug 'tpope/vim-bundler'        " Slow on msys2 
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'  "Slow on msys2
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
@@ -59,7 +57,7 @@ if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
-if has("python")
+if has('python')
   Plug 'Traap/github-issues.vim'
 endif
 
@@ -77,8 +75,13 @@ if has('unix')
   Plug 'mileszs/ack.vim'
 endif
 
+if !has('windows')
+  Plug 'tpope/vim-bundler'        " Slow on msys2
+  Plug 'tpope/vim-projectionist'   "Slow on msys2
+endif
+
 " end community plugins ---------------------------------------------------- }}}
-" {{{ Begin my bundles 
+" {{{ Begin my bundles
 " Bundle specific settings
 Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-airline'
@@ -100,7 +103,7 @@ Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 
-" Operating systems and keybindings 
+" Operating systems and keybindings
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-macunix'
 " End my bundles ----------------------------------------------------------- }}}
@@ -110,7 +113,7 @@ Plug 'ryanoasis/vim-devicons'
 " {{{ Done loading plugins.
 call plug#end()
 " -------------------------------------------------------------------------- }}}
-" {{{ Indicate vimplug installation is done. 
+" {{{ Indicate vimplug installation is done.
 if g:not_finish_vimplug == "yes"
   autocmd VimEnter * PlugInstall
 endif

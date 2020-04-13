@@ -53,3 +53,19 @@ Connect to my private and public keys.
 #### Symbolic links
 I use symbolic links from $HOME to .vim, .vimrc, and .vimrc_background
 so that my Vim environment is controlled.
+
+History
+I started using Vim during my Christmas 2015 work break.  I chose Vim because I needed an editor that I could use consistently across various Linux, OSX, and Windows environments.  I only know how to start and exit Vim.  I could not do the same with Emacs.  
+
+I [YouTube'd](https://www.youtube.com) and searched Vim.  I was amazed at what I leaned.  I saw men, women, and college students showing how they used Vim to increase their productivity.
+-- I was hooked!
+
+Acknowledgments
+I learned about dotfiles, Vim, TMUX, and so much more.  I am listing Vim contributors I followed when I began.
+1. [Tim Pope](https://github.com/tpope) prolific is an understatement.  I started with [Fugitive](https://github.com/tpope/vim-fugitive) and [Pathogen](https://github.com/tpope/vim-pathogen).   
+2. [Steve Losh](https://learnvimscriptthehardway.stevelosh.com/) challenged me to think differently.  
+3. [Junegunn Choi](https://github.com/junegunn/) nearly caused my heart to with [vim-easy-align](https://github.com/junegunn/vim-easy-align).  I cannot count the months, days, hours, and minutes I have wasted using 'repeated-space-key-pattern' to align text.  [fzf](https://github.com/junegunn/fzf), [fzf.vim](https://github.com/junegunn/fzf.vim),  and [vim-plug](https://github.com/junegunn/vim-plug) have my lasted updates possible.
+4. [James Morrin](https://github.com/treasonx) vimrc was studied.  
+5. [Chris Toomey](https://github.com/christoomey) has two excellent plugins [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) and [vim-tmux-runner](https://github.com/christoomey/vim-tmux-runner) that I used to learn Tmux.
+
+I learned from many others, also.  There are too many to name.

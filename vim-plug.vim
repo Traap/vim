@@ -132,6 +132,7 @@ endif
 " {{{ BEGIN MY BUNDLES 
 " {{{ Bundle specific settings
 Plug 'Traap/vim-bundle-airline'
+Plug 'Traap/vim-bundle-autocmd'
 Plug 'Traap/vim-bundle-coc'
 Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-fzf'

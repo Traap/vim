@@ -58,7 +58,7 @@ I started my journey searching [YouTube](https://www.youtube.com) for Vim.  I wa
 ## Acknowledgments
 I learned about dotfiles, Vim, TMUX, and so much more.  I am listing Vim contributors I followed when I began.
 1. [Tim Pope](https://github.com/tpope) prolific is an understatement.  I started with [Fugitive](https://github.com/tpope/vim-fugitive) and [Pathogen](https://github.com/tpope/vim-pathogen).   
-2. [Steve Losh](https://github.com/sjl) challenged me to think differently. I read [Learning Vim script the Hard Way](https://learnvimscriptthehardway.stevelosh.com/).
+2. [Steve Losh](https://github.com/sjl) challenged me to think differently. [Learning Vimscript the Hard Way](https://learnvimscriptthehardway.stevelosh.com/) guided me.  I backlogged items to study. 
 3. [Junegunn Choi](https://github.com/junegunn/) nearly caused my heart to with [vim-easy-align](https://github.com/junegunn/vim-easy-align).  I cannot count the months, days, hours, and minutes I have wasted using 'repeated-space-key-pattern' to align text.  [fzf](https://github.com/junegunn/fzf), [fzf.vim](https://github.com/junegunn/fzf.vim),  and [vim-plug](https://github.com/junegunn/vim-plug) have my lasted updates possible.
 4. [James Morrin](https://github.com/treasonx) vimrc and OSX setups were studied.  
 5. [Chris Toomey](https://github.com/christoomey) has two excellent plugins [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) and [vim-tmux-runner](https://github.com/christoomey/vim-tmux-runner) that I used to learn Tmux.

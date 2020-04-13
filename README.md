@@ -56,8 +56,7 @@ so that my Vim environment is controlled.
 ## History
 I started using Vim during my Christmas 2015 work break.  I chose Vim because I needed an editor that I could use consistently across various Linux, OSX, and Windows environments.  I only know how to start and exit Vim.  I could not do the same with Emacs.  
 
-I [YouTube'd](https://www.youtube.com) and searched Vim.  I was amazed at what I leaned.  I saw men, women, and college students showing how they used Vim to increase their productivity.
--- I was hooked!
+I started my journey searching [YouTube](https://www.youtube.com) for Vim.  I was amazed at what I leaned.  I saw men, women, and college students showing how they used Vim to increase their productivity.  The creativity I witnessed amazed me. -- I was hooked!
 
 ## Acknowledgments
 I learned about dotfiles, Vim, TMUX, and so much more.  I am listing Vim contributors I followed when I began.

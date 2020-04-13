@@ -2,7 +2,7 @@
 The piece parts I use to personalize Vim.
 
 ## Installation 
-### **WARNING:** There [be dragons](https://github.com/tpope/tpope) here (paraphrased).
+#### **WARNING:** There [be dragons](https://github.com/tpope/tpope) here (paraphrased).
 I have customized my Vim/neovim setup to operate on linux, macunix, and win32unix.  I set up Vim with following simple steps.
 
 ```bash

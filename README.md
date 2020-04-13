@@ -12,7 +12,7 @@ rm -rf ~/git/vim
 git clone https://github.com:Traap/vim.git
 vim
 ```
-Watch the magic!!!
+*Watch the magic!!!*
 
 ## Overview
 I use different methods to install Vim and Neovim.  I use the steps listed above if I choose to reset my environment or after installing Vim or NeoVim.

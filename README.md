@@ -67,7 +67,7 @@ I learned about dotfiles, Vim, TMUX, and so much more.  I am listing Vim contrib
 3. [Junegunn Choi](https://github.com/junegunn/) nearly caused my heart to with [vim-easy-align](https://github.com/junegunn/vim-easy-align).  I cannot count the months, days, hours, and minutes I have wasted using 'repeated-space-key-pattern' to align text.  [fzf](https://github.com/junegunn/fzf), [fzf.vim](https://github.com/junegunn/fzf.vim),  and [vim-plug](https://github.com/junegunn/vim-plug) have my lasted updates possible.
 4. [James Morrin](https://github.com/treasonx) vimrc was studied.  
 5. [Chris Toomey](https://github.com/christoomey) has two excellent plugins [vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator) and [vim-tmux-runner](https://github.com/christoomey/vim-tmux-runner) that I used to learn Tmux.
-6. [Karl Yngve Lervåg](https://github.com/lervag) helped me learn \LaTeX\ better with [vimtex](https://github.com/lervag/vimtex).
+6. [Karl Yngve Lervåg](https://github.com/lervag) increased my LaTeX productivity with [vimtex](https://github.com/lervag/vimtex).
 
 I learned from many others, also.  There are too many to name.
 
@@ -78,4 +78,4 @@ I spend a significant amount of time breaking and rebuilding computers.  I have 
 
 My goal was to type Vim have it automatically bootstrap itself.  I also want to experiment with plugins and Vim settings. Now that I use [vim-plug](https://github.com/junegunn/vim-plug), I can safely comment out a few [plug](https://github.com/Traap/vim/blob/master/plug.vim)  lines without much effort.
 
-I centrally located my [keybindings](https://github.com/Traap/vim-bundle-keybindings).  \LaTeX\ is my primary language.  I personalized [vimtex](https://github.com/lervag/vimtex) with [vimtex](https://github.com/Traap/vim-bundle-vimtex).  These simple abstractions support [loose coupling)[https://en.wikipedia.org/wiki/Coupling_(computer_programming)) and (high cohesion)(https://en.wikipedia.org/wiki/Cohesion_(computer_science)) I try practice.
+I centrally located my [keybindings](https://github.com/Traap/vim-bundle-keybindings).  LaTeX is my primary language.  I personalized [vimtex](https://github.com/lervag/vimtex) with [vimtex](https://github.com/Traap/vim-bundle-vimtex).  These simple abstractions support [loose coupling)[https://en.wikipedia.org/wiki/Coupling_(computer_programming)) and (high cohesion)(https://en.wikipedia.org/wiki/Cohesion_(computer_science)) I try practice.

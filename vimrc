@@ -15,13 +15,14 @@
 " -------------------------------------------------------------------------- }}}
 " {{{ Initialize my Vim Personalization.  
 
-" I always root my GitHub repositories at ~/git.
+" s:vim_home defines the location of my Vim preferences.
 let s:vim_home = '~/git/vim/'
 
-" My private and public keys are maintained in a private repository.
+" s:vim_ssh represents the private repository for my public and private keys. 
 let s:vim_ssh = '~/git/ssh/'
 
-" A list of items I want installed, and the order I want Vim to source them.
+" s:config_list concatenates s:vim_home or s:vim_ssh with the appropriate
+" component. 
 let s:config_list = 
                 \ [ s:vim_home . 'bootstrap.vim'
                 \ , s:vim_home . 'autoload/plug.vim'
@@ -29,7 +30,7 @@ let s:config_list =
                 \ , s:vim_ssh  . 'config.vim'
                 \ ]
 
-" Now kick-start Vim. 
+" Iterate s:config_list to kick-start Vim. 
 for files in s:config_list
   for f in split(expand(files), '\n')
     exec 'source '.f

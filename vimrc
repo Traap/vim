@@ -22,9 +22,10 @@ let s:vim_home = '~/git/vim/'
 let s:vim_ssh = '~/git/ssh/'
 
 " A list of items I want installed, and the order I want Vim to source them.
-let s:config_list = [ s:vim_home . 'bootstrap.vim'
+let s:config_list = 
+                \ [ s:vim_home . 'bootstrap.vim'
                 \ , s:vim_home . 'autoload/plug.vim'
-                \ , s:vim_home . 'vim-plug.vim'
+                \ , s:vim_home . 'plug.vim'
                 \ , s:vim_home . 'settings.vim'
                 \ , s:vim_ssh  . 'config.vim'
                 \ ]

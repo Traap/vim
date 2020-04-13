@@ -131,6 +131,7 @@ endif
 " END COMMUNITY PLUGINS ---------------------------------------------------- }}}
 " {{{ BEGIN MY BUNDLES 
 " {{{ Bundle specific settings
+Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-autocmd'
 Plug 'Traap/vim-bundle-coc'

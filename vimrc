@@ -22,7 +22,7 @@ let s:vim_home = '~/git/vim/'
 let s:vim_ssh = '~/git/ssh/'
 
 " A list of items I want installed, and the order I want Vim to source them.
-let config_list = [ s:vim_home . 'bootstrap.vim'
+let s:config_list = [ s:vim_home . 'bootstrap.vim'
                 \ , s:vim_home . 'autoload/plug.vim'
                 \ , s:vim_home . 'vim-plug.vim'
                 \ , s:vim_home . 'settings.vim'
@@ -30,7 +30,7 @@ let config_list = [ s:vim_home . 'bootstrap.vim'
                 \ ]
 
 " Now kick-start Vim. 
-for files in config_list
+for files in s:config_list
   for f in split(expand(files), '\n')
     exec 'source '.f
   endfor

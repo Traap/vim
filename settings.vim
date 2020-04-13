@@ -123,31 +123,6 @@ if !has("gui_running")
   colorscheme desert
 endif
 " -------------------------------------------------------------------------- }}}
-" {{{ Automatic spelling and typo corrections.
-iabbrev efk            gary.howard@fresenius-kabi.com
-iabbrev egh            gary.a.howard@mac.com
-iabbrev developmetn    development
-iabbrev heigth         heigth
-iabbrev liek           likewisee
-iabbrev liekwise       likewise
-iabbrev manditory      mandatory
-iabbrev moer           more
-iabbrev pritn          print
-iabbrev reprot         report
-iabbrev retrun         return
-iabbrev sectoin        section
-iabbrev subsectoin     subsection
-iabbrev subsubsectoin  subsubsection
-iabbrev teh            the
-iabbrev thier          their
-iabbrev verboase       verbose
-iabbrev waht           what
-iabbrev weight         weigth
-iabbrev weihg          weigh
-iabbrev widht          width
-iabbrev wiegh          weigh
-iabbrev wiegth         weigth
-" ------------------------------------------------------------------------- }}}
 " {{{ grep experiment
 " Yank visually selected test and search for it in any file.
 vnoremap _g y:exe "grep /. escape(@", '\\/') . "/ *.*"<cr>

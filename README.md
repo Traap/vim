@@ -69,7 +69,7 @@ I learned from many others, also.  There are too many to name.
 ## Why the [vim-bundle-xxx](https://github.com/Traap/vim-bundle-settings) Pattern?
 Are you Nuts?  The short answer is **Yes**.
 
-Naming conventions are essential axioms to well-formed written programs.   I needed a construct that was just another Vim plugin.
+Naming conventions are essential axioms to well-written programs.   I needed a construct that was just another Vim plugin.
 
 I spend a significant amount of time breaking and rebuilding computers.  I have had four computers physically break within the last six months: motherboards, disk drives, monitors, and more.  Rebuilding computers quickly is in my DNA.  The bottom line is simple, 'My computers are not Traap proof.'
 

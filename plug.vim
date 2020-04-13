@@ -80,19 +80,19 @@ if !has('windows')
   Plug 'tpope/vim-projectionist'   "Slow on msys2
 endif
 
-" end community plugins ---------------------------------------------------- }}}
+" End community plugins ---------------------------------------------------- }}}
 " {{{ Begin my bundles
 " Bundle specific settings
 Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-autocmd'
 Plug 'Traap/vim-bundle-coc'
-Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-github-issues'
 Plug 'Traap/vim-bundle-haskell'
 Plug 'Traap/vim-bundle-lmgtfy'
+Plug 'Traap/vim-bundle-macunix'
 Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
@@ -102,12 +102,10 @@ Plug 'Traap/vim-bundle-tmux'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
-
-" Operating systems and keybindings
-Plug 'Traap/vim-bundle-keybindings'
-Plug 'Traap/vim-bundle-macunix'
 " End my bundles ----------------------------------------------------------- }}}
-" {{{ MUST BE LISTED LAST PLUGIN.
+" {{{ Now order mattes. 
+Plug 'Traap/vim-bundle-colors'
+Plug 'Traap/vim-bundle-keybindings'
 Plug 'ryanoasis/vim-devicons'
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.

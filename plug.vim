@@ -4,6 +4,7 @@ call plug#begin('~/.vim/bundle')
 " {{{ Begin community plugins
 Plug 'ajh17/VimCompletesMe'
 Plug 'beloglazov/vim-online-thesaurus'
+Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dense-analysis/ale'
@@ -84,6 +85,7 @@ endif
 " {{{ Begin my bundles
 " Bundle specific settings
 Plug 'Traap/vim-bundle-abbreviate'
+Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-autocmd'
 Plug 'Traap/vim-bundle-coc'

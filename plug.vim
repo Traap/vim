@@ -55,7 +55,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'francoiscabrol/ranger.vim'
 
 if v:version >= 800
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 if has('python')
@@ -101,7 +101,7 @@ Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-settings'
 Plug 'Traap/vim-bundle-terminal'
-Plug 'Traap/vim-bundle-tmux'
+Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'

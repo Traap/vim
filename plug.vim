@@ -116,6 +116,6 @@ call plug#end()
 " -------------------------------------------------------------------------- }}}
 " {{{ Indicate vimplug installation is done.
 if g:not_finish_vimplug == "yes"
-  autocmd VimEnter * PlugInstall
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 " -------------------------------------------------------------------------- }}}

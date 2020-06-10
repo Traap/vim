@@ -106,7 +106,7 @@ Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 " End my bundles ----------------------------------------------------------- }}}
-" {{{ Now order mattes. 
+" {{{ Now order matters.
 Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'ryanoasis/vim-devicons'

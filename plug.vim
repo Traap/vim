@@ -7,7 +7,7 @@ Plug 'beloglazov/vim-online-thesaurus'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'dkprice/vim-easygrep'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring'
@@ -46,7 +46,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimoutliner/vimoutliner'
 Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/bufexplorer.zip'
+"Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
@@ -55,7 +55,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'francoiscabrol/ranger.vim'
 
 if v:version >= 800
-"  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 if has('python')

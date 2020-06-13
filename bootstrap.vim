@@ -1,4 +1,5 @@
 " {{{ bootstrap vim with vim-plug.
+
 let vimplug_exists=expand('~/.vim/autoload/plug.vim')
 
 if !filereadable(vimplug_exists)

@@ -1,7 +1,10 @@
 " {{{ Tell Vim where our plugin manager is located.
+
 call plug#begin('~/.vim/bundle')
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
+
 Plug 'ajh17/VimCompletesMe'
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'chriskempson/base16-vim'
@@ -13,7 +16,7 @@ Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
-Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
+" Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'jez/vim-superman'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
@@ -25,7 +28,7 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'moll/vim-bbye'
 Plug 'ngmy/vim-rubocop'
 Plug 'rhysd/vim-grammarous'
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+" Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/gem-browse'
@@ -51,7 +54,7 @@ Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'will133/vim-dirdiff'
-Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+" Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'francoiscabrol/ranger.vim'
 
 if v:version >= 800
@@ -59,7 +62,7 @@ if v:version >= 800
 endif
 
 if has('python')
-  Plug 'Traap/github-issues.vim'
+  " Plug 'Traap/github-issues.vim'
 endif
 
 if has('macunix')
@@ -83,6 +86,7 @@ endif
 
 " End community plugins ---------------------------------------------------- }}}
 " {{{ Begin my bundles
+
 " Bundle specific settings
 Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-ale'
@@ -96,7 +100,7 @@ Plug 'Traap/vim-bundle-grammarous'
 Plug 'Traap/vim-bundle-haskell'
 Plug 'Traap/vim-bundle-lmgtfy'
 Plug 'Traap/vim-bundle-macunix'
-Plug 'Traap/vim-bundle-nerdtree'
+" Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-settings'
@@ -105,17 +109,55 @@ Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
+
 " End my bundles ----------------------------------------------------------- }}}
 " {{{ Now order matters.
+
 Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'ryanoasis/vim-devicons'
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.
+
 call plug#end()
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Indicate vimplug installation is done.
+
 if g:not_finish_vimplug == "yes"
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Volatile experiments.  You have been warned.
+"
+" This sections contains Vim snippets that may deleted my next push, or mature
+" into a vim-bundle-xyz.
+
+let g:postBufferOn = 0
+let g:postBufferCpo = &cpo
+
+function! TogglePostBuffer()
+  if g:postBufferOn
+    echom "Post buffer disabled."
+    let g:postBufferOn = 0
+    let &cpo = g:postBufferCpo
+  else
+    echom "Post buffer enabled."
+    let g:postBufferOn = 1
+    " let g:postBufferCpo = &cpo
+    set breakindent
+    set breakindentopt=shift:2
+    set columns=50
+    set nolinebreak
+    set showbreak=↪
+    set textwidth=0
+    set visualbell
+    set wrap
+  endif
+endfunction
+
+map <leader>pb :call TogglePostBuffer()<cr>
+
 " -------------------------------------------------------------------------- }}}

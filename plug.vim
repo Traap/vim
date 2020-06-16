@@ -135,29 +135,23 @@ endif
 " This sections contains Vim snippets that may deleted my next push, or mature
 " into a vim-bundle-xyz.
 
-let g:postBufferOn = 0
-let g:postBufferCpo = &cpo
+let g:post_buffer_on=0
 
 function! TogglePostBuffer()
-  if g:postBufferOn
-    echom "Post buffer disabled."
-    let g:postBufferOn = 0
-    let &cpo = g:postBufferCpo
+  if g:post_buffer_on
+    let g:post_buffer_on=0
+    let &columns=g:post_buffer_columns
+    let &textwidth=g:post_buffer_textwidth
+    set nobreakindent
   else
-    echom "Post buffer enabled."
-    let g:postBufferOn = 1
-    let g:postBufferCpo = &cpo
+    let g:post_buffer_on=1
+    let g:post_buffer_columns=&columns
+    let g:post_buffer_textwidth=&textwidth
     set breakindent
     set breakindentopt=shift:2
     set columns=50
-    set nolinebreak
-    set showbreak=↪
     set textwidth=0
-    set visualbell
-    set wrap
   endif
 endfunction
-
-nnoremap <leader>pb :call TogglePostBuffer()<cr>
 
 " -------------------------------------------------------------------------- }}}

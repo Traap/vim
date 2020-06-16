@@ -146,7 +146,7 @@ function! TogglePostBuffer()
   else
     echom "Post buffer enabled."
     let g:postBufferOn = 1
-    " let g:postBufferCpo = &cpo
+    let g:postBufferCpo = &cpo
     set breakindent
     set breakindentopt=shift:2
     set columns=50
@@ -158,6 +158,6 @@ function! TogglePostBuffer()
   endif
 endfunction
 
-map <leader>pb :call TogglePostBuffer()<cr>
+nnoremap <leader>pb :call TogglePostBuffer()<cr>
 
 " -------------------------------------------------------------------------- }}}

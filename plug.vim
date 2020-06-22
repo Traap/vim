@@ -58,7 +58,7 @@ Plug 'will133/vim-dirdiff'
 Plug 'francoiscabrol/ranger.vim'
 
 if v:version >= 800
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 if has('python')
@@ -132,7 +132,7 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Volatile experiments.  You have been warned.
 "
-" This sections contains Vim snippets that may deleted my next push, or mature
+" This sections contains Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
 
 let g:post_buffer_on=0

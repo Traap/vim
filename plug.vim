@@ -1,8 +1,8 @@
-" {{{ Tell Vim where our plugin manager is located.
+" {{{ Tell Vim where our plugin manager is located.{{{
 
 call plug#begin('~/.vim/bundle')
 
-" -------------------------------------------------------------------------- }}}
+" -------------------------------------------------------------------------- }}}}}}
 " {{{ Begin community plugins
 
 Plug 'ajh17/VimCompletesMe'
@@ -16,7 +16,7 @@ Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
-" Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
+Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'jez/vim-superman'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
@@ -28,7 +28,7 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'moll/vim-bbye'
 Plug 'ngmy/vim-rubocop'
 Plug 'rhysd/vim-grammarous'
-" Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/gem-browse'
@@ -54,7 +54,7 @@ Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'will133/vim-dirdiff'
-" Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'francoiscabrol/ranger.vim'
 
 if v:version >= 800
@@ -100,7 +100,7 @@ Plug 'Traap/vim-bundle-grammarous'
 Plug 'Traap/vim-bundle-haskell'
 Plug 'Traap/vim-bundle-lmgtfy'
 Plug 'Traap/vim-bundle-macunix'
-" Plug 'Traap/vim-bundle-nerdtree'
+Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-settings'

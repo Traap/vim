@@ -47,12 +47,13 @@ Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vimoutliner/vimoutliner'
+"Plug 'vimoutliner/vimoutliner'
 Plug 'vim-ruby/vim-ruby'
 "Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
+Plug 'vimwiki/vimwiki'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'francoiscabrol/ranger.vim'
@@ -154,4 +155,5 @@ function! TogglePostBuffer()
   endif
 endfunction
 
+let g:vimwiki_list =[{'path': '~/git/wiki/', 'path_html': '~/git/wiki/html/'}]
 " -------------------------------------------------------------------------- }}}

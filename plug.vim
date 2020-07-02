@@ -190,7 +190,7 @@ augroup vimwiki_group
 augroup end
 
 map <Localleader>dn :VimwikiMakeDiaryNote<cr>
-map <LocalLeader>cv :ToggleCalendar<cr>
+map <LocalLeader>cv :call ToggleCalendar()<cr>
 map <LocalLeader>sl :VimwikiSplitLink<cr>
 let g:calendar_mark = 'right'
 let g:calendar_navi = 'both'

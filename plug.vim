@@ -164,14 +164,35 @@ let g:vimwiki_list =[{'path': '~/git/wiki/', 'path_html': '~/git/wiki/html/'}]
 let g:vimwiki_listsyms = '✗○◐●✓'
 
 command! Diary VimwikiDiaryIndex
-augroup vimwiki_group
+augroup diary_group
   autocmd!
-  " autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
-  autocmd * diary.wiki VimwikiDiaryGenerateLinks
+  autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
 augroup end
 
 " Calendar experiments
+function! ToggleCalendar()
+  execute ":CalendarVR"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+
+augroup vimwiki_group 
+  autocmd!
+  autocmd BufRead,BufNewFile *.wiki set filetype=vimwiki
+augroup end
+
+map <Localleader>dn :VimwikiMakeDiaryNote<cr>
+map <LocalLeader>cv :ToggleCalendar<cr>
+map <LocalLeader>sl :VimwikiSplitLink<cr>
 let g:calendar_mark = 'right'
 let g:calendar_navi = 'both'
-nnoremap <localleader>cv :CalendarVR<cr>
+let g:calendar_diary=$HOME.'/git/wiki/diary'
 " -------------------------------------------------------------------------- }}}

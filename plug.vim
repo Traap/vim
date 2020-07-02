@@ -1,8 +1,14 @@
-" {{{ Tell Vim where our plugin manager is located.{{{
+" {{{ Tell Vim where our plugin manager is located.
 
 call plug#begin('~/.vim/bundle')
 
-" -------------------------------------------------------------------------- }}}}}}
+" -------------------------------------------------------------------------- }}}
+" {{{ Preamble 
+
+" vimwiki requiers this global variable set prior to loading the plugin.
+let g:vimwiki_map_prefix = '<Leader>z'
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
 
 Plug 'ajh17/VimCompletesMe'
@@ -157,11 +163,34 @@ endfunction
 
 " Begin vimwiki experiments.
 
-let g:vimwiki_hl_cb_checked = 1
-let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_auto_header = 1
+let g:vimwiki_hl_cb_checked = 2
 let g:vimwiki_hl_headers = 1
-let g:vimwiki_list =[{'path': '~/git/wiki/', 'path_html': '~/git/wiki/html/'}]
-let g:vimwiki_listsyms = '✗○◐●✓'
+let g:vimwiki_listsym_rejected = 'ϴ'
+let g:vimwiki_listsyms = ' ○◐●✓'
+
+let g:vimwiki_key_mappings =
+  \ {
+  \   'all_maps': 1,
+  \   'global': 1,
+  \   'headers': 1,
+  \   'text_objs': 1,
+  \   'table_format': 1,
+  \   'table_mappings': 1,
+  \   'lists': 1,
+  \   'links': 1,
+  \   'html': 1,
+  \   'mouse': 0,
+  \ }
+
+let g:vimwiki_list =
+  \[{
+  \ 'path':'~/git/wiki/',
+  \ 'path_html':'~/git/wiki/html/',
+  \ 'auto_tags': 1,
+  \ 'auto_generate_links': 1,
+  \ 'auto_generate_tags': 1,
+  \}]
 
 command! Diary VimwikiDiaryIndex
 augroup diary_group
@@ -184,15 +213,26 @@ function! ToggleCalendar()
   end
 endfunction
 
-augroup vimwiki_group 
+augroup vimwiki_group
   autocmd!
   autocmd BufRead,BufNewFile *.wiki set filetype=vimwiki
 augroup end
 
-map <Localleader>dn :VimwikiMakeDiaryNote<cr>
-map <LocalLeader>cv :call ToggleCalendar()<cr>
-map <LocalLeader>sl :VimwikiSplitLink<cr>
 let g:calendar_mark = 'right'
 let g:calendar_navi = 'both'
 let g:calendar_diary=$HOME.'/git/wiki/diary'
+
+map <Localleader>dn :VimwikiMakeDiaryNote<cr>
+map <LocalLeader>cv :call ToggleCalendar()<cr>
+map <LocalLeader>sl :VimwikiSplitLink<cr>
+
+imap <LocalLeader>D <Plug>VimwikiIncreaseLvlSingleItem
+imap <LocalLeader>T <Plug>VimwikiDecreaseLvlSingleItem
+imap <LocalLeader>J <Plug>VimwikiListNextSymbol
+imap <LocalLeader>K <Plug>VimwikiListPrevSymbol
+imap <LocalLeader>M <Plug>VimwikiListToggleSymbol
+
+
+" use <a-space>for trigger completion
+inoremap <silent><expr> <a-space> coc#refresh()
 " -------------------------------------------------------------------------- }}}

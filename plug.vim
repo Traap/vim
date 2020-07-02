@@ -23,6 +23,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-journal'
 Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'
+Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
 Plug 'mechatroner/rainbow_csv'
 Plug 'moll/vim-bbye'
@@ -47,7 +48,6 @@ Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'vimoutliner/vimoutliner'
 Plug 'vim-ruby/vim-ruby'
 "Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/gitignore'
@@ -155,5 +155,23 @@ function! TogglePostBuffer()
   endif
 endfunction
 
+" Begin vimwiki experiments.
+
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_hl_cb_checked = 1
+let g:vimwiki_hl_headers = 1
 let g:vimwiki_list =[{'path': '~/git/wiki/', 'path_html': '~/git/wiki/html/'}]
+let g:vimwiki_listsyms = '✗○◐●✓'
+
+command! Diary VimwikiDiaryIndex
+augroup vimwiki_group
+  autocmd!
+  " autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
+  autocmd * diary.wiki VimwikiDiaryGenerateLinks
+augroup end
+
+" Calendar experiments
+let g:calendar_mark = 'right'
+let g:calendar_navi = 'both'
+nnoremap <localleader>cv :CalendarVR<cr>
 " -------------------------------------------------------------------------- }}}

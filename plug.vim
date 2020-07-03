@@ -7,6 +7,8 @@ call plug#begin('~/.vim/bundle')
 
 " vimwiki requiers this global variable set prior to loading the plugin.
 let g:vimwiki_map_prefix = '<Leader>z'
+let g:vimwiki_tab_key = '<F7>'
+let g:vimwiki_shift_tab_key = '<F8>'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
@@ -39,6 +41,10 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/gem-browse'
+Plug 'Traap/vim-dragvisuals'
+Plug 'Traap/vim-helptags'
+Plug 'Traap/vim-ide'
+Plug 'Traap/vimwiki'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -49,17 +55,13 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'Traap/vim-dragvisuals'
-Plug 'Traap/vim-helptags'
-Plug 'Traap/vim-ide'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
-"Plug 'vim-scripts/bufexplorer.zip'
+" Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
-Plug 'vimwiki/vimwiki'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'francoiscabrol/ranger.vim'
@@ -232,7 +234,7 @@ imap <LocalLeader>J <Plug>VimwikiListNextSymbol
 imap <LocalLeader>K <Plug>VimwikiListPrevSymbol
 imap <LocalLeader>M <Plug>VimwikiListToggleSymbol
 
-
 " use <a-space>for trigger completion
-inoremap <silent><expr> <a-space> coc#refresh()
+inoremap <silent><expr> <a-space> coc#refresh() 
+
 " -------------------------------------------------------------------------- }}}

@@ -3,14 +3,6 @@
 call plug#begin('~/.vim/bundle')
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Preamble 
-
-" vimwiki requiers this global variable set prior to loading the plugin.
-let g:vimwiki_map_prefix = '<Leader>z'
-let g:vimwiki_tab_key = '<F7>'
-let g:vimwiki_shift_tab_key = '<F8>'
-
-" -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
 
 Plug 'ajh17/VimCompletesMe'
@@ -234,7 +226,7 @@ imap <LocalLeader>J <Plug>VimwikiListNextSymbol
 imap <LocalLeader>K <Plug>VimwikiListPrevSymbol
 imap <LocalLeader>M <Plug>VimwikiListToggleSymbol
 
-" use <a-space>for trigger completion
-inoremap <silent><expr> <a-space> coc#refresh() 
 
+let g:vimwiki_tab_key = '<F7>'
+let g:vimwiki_shift_tab_key = '<F8>'
 " -------------------------------------------------------------------------- }}}

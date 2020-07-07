@@ -36,7 +36,9 @@ Plug 'tpope/gem-browse'
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
-Plug 'Traap/vimwiki'
+Plug 'lervag/wiki.vim'
+Plug 'lervag/wiki-ft.vim'
+" Plug 'Traap/vimwiki'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -155,44 +157,6 @@ function! TogglePostBuffer()
   endif
 endfunction
 
-" Begin vimwiki experiments.
-
-let g:vimwiki_auto_header = 1
-let g:vimwiki_hl_cb_checked = 2
-let g:vimwiki_hl_headers = 1
-let g:vimwiki_listsym_rejected = 'ϴ'
-let g:vimwiki_listsyms = ' ○◐●✓'
-
-let g:vimwiki_key_mappings =
-  \ {
-  \   'all_maps': 1,
-  \   'global': 1,
-  \   'headers': 1,
-  \   'text_objs': 1,
-  \   'table_format': 1,
-  \   'table_mappings': 1,
-  \   'lists': 1,
-  \   'links': 1,
-  \   'html': 1,
-  \   'mouse': 0,
-  \ }
-
-let g:vimwiki_list =
-  \[{
-  \ 'path':'~/git/wiki/',
-  \ 'path_html':'~/git/wiki/html/',
-  \ 'auto_tags': 1,
-  \ 'auto_generate_links': 1,
-  \ 'auto_generate_tags': 1,
-  \}]
-
-command! Diary VimwikiDiaryIndex
-augroup diary_group
-  autocmd!
-  autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
-augroup end
-
-" Calendar experiments
 function! ToggleCalendar()
   execute ":CalendarVR"
   if exists("g:calendar_open")
@@ -207,26 +171,70 @@ function! ToggleCalendar()
   end
 endfunction
 
-augroup vimwiki_group
-  autocmd!
-  autocmd BufRead,BufNewFile *.wiki set filetype=vimwiki
-augroup end
-
 let g:calendar_mark = 'right'
 let g:calendar_navi = 'both'
-let g:calendar_diary=$HOME.'/git/wiki/diary'
-
-map <Localleader>dn :VimwikiMakeDiaryNote<cr>
+let g:calendar_diary = $HOME.'/git/wiki/journal'
+let g:calendar_filetype = 'wiki'
+let g:calendar_diary_extension = '.wiki'
+let g:calendar_action = 'MyCalAction'
+" let g:calendar_sign = 'MyCalSign'
 map <LocalLeader>cv :call ToggleCalendar()<cr>
-map <LocalLeader>sl :VimwikiSplitLink<cr>
+ 
+" Add zero prefix to a number
+function! s:prefix_zero(num) abort
+  if a:num < 10
+    return '0'.a:num
+  endif
+  return a:num
+endfunction
 
-imap <LocalLeader>D <Plug>VimwikiIncreaseLvlSingleItem
-imap <LocalLeader>T <Plug>VimwikiDecreaseLvlSingleItem
-imap <LocalLeader>J <Plug>VimwikiListNextSymbol
-imap <LocalLeader>K <Plug>VimwikiListPrevSymbol
-imap <LocalLeader>M <Plug>VimwikiListToggleSymbol
+function MyCalAction(day,month,year,week,dir)
+  " day   : day you actioned
+  " month : month you actioned
+  " year  : year you actioned
+  " week  : day of week (Mo=1 ... Su=7)
+  " dir   : direction of calendar
+  let day = s:prefix_zero(a:day)
+  let month = s:prefix_zero(a:month)
 
+  let link = a:year.'-'.month.'-'.day
+  if winnr('#') == 0
+    if a:dir ==? 'V'
+      vsplit
+    else
+      split
+    endif
+  else
+    wincmd p
+    if !&hidden && &modified
+      new
+    endif
+  endif
 
-let g:vimwiki_tab_key = '<F7>'
-let g:vimwiki_shift_tab_key = '<F8>'
+  call wiki#journal#make_note()
+endfunction
+
+" function MyCalSign(day,month,year)
+"   " day   : day you actioned
+"   " month : month you actioned
+"   " year  : year you actioned
+"   let day = s:prefix_zero(a:day)
+"   let month = s:prefix_zero(a:month)
+"   let sfile = vimwiki#vars#get_wikilocal('path').vimwiki#vars#get_wikilocal('diary_rel_path').
+"         \ a:year.'-'.month.'-'.day.vimwiki#vars#get_wikilocal('ext')
+"   return filereadable(expand(sfile))
+" endfunction
+
+" Begin wiki.vim experiments.
+let g:wiki_root = $HOME.'/git/wiki'
+
+let g:wiki_journal = {
+  \ 'name': 'journal',
+  \ 'frequency': 'daily',
+  \ 'date_format': {
+  \   'daily' : '%Y-%m-%d',
+  \   'weekly' : '%Y_w%V',
+  \   'monthly' : '%Y_m%m',
+  \ },
+  \}
 " -------------------------------------------------------------------------- }}}

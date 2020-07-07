@@ -138,6 +138,8 @@ endif
 " This sections contains Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
 
+" {{{ TogglePostBuffer experiments. 
+
 let g:post_buffer_on=0
 
 function! TogglePostBuffer()
@@ -157,77 +159,10 @@ function! TogglePostBuffer()
   endif
 endfunction
 
-function! ToggleCalendar()
-  execute ":CalendarVR"
-  if exists("g:calendar_open")
-    if g:calendar_open == 1
-      execute "q"
-      unlet g:calendar_open
-    else
-      g:calendar_open = 1
-    end
-  else
-    let g:calendar_open = 1
-  end
-endfunction
+" -------------------------------------------------------------------------- }}}
+" {{{ wiki.vim experiments.
 
-let g:calendar_mark = 'right'
-let g:calendar_navi = 'both'
-let g:calendar_diary = $HOME.'/git/wiki/journal'
-let g:calendar_filetype = 'wiki'
-let g:calendar_diary_extension = '.wiki'
-let g:calendar_action = 'MyCalAction'
-" let g:calendar_sign = 'MyCalSign'
-map <LocalLeader>cv :call ToggleCalendar()<cr>
- 
-" Add zero prefix to a number
-function! s:prefix_zero(num) abort
-  if a:num < 10
-    return '0'.a:num
-  endif
-  return a:num
-endfunction
-
-function MyCalAction(day,month,year,week,dir)
-  " day   : day you actioned
-  " month : month you actioned
-  " year  : year you actioned
-  " week  : day of week (Mo=1 ... Su=7)
-  " dir   : direction of calendar
-  let day = s:prefix_zero(a:day)
-  let month = s:prefix_zero(a:month)
-
-  let link = a:year.'-'.month.'-'.day
-  if winnr('#') == 0
-    if a:dir ==? 'V'
-      vsplit
-    else
-      split
-    endif
-  else
-    wincmd p
-    if !&hidden && &modified
-      new
-    endif
-  endif
-
-  call wiki#journal#make_note()
-endfunction
-
-" function MyCalSign(day,month,year)
-"   " day   : day you actioned
-"   " month : month you actioned
-"   " year  : year you actioned
-"   let day = s:prefix_zero(a:day)
-"   let month = s:prefix_zero(a:month)
-"   let sfile = vimwiki#vars#get_wikilocal('path').vimwiki#vars#get_wikilocal('diary_rel_path').
-"         \ a:year.'-'.month.'-'.day.vimwiki#vars#get_wikilocal('ext')
-"   return filereadable(expand(sfile))
-" endfunction
-
-" Begin wiki.vim experiments.
 let g:wiki_root = $HOME.'/git/wiki'
-
 let g:wiki_journal = {
   \ 'name': 'journal',
   \ 'frequency': 'daily',
@@ -237,4 +172,87 @@ let g:wiki_journal = {
   \   'monthly' : '%Y_m%m',
   \ },
   \}
+let g:wiki_use_calendar = 1
+
+" -------------------------------------------------------------------------- }}}
+" {{{ calendar.vim expierments
+
+" Hook for calendar.vim
+if g:wiki_use_calendar
+  let g:calendar_mark = 'right'
+  let g:calendar_navi = 'both'
+  let g:calendar_diary = $HOME.'/git/wiki/journal'
+  let g:calendar_filetype = 'wiki'
+  let g:calendar_diary_extension = '.wiki'
+  let g:calendar_action = 'MyCalAction'
+  let g:calendar_sign = 'MyCalSign'
+  map <LocalLeader>cv :call ToggleCalendar()<cr>
+
+  function! ToggleCalendar()
+    execute ":CalendarVR"
+    if exists("g:calendar_open")
+      if g:calendar_open == 1
+        execute "q"
+        unlet g:calendar_open
+      else
+        g:calendar_open = 1
+      end
+    else
+      let g:calendar_open = 1
+    end
+  endfunction
+
+  " Add zero prefix to a number
+  function! s:prefix_zero(num) abort
+    if a:num < 10
+      return '0'.a:num
+    endif
+    return a:num
+  endfunction
+
+  " Build journal file name.
+  function! s:build_filename(day,month,year) abort
+    " day   : day you actioned
+    " month : month you actioned
+    " year  : year you actioned
+    let day = s:prefix_zero(a:day)
+    let month = s:prefix_zero(a:month)
+    let sfile = a:year.'-'.month.'-'.day
+    return sfile
+  endfunction
+
+  function MyCalAction(day,month,year,week,dir)
+    " day   : day you actioned
+    " month : month you actioned
+    " year  : year you actioned
+    " week  : day of week (Mo=1 ... Su=7)
+    " dir   : direction of calendar
+    let sfile = s:build_filename(a:day, a:month, a:year)
+
+    if winnr('#') == 0
+      if a:dir ==? 'V'
+        vsplit
+      else
+        split
+      endif
+    else
+      wincmd p
+      if !&hidden && &modified
+        new
+      endif
+    endif
+
+    call wiki#journal#make_note(sfile)
+  endfunction
+
+  function MyCalSign(day,month,year)
+    " day   : day you actioned
+    " month : month you actioned
+    " year  : year you actioned
+    let sfile = s:build_filename(a:day, a:month, a:year)
+    return filereadable(expand(sfile))
+  endfunction
+endif
+
+" -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

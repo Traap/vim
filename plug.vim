@@ -3,6 +3,14 @@
 call plug#begin('~/.vim/bundle')
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Preamble
+" vimwiki requires these global variables set prior to loading the  plugin. 
+
+let g:vimwiki_map_prefix = '<leader>z'
+let g:vimwiki_tab_key = '<F7>'
+let g:vimwiki_shift_tab_key = '<F8>'
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
 
 Plug 'ajh17/VimCompletesMe'
@@ -36,9 +44,9 @@ Plug 'tpope/gem-browse'
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
-Plug 'lervag/wiki.vim'
-Plug 'lervag/wiki-ft.vim'
-" Plug 'Traap/vimwiki'
+" Plug 'lervag/wiki.vim'
+" Plug 'lervag/wiki-ft.vim'
+Plug 'Traap/vimwiki'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -160,31 +168,80 @@ function! TogglePostBuffer()
 endfunction
 
 " -------------------------------------------------------------------------- }}}
+" {{{ vimwiki experiments. 
+let g:traap_use_vimwiki = 1
+if g:traap_use_vimwiki
+
+  let g:vimwiki_auto_header = 1
+  let g:vimwiki_hl_cb_checked = 2
+  let g:vimwiki_hl_headers = 1
+  let g:vimwiki_listsym_rejected = 'ϴ'
+  let g:vimwiki_listsyms = ' ○◐●✓'
+
+  let g:vimwiki_key_mappings =
+    \ {
+    \   'all_maps': 1,
+    \   'global': 1,
+    \   'headers': 0,
+    \   'text_objs': 1,
+    \   'table_format': 1,
+    \   'table_mappings': 0,
+    \   'lists': 1,
+    \   'links': 1,
+    \   'html': 0,
+    \   'mouse': 0,
+    \ }
+
+  let g:vimwiki_list =
+    \[{
+    \ 'path':'~/git/wiki/',
+    \ 'path_html':'~/git/wiki/html/',
+    \ 'auto_tags': 1,
+    \ 'auto_generate_links': 1,
+    \ 'auto_generate_tags': 1,
+    \}]
+
+  command! Diary VimwikiDiaryIndex
+  augroup diary_group
+    autocmd!
+    autocmd BufRead,BufNewFile journal.wiki VimwikiDiaryGenerateLinks
+  augroup end
+
+endif
+
+" -------------------------------------------------------------------------- }}}
 " {{{ wiki.vim experiments.
 
-let g:wiki_root = $HOME.'/git/wiki'
-let g:wiki_journal = {
-  \ 'name': 'journal',
-  \ 'frequency': 'daily',
-  \ 'date_format': {
-  \   'daily' : '%Y-%m-%d',
-  \   'weekly' : '%Y_w%V',
-  \   'monthly' : '%Y_m%m',
-  \ },
-  \}
-let g:wiki_use_calendar = 1
+let g:traap_use_wiki = 0
+let g:traap_use_wiki_calendar = 0
+if g:traap_use_wiki
+  let g:wiki_root = $HOME.'/git/wiki'
+  let g:wiki_journal = {
+    \ 'name': 'journal',
+    \ 'frequency': 'daily',
+    \ 'date_format': {
+    \   'daily' : '%Y-%m-%d',
+    \   'weekly' : '%Y_w%V',
+    \   'monthly' : '%Y_m%m',
+    \ },
+    \}
+  let g:wiki_use_calendar = 1
 
-augroup wiki_group
-  autocmd!
-  autocmd BufRead,BufNewFile  *.wiki setlocal spell
-  autocmd BufRead,BufNewFile  *.wiki setlocal autowriteall
-augroup end
+  augroup wiki_group
+    autocmd!
+    autocmd BufRead,BufNewFile  *.wiki setlocal spell
+    autocmd BufRead,BufNewFile  *.wiki setlocal autowriteall
+  augroup end
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ calendar.vim expierments
+" {{{ Generic calendar setup.
+let g:traap_use_calendar = 1
+if  g:traap_use_calendar
 
-" Hook for calendar.vim
-if g:wiki_use_calendar
+  " Setup generic calendar attributes that should be common between vimwiki and
+  " wiki.
   let g:calendar_mark = 'right'
   let g:calendar_navi = 'both'
   let g:calendar_diary = $HOME.'/git/wiki/journal'
@@ -193,7 +250,8 @@ if g:wiki_use_calendar
   let g:calendar_action = 'MyCalAction'
   let g:calendar_sign = 'MyCalSign'
   map <LocalLeader>cv :call ToggleCalendar()<cr>
-
+" -------------------------------------------------------------------------- }}}
+" {{{ Toggle calendar on the terminal right side.  
   function! ToggleCalendar()
     execute ":CalendarVR"
     if exists("g:calendar_open")
@@ -207,58 +265,63 @@ if g:wiki_use_calendar
       let g:calendar_open = 1
     end
   endfunction
+" -------------------------------------------------------------------------- }}}
+" {{{ wiki specific Hook for calendar.vim
+  if g:traap_use_wiki_calendar
 
-  " Add zero prefix to a number
-  function! s:prefix_zero(num) abort
-    if a:num < 10
-      return '0'.a:num
-    endif
-    return a:num
-  endfunction
+    " Add zero prefix to a number
+    function! s:prefix_zero(num) abort
+      if a:num < 10
+        return '0'.a:num
+      endif
+      return a:num
+    endfunction
 
-  " Build journal file name.
-  function! s:build_filename(day,month,year) abort
-    " day   : day you actioned
-    " month : month you actioned
-    " year  : year you actioned
-    let day = s:prefix_zero(a:day)
-    let month = s:prefix_zero(a:month)
-    let sfile = a:year.'-'.month.'-'.day
-    return sfile
-  endfunction
+    " Build journal file name.
+    function! s:build_filename(day,month,year) abort
+      " day   : day you actioned
+      " month : month you actioned
+      " year  : year you actioned
+      let day = s:prefix_zero(a:day)
+      let month = s:prefix_zero(a:month)
+      let sfile = a:year.'-'.month.'-'.day
+      return sfile
+    endfunction
 
-  function MyCalAction(day,month,year,week,dir)
-    " day   : day you actioned
-    " month : month you actioned
-    " year  : year you actioned
-    " week  : day of week (Mo=1 ... Su=7)
-    " dir   : direction of calendar
-    let sfile = s:build_filename(a:day, a:month, a:year)
+    function MyCalAction(day,month,year,week,dir)
+      " day   : day you actioned
+      " month : month you actioned
+      " year  : year you actioned
+      " week  : day of week (Mo=1 ... Su=7)
+      " dir   : direction of calendar
+      let sfile = s:build_filename(a:day, a:month, a:year)
 
-    if winnr('#') == 0
-      if a:dir ==? 'V'
-        vsplit
+      if winnr('#') == 0
+        if a:dir ==? 'V'
+          vsplit
+        else
+          split
+        endif
       else
-        split
+        wincmd p
+        if !&hidden && &modified
+          new
+        endif
       endif
-    else
-      wincmd p
-      if !&hidden && &modified
-        new
-      endif
-    endif
 
-    call wiki#journal#make_note(sfile)
-  endfunction
+      call wiki#journal#make_note(sfile)
+    endfunction
 
-  function MyCalSign(day,month,year)
-    " day   : day you actioned
-    " month : month you actioned
-    " year  : year you actioned
-    let sfile = s:build_filename(a:day, a:month, a:year)
-    return filereadable(expand(sfile))
-  endfunction
+    function MyCalSign(day,month,year)
+      " day   : day you actioned
+      " month : month you actioned
+      " year  : year you actioned
+      let sfile = s:build_filename(a:day, a:month, a:year)
+      return filereadable(expand(sfile))
+    endfunction
+  endif
+
+" -------------------------------------------------------------------------- }}}
 endif
-
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

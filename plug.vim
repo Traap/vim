@@ -174,6 +174,12 @@ let g:wiki_journal = {
   \}
 let g:wiki_use_calendar = 1
 
+augroup wiki_group
+  autocmd!
+  autocmd BufRead,BufNewFile  *.wiki setlocal spell
+  autocmd BufRead,BufNewFile  *.wiki setlocal autowriteall
+augroup end
+
 " -------------------------------------------------------------------------- }}}
 " {{{ calendar.vim expierments
 

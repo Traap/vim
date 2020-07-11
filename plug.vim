@@ -18,18 +18,14 @@ Plug 'beloglazov/vim-online-thesaurus'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-"Plug 'dense-analysis/ale'
-Plug 'dkprice/vim-easygrep'
 Plug 'dpelle/vim-LanguageTool'
-Plug 'ecomba/vim-ruby-refactoring'
+Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main', 'for': 'ruby'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'jez/vim-superman'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-journal'
-Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
@@ -44,22 +40,22 @@ Plug 'tpope/gem-browse'
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
-" Plug 'lervag/wiki.vim'
-" Plug 'lervag/wiki-ft.vim'
-Plug 'Traap/vimwiki'
+Plug 'lervag/wiki.vim', {'for': ['md', 'markdown', 'wiki']} 
+Plug 'lervag/wiki-ft.vim', {'for': ['md', 'markdown', 'wiki']} 
+Plug 'Traap/vimwiki', {'branch': 'dev', 'for': ['md', 'markdown', 'wiki']}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rails', {'for': 'ruby'}
+Plug 'tpope/vim-rake', {'for': 'ruby'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 " Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
@@ -91,8 +87,8 @@ if has('unix')
 endif
 
 if !has('windows')
-  Plug 'tpope/vim-bundler'        " Slow on msys2
-  Plug 'tpope/vim-projectionist'   "Slow on msys2
+  Plug 'tpope/vim-bundler', {'for': 'ruby'}
+  Plug 'tpope/vim-projectionist', {'for': 'ruby'}
 endif
 
 " End community plugins ---------------------------------------------------- }}}

@@ -21,12 +21,15 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main', 'for': 'ruby'}
+Plug 'francoiscabrol/ranger.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'jez/vim-superman'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kovetskiy/sxhkd-vim'
+Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
@@ -38,11 +41,6 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/gem-browse'
-Plug 'Traap/vim-dragvisuals'
-Plug 'Traap/vim-helptags'
-Plug 'Traap/vim-ide'
-Plug 'lervag/vimtex'
-Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -53,6 +51,10 @@ Plug 'tpope/vim-rake', {'for': 'ruby'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'Traap/vim-dragvisuals'
+Plug 'Traap/vim-helptags'
+Plug 'Traap/vim-ide'
+Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
@@ -62,7 +64,6 @@ Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
-Plug 'francoiscabrol/ranger.vim'
 
 if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -99,7 +100,7 @@ Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-autocmd'
-" Plug 'Traap/vim-bundle-coc'
+Plug 'Traap/vim-bundle-coc'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-github-issues'

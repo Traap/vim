@@ -40,9 +40,9 @@ Plug 'tpope/gem-browse'
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
-Plug 'lervag/wiki.vim', {'for': ['md', 'markdown', 'wiki']} 
-Plug 'lervag/wiki-ft.vim', {'for': ['md', 'markdown', 'wiki']} 
-Plug 'Traap/vimwiki', {'branch': 'dev', 'for': ['md', 'markdown', 'wiki']}
+" Plug 'lervag/wiki.vim', {'for': ['md', 'markdown', 'wiki']} 
+" Plug 'lervag/wiki-ft.vim', {'for': ['md', 'markdown', 'wiki']} 
+Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -99,7 +99,7 @@ Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-autocmd'
-Plug 'Traap/vim-bundle-coc'
+" Plug 'Traap/vim-bundle-coc'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-github-issues'

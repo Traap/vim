@@ -14,6 +14,7 @@ let g:vimwiki_shift_tab_key = '<F8>'
 " {{{ Begin community plugins
 
 Plug 'ajh17/VimCompletesMe'
+Plug 'aklt/plantuml-syntax'
 Plug 'beloglazov/vim-online-thesaurus'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -40,8 +41,7 @@ Plug 'tpope/gem-browse'
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
-" Plug 'lervag/wiki.vim', {'for': ['md', 'markdown', 'wiki']} 
-" Plug 'lervag/wiki-ft.vim', {'for': ['md', 'markdown', 'wiki']} 
+Plug 'lervag/vimtex'
 Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'

@@ -115,6 +115,7 @@ Plug 'Traap/vim-bundle-settings'
 Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
+Plug 'Traap/vim-bundle-vimwiki'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 
@@ -163,73 +164,6 @@ function! TogglePostBuffer()
     set textwidth=0
   endif
 endfunction
-
-" -------------------------------------------------------------------------- }}}
-" {{{ vimwiki experiments. 
-let g:traap_use_vimwiki = 1
-if g:traap_use_vimwiki
-
-  let g:vimwiki_auto_header = 1
-  let g:vimwiki_hl_cb_checked = 2
-  let g:vimwiki_hl_headers = 1
-  let g:vimwiki_listsym_rejected = 'ϴ'
-  let g:vimwiki_listsyms = ' ○◐●✓'
-
-  let g:vimwiki_key_mappings =
-    \ {
-    \   'all_maps': 1,
-    \   'global': 1,
-    \   'headers': 0,
-    \   'text_objs': 1,
-    \   'table_format': 1,
-    \   'table_mappings': 0,
-    \   'lists': 1,
-    \   'links': 1,
-    \   'html': 0,
-    \   'mouse': 0,
-    \ }
-
-  let g:vimwiki_list =
-    \[{
-    \ 'path':'~/git/wiki/',
-    \ 'path_html':'~/git/wiki/html/',
-    \ 'auto_tags': 1,
-    \ 'auto_generate_links': 1,
-    \ 'auto_generate_tags': 1,
-    \}]
-
-  command! Diary VimwikiDiaryIndex
-  augroup diary_group
-    autocmd!
-    autocmd BufRead,BufNewFile journal.wiki VimwikiDiaryGenerateLinks
-  augroup end
-
-endif
-
-" -------------------------------------------------------------------------- }}}
-" {{{ wiki.vim experiments.
-
-let g:traap_use_wiki = 0
-let g:traap_use_wiki_calendar = 0
-if g:traap_use_wiki
-  let g:wiki_root = $HOME.'/git/wiki'
-  let g:wiki_journal = {
-    \ 'name': 'journal',
-    \ 'frequency': 'daily',
-    \ 'date_format': {
-    \   'daily' : '%Y-%m-%d',
-    \   'weekly' : '%Y_w%V',
-    \   'monthly' : '%Y_m%m',
-    \ },
-    \}
-  let g:wiki_use_calendar = 1
-
-  augroup wiki_group
-    autocmd!
-    autocmd BufRead,BufNewFile  *.wiki setlocal spell
-    autocmd BufRead,BufNewFile  *.wiki setlocal autowriteall
-  augroup end
-endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ calendar.vim expierments

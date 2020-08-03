@@ -9,6 +9,7 @@ call plug#begin('~/.vim/bundle')
 let g:vimwiki_map_prefix = '<leader>z'
 let g:vimwiki_tab_key = '<F7>'
 let g:vimwiki_shift_tab_key = '<F8>'
+let g:tex_flavor = 'latex'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins

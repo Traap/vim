@@ -29,6 +29,7 @@ Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'jez/vim-superman'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kevinoid/vim-jsonc'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'lervag/vimtex'
 Plug 'luochen1990/rainbow'

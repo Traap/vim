@@ -11,6 +11,19 @@ let g:vimwiki_tab_key = '<F7>'
 let g:vimwiki_shift_tab_key = '<F8>'
 let g:tex_flavor = 'latex'
 
+" vimwiki remap keyboard experiment.
+
+let g:vimwiki_keyboard_backspace = '<F1>'
+let g:vimwiki_keyboard_ctrl_down = '<F2>'
+let g:vimwiki_keyboard_ctrl_return = '<F3>'
+let g:vimwiki_keyboard_ctrl_shift_return = '<F4>'
+let g:vimwiki_keyboard_ctrl_up = '<F5>'
+let g:vimwiki_keyboard_plus = '<F6>'
+let g:vimwiki_keyboard_return = '<F7>'
+let g:vimwiki_keyboard_shift_tab = '<F8>'
+let g:vimwiki_keyboard_shift_return = '<F9>'
+let g:vimwiki_keyboard_tab = '<F10>'
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
 
@@ -39,6 +52,7 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'moll/vim-bbye'
 Plug 'ngmy/vim-rubocop'
 Plug 'rhysd/vim-grammarous'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -60,7 +74,6 @@ Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
-" Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
@@ -167,5 +180,4 @@ function! TogglePostBuffer()
   endif
 endfunction
 
-" -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

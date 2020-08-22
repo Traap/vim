@@ -39,6 +39,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
+Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 Plug 'jez/vim-superman'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'

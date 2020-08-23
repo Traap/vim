@@ -3,26 +3,14 @@
 call plug#begin('~/.vim/bundle')
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Preamble
-" vimwiki requires these global variables set prior to loading the  plugin. 
+" {{{ Preamble plugins 
 
-let g:vimwiki_map_prefix = '<leader>z'
-let g:vimwiki_tab_key = '<F7>'
-let g:vimwiki_shift_tab_key = '<F8>'
+" Plugins loaded define global values needed by a community plugin.
+
+Plug 'Traap/vim-bundle-vimwiki'
+
+" vimtex needs to know default file format.
 let g:tex_flavor = 'latex'
-
-" vimwiki remap keyboard experiment.
-
-let g:vimwiki_keyboard_backspace = '<F1>'
-let g:vimwiki_keyboard_ctrl_down = '<F2>'
-let g:vimwiki_keyboard_ctrl_return = '<F3>'
-let g:vimwiki_keyboard_ctrl_shift_return = '<F4>'
-let g:vimwiki_keyboard_ctrl_up = '<F5>'
-let g:vimwiki_keyboard_plus = '<F6>'
-let g:vimwiki_keyboard_return = '<F7>'
-let g:vimwiki_keyboard_shift_tab = '<F8>'
-let g:vimwiki_keyboard_shift_return = '<F9>'
-let g:vimwiki_keyboard_tab = '<F10>'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
@@ -138,7 +126,6 @@ Plug 'Traap/vim-bundle-settings'
 Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
-Plug 'Traap/vim-bundle-vimwiki'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 

@@ -108,6 +108,13 @@ if !has('windows')
   Plug 'tpope/vim-projectionist', {'for': 'ruby'}
 endif
 
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'tyru/open-browser.vim'
+
+let g:plantuml_previewer#plantuml_jar_path = '~/git/plantuml/plantuml.jar'
+let g:plantuml_previewer#save_format = 'png'
+let g:plantuml_previewer#view_path = '~/Downloads'
+
 " End community plugins ---------------------------------------------------- }}}
 " {{{ Begin my bundles
 

@@ -154,6 +154,12 @@ endif
 " This sections contains Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
 
+" {{{ PlantUml Hack
+
+map <F2> :r!java -Djava.awt.headless=true -jar ~/git/plantuml/plantuml.jar %<cr>
+map <F3> :r!SumatraPDF.exe sequence.png<cr>
+
+" -------------------------------------------------------------------------- }}}
 " {{{ TogglePostBuffer experiments. 
 
 let g:post_buffer_on=0
@@ -175,4 +181,5 @@ function! TogglePostBuffer()
   endif
 endfunction
 
+" -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

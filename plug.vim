@@ -156,7 +156,22 @@ endif
 " {{{ PlantUml Hack
 
 map <F2> :r!java -Djava.awt.headless=true -jar ~/git/plantuml/plantuml.jar %<cr>
-map <F3> :r!SumatraPDF.exe sequence.png<cr>
+
+if has("win32unix")
+  let g:traap_png_viewer = 'SumantraPDF.exe'
+else
+  let g:os_wsl=hostname()
+  if g:os_wsl
+    let g:traap_png_viewer = 'SumantraPDF.exe'
+  else
+    let g:traap_png_viewer = 'feh --auto-reload --auto-zoom'
+  endif 
+endif
+
+" TODO: Remove hardcoded filename.
+let g:traap_png_viewer_key = ':r!'.g:traap_png_viewer.' '.'demo.png 2> /dev/null&<cr>'
+
+execute 'map <F3>' g:traap_png_viewer_key
 
 " -------------------------------------------------------------------------- }}}
 " {{{ TogglePostBuffer experiments. 

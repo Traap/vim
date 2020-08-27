@@ -155,8 +155,6 @@ endif
 
 " {{{ PlantUml Hack
 
-map <F2> :r!java -Djava.awt.headless=true -jar ~/git/plantuml/plantuml.jar %<cr>
-
 if has("win32unix")
   let g:traap_png_viewer = 'SumantraPDF.exe'
 else
@@ -164,14 +162,35 @@ else
   if g:os_wsl
     let g:traap_png_viewer = 'SumantraPDF.exe'
   else
-    let g:traap_png_viewer = 'feh --auto-reload --auto-zoom'
+    let g:traap_png_viewer = 'okular'
   endif 
 endif
 
-" TODO: Remove hardcoded filename.
-let g:traap_png_viewer_key = ':r!'.g:traap_png_viewer.' '.'demo.png 2> /dev/null&<cr>'
+function! GenerateUmlDiagram()
+  let s:cmd_args = '-Djava.awt.headless=true'
+  let s:cmd_jar = '~/git/plantuml/plantuml.jar'
+  let s:cmd_plantuml = '!java '.s:cmd_args.' -jar '.s:cmd_jar.' '. expand('%')
+  silent execute s:cmd_plantuml
 
-execute 'map <F3>' g:traap_png_viewer_key
+  if !exists('g:traap_png_viewer_lunched') 
+    let s:cmd_view = '!'.g:traap_png_viewer.' '.expand('%<').'.png 2>/dev/null&'
+    silent execute s:cmd_view
+    let g:traap_png_viewer_lunched = 1
+  endif
+endfunction
+
+function! ClearUmlLaunchFlag()
+    let g:traap_png_viewer_lunched = 0
+endfunction
+
+augroup plantuml_group
+  autocmd!
+  autocmd BufWritePost *.puml :call GenerateUmlDiagram()
+  autocmd BufLeave     *.puml :call ClearUmlLaunchFlag()
+augroup END
+
+map <F2> :r!java -Djava.awt.headless=true -jar ~/git/plantuml/plantuml.jar %<cr>
+exec 'map <F3> :r!'.g:traap_png_viewer.' '.expand('%<').'.png 2>/dev/null&<cr>'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ TogglePostBuffer experiments. 

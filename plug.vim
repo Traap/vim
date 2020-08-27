@@ -155,27 +155,26 @@ endif
 
 " {{{ PlantUml Hack
 
-if has("win32unix")
-  let g:traap_png_viewer = 'SumantraPDF.exe'
-else
-  let g:os_wsl=hostname()
-  if g:os_wsl
-    let g:traap_png_viewer = 'SumantraPDF.exe'
+function! InitUmlSettings()
+  let g:traap_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+
+  if g:traap_wsl || has("win32unix")
+    let g:traap_png_viewer = 'SumatraPDF.exe'
   else
     let g:traap_png_viewer = 'okular'
-  endif 
-endif
+  endif
+endfunction
 
 function! GenerateUmlDiagram()
   let s:cmd_args = '-Djava.awt.headless=true'
   let s:cmd_jar = '~/git/plantuml/plantuml.jar'
-  let s:cmd_plantuml = '!java '.s:cmd_args.' -jar '.s:cmd_jar.' '. expand('%')
-  silent execute s:cmd_plantuml
+  let g:cmd_plantuml = '!java '.s:cmd_args.' -jar '.s:cmd_jar.' '. expand('%')
+  silent execute g:cmd_plantuml
 
   if !exists('g:traap_png_viewer_lunched') 
-    let s:cmd_view = '!'.g:traap_png_viewer.' '.expand('%<').'.png 2>/dev/null&'
-    silent execute s:cmd_view
     let g:traap_png_viewer_lunched = 1
+    let g:cmd_view = '!'.g:traap_png_viewer.' '.expand('%<').'.png 2>/dev/null&'
+    silent execute g:cmd_view
   endif
 endfunction
 
@@ -185,12 +184,10 @@ endfunction
 
 augroup plantuml_group
   autocmd!
-  autocmd BufWritePost *.puml :call GenerateUmlDiagram()
-  autocmd BufLeave     *.puml :call ClearUmlLaunchFlag()
+  autocmd BufRead,BufNewFile *.puml :call InitUmlSettings()
+  autocmd BufWritePost       *.puml :call GenerateUmlDiagram()
+  autocmd BufLeave           *.puml :call ClearUmlLaunchFlag()
 augroup END
-
-map <F2> :r!java -Djava.awt.headless=true -jar ~/git/plantuml/plantuml.jar %<cr>
-exec 'map <F3> :r!'.g:traap_png_viewer.' '.expand('%<').'.png 2>/dev/null&<cr>'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ TogglePostBuffer experiments. 

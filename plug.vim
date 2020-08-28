@@ -156,37 +156,49 @@ endif
 " {{{ PlantUml Hack
 
 function! InitUmlSettings()
-  let g:traap_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
 
-  if g:traap_wsl || has("win32unix")
-    let g:traap_png_viewer = 'SumatraPDF.exe'
+  let g:puml_viewer_open = 0
+  let g:puml_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+
+  if g:puml_wsl || has("win32unix")
+    let g:puml_viewer = 'SumatraPDF.exe'
   else
-    let g:traap_png_viewer = 'okular'
+    let g:puml_viewer = 'okular'
   endif
+
 endfunction
 
 function! GenerateUmlDiagram()
-  let s:cmd_args = '-Djava.awt.headless=true'
-  let s:cmd_jar = '~/git/plantuml/plantuml.jar'
-  let g:cmd_plantuml = '!java '.s:cmd_args.' -jar '.s:cmd_jar.' '. expand('%')
-  silent execute g:cmd_plantuml
 
-  if !exists('g:traap_png_viewer_lunched') 
-    let g:traap_png_viewer_lunched = 1
-    let g:cmd_view = '!'.g:traap_png_viewer.' '.expand('%<').'.png 2>/dev/null&'
-    silent execute g:cmd_view
+  let s:puml_args = '-Djava.awt.headless=true'
+
+  let s:puml_jar = '~/git/plantuml/plantuml.jar'
+
+  let g:puml_cmd = '!java ' . s:puml_args .
+                 \ ' -jar ' . s:puml_jar . 
+                 \ ' '. expand('%') . 
+                 \ ' -Tpng' .
+                 \ ' -o' . expand('%<') . '.png'
+
+  silent execute g:puml_cmd
+
+  if !g:puml_viewer_open
+    let g:puml_viewer_open = 1
+    let g:puml_view = '!'.g:puml_viewer.' '.expand('%<').'.png 2>/dev/null&'
+    silent execute g:puml_view
   endif
+
 endfunction
 
 function! ClearUmlLaunchFlag()
-    let g:traap_png_viewer_lunched = 0
+  let g:puml_viewer_open = 0
 endfunction
 
 augroup plantuml_group
   autocmd!
-  autocmd BufRead,BufNewFile *.puml :call InitUmlSettings()
-  autocmd BufWritePost       *.puml :call GenerateUmlDiagram()
-  autocmd BufLeave           *.puml :call ClearUmlLaunchFlag()
+  autocmd BufRead,BufNewFile *.puml,*.wsd :call InitUmlSettings()
+  autocmd BufWritePost       *.puml,*.wsd :call GenerateUmlDiagram()
+  autocmd BufLeave           *.puml,*.wsd :call ClearUmlLaunchFlag()
 augroup END
 
 " -------------------------------------------------------------------------- }}}

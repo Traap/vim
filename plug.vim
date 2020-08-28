@@ -168,26 +168,40 @@ function! InitUmlSettings()
 
 endfunction
 
-function! GenerateUmlDiagram()
+function! RunPumlJavaCommand()
 
+  " Example: !java -Djava.awt.headless=true "foo.puml"
   let s:puml_args = '-Djava.awt.headless=true'
 
   let s:puml_jar = '~/git/plantuml/plantuml.jar'
 
   let g:puml_cmd = '!java ' . s:puml_args .
                  \ ' -jar ' . s:puml_jar . 
-                 \ ' '. expand('%') . 
-                 \ ' -Tpng' .
-                 \ ' -o' . expand('%<') . '.png'
+                 \ ' "' . expand('%') . '"'
 
   silent execute g:puml_cmd
 
+endfunction
+
+function! RunPumlViewCommand()
+
+  " Example: !okular "foo.png" 2>/dev/null&
   if !g:puml_viewer_open
+
     let g:puml_viewer_open = 1
-    let g:puml_view = '!'.g:puml_viewer.' '.expand('%<').'.png 2>/dev/null&'
+
+    let g:puml_view = '!' . g:puml_viewer .
+                    \ ' "'. expand('%<') . '.png"' .
+                    \ ' 2>/dev/null&'
     silent execute g:puml_view
+
   endif
 
+endfunction
+
+function! GenerateUmlDiagram()
+  call RunPumlJavaCommand()
+  call RunPumlViewCommand()
 endfunction
 
 function! ClearUmlLaunchFlag()

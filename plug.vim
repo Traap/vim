@@ -17,12 +17,11 @@ let g:tex_flavor = 'latex'
 
 Plug 'ajh17/VimCompletesMe'
 Plug 'aklt/plantuml-syntax'
-Plug 'beloglazov/vim-online-thesaurus'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dpelle/vim-LanguageTool'
-Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main', 'for': 'ruby'}
+Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'francoiscabrol/ranger.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
@@ -50,8 +49,8 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails', {'for': 'ruby'}
-Plug 'tpope/vim-rake', {'for': 'ruby'}
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
@@ -61,12 +60,13 @@ Plug 'Traap/vim-ide'
 Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+
 
 if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -91,8 +91,8 @@ if has('unix')
 endif
 
 if !has('windows')
-  Plug 'tpope/vim-bundler', {'for': 'ruby'}
-  Plug 'tpope/vim-projectionist', {'for': 'ruby'}
+  Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-projectionist'
 endif
 
 Plug 'weirongxu/plantuml-previewer.vim'

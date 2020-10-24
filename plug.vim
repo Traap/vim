@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/bundle')
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Preamble plugins 
+" {{{ Preamble ... One Ring to Rule them All! 
 
 " Plugins loaded define global values needed by a community plugin.
 
@@ -85,16 +85,12 @@ if has('nvim')
   Plug 'rbgrouleff/bclose.vim'
 endif
 
-if has('unix')
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
-  Plug 'junegunn/fzf.vim'
-  Plug 'mileszs/ack.vim'
-endif
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
+Plug 'mileszs/ack.vim'
 
-if !has('windows')
-  Plug 'tpope/vim-bundler'
-  Plug 'tpope/vim-projectionist'
-endif
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-projectionist'
 
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'tyru/open-browser.vim'
@@ -233,6 +229,15 @@ function! TogglePostBuffer()
     set textwidth=0
   endif
 endfunction
+
+" -------------------------------------------------------------------------- }}}
+" {{{ nvim has the last wor nvim has the last word 
+
+if has('nvim')
+  set termguicolors
+  colorscheme base16-chalk
+  autocmd OptionSet guicursor noautocmd set guicursor=
+endif
 
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

@@ -231,7 +231,7 @@ function! TogglePostBuffer()
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ nvim has the last wor nvim has the last word 
+" {{{ nvim has the last word 
 
 if has('nvim')
   set termguicolors

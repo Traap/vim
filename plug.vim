@@ -231,13 +231,16 @@ function! TogglePostBuffer()
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ nvim has the last word 
+" {{{ nvim has the last words.
 
-if has('nvim')
-  set termguicolors
-  colorscheme base16-chalk
-  autocmd OptionSet guicursor noautocmd set guicursor=
-endif
+function! FixTerminal()
+  if has('nvim')
+    set termguicolors
+    colorscheme base16-chalk
+    autocmd OptionSet guicursor noautocmd set guicursor=
+  endif
+endfunction
+call FixTerminal()
 
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

@@ -26,7 +26,6 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
-Plug 'jez/vim-superman'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kevinoid/vim-jsonc'
@@ -63,7 +62,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
-Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
@@ -238,6 +236,7 @@ function! FixTerminal()
     set termguicolors
     colorscheme base16-chalk
     autocmd OptionSet guicursor noautocmd set guicursor=
+    let g:man_hardwrap=1
   endif
 endfunction
 call FixTerminal()

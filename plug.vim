@@ -148,14 +148,11 @@ endif
 
 function! InitUmlSettings()
 
-  let g:puml_viewer_open = 0
-  let g:puml_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+  let g:puml_viewer_open = 0 let g:puml_wsl = (substitute(system('uname -r'),
+  '\n', '', '') =~ 'Microsoft')
 
-  if g:puml_wsl || has("win32unix")
-    let g:puml_viewer = 'SumatraPDF.exe'
-  else
-    let g:puml_viewer = 'okular'
-  endif
+  if g:puml_wsl || has("win32unix") let g:puml_viewer = 'SumatraPDF.exe' else
+    let g:puml_viewer = 'okular' endif
 
 endfunction
 
@@ -166,9 +163,8 @@ function! RunPumlJavaCommand()
 
   let s:puml_jar = '~/git/plantuml/plantuml.jar'
 
-  let g:puml_cmd = '!java ' . s:puml_args .
-                 \ ' -jar ' . s:puml_jar . 
-                 \ ' "' . expand('%') . '"'
+  let g:puml_cmd = '!java ' . s:puml_args .  \ ' -jar ' . s:puml_jar .  \ ' "'
+  . expand('%') . '"'
 
   silent execute g:puml_cmd
 
@@ -181,71 +177,41 @@ function! RunPumlViewCommand()
 
     let g:puml_viewer_open = 1
 
-    let g:puml_view = '!' . g:puml_viewer .
-                    \ ' "'. expand('%<') . '.png"' .
-                    \ ' 2>/dev/null&'
-    silent execute g:puml_view
+    let g:puml_view = '!' . g:puml_viewer .  \ ' "'. expand('%<') . '.png"'
+    .  \ ' 2>/dev/null&' silent execute g:puml_view
 
   endif
 
 endfunction
 
-function! GenerateUmlDiagram()
-  call RunPumlJavaCommand()
-  call RunPumlViewCommand()
-endfunction
+function! GenerateUmlDiagram() call RunPumlJavaCommand() call
+  RunPumlViewCommand() endfunction
 
-function! ClearUmlLaunchFlag()
-  let g:puml_viewer_open = 0
-endfunction
+function! ClearUmlLaunchFlag() let g:puml_viewer_open = 0 endfunction
 
-augroup plantuml_group
-  autocmd!
-  autocmd BufRead,BufNewFile *.puml,*.wsd :call InitUmlSettings()
-  autocmd BufWritePost       *.puml,*.wsd :call GenerateUmlDiagram()
-  autocmd BufLeave           *.puml,*.wsd :call ClearUmlLaunchFlag()
-augroup END
+augroup plantuml_group autocmd!  autocmd BufRead,BufNewFile *.puml,*.wsd :call
+  InitUmlSettings() autocmd BufWritePost       *.puml,*.wsd :call
+  GenerateUmlDiagram() autocmd BufLeave           *.puml,*.wsd :call
+  ClearUmlLaunchFlag() augroup END
 
 " -------------------------------------------------------------------------- }}}
 " {{{ TogglePostBuffer experiments. 
 
 let g:post_buffer_on=0
 
-function! TogglePostBuffer()
-  if g:post_buffer_on
-    let g:post_buffer_on=0
-    let &columns=g:post_buffer_columns
-    let &textwidth=g:post_buffer_textwidth
-    set nobreakindent
-  else
-    let g:post_buffer_on=1
-    let g:post_buffer_columns=&columns
-    let g:post_buffer_textwidth=&textwidth
-    set breakindent
-    set breakindentopt=shift:2
-    set columns=50
-    set textwidth=0
-  endif
-endfunction
+function! TogglePostBuffer() if g:post_buffer_on let g:post_buffer_on=0 let
+  &columns=g:post_buffer_columns let &textwidth=g:post_buffer_textwidth set
+  nobreakindent else let g:post_buffer_on=1 let g:post_buffer_columns=&columns
+  let g:post_buffer_textwidth=&textwidth set breakindent set
+  breakindentopt=shift:2 set columns=50 set textwidth=0 endif endfunction
 
 " -------------------------------------------------------------------------- }}}
 " {{{ nvim has the last words.
 
-if has('nvim')
-  let g:man_hardwrap=1
-  let g:clipboard = {
-      \   'name': 'myClipboard',
-      \   'copy': {
-      \      '+': 'xsel --nodetach -i -b',
-      \      '*': 'xsel --nodetach -i -b',
-      \    },
-      \   'paste': {
-      \      '+': 'xsel -o -b',
-      \      '*': 'xsel -o -b',
-      \   },
-      \   'cache_enabled': 1,
-      \ }
-endif
+if has('nvim') let g:man_hardwrap=1 let g:clipboard = { \   'name':
+  'myClipboard', \   'copy': { \      '+': 'xsel --nodetach -i -b', \      '*':
+  'xsel --nodetach -i -b', \    }, \   'paste': { \      '+': 'xsel -o -b',
+        \      '*': 'xsel -o -b', \   }, \   'cache_enabled': 1, \ } endif
 
 function! FixTerminal()
   if has('linux')

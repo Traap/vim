@@ -231,12 +231,27 @@ endfunction
 " -------------------------------------------------------------------------- }}}
 " {{{ nvim has the last words.
 
+if has('nvim')
+  let g:man_hardwrap=1
+  let g:clipboard = {
+      \   'name': 'myClipboard',
+      \   'copy': {
+      \      '+': 'xsel --nodetach -i -b',
+      \      '*': 'xsel --nodetach -i -b',
+      \    },
+      \   'paste': {
+      \      '+': 'xsel -o -b',
+      \      '*': 'xsel -o -b',
+      \   },
+      \   'cache_enabled': 1,
+      \ }
+endif
+
 function! FixTerminal()
-  if has('nvim')
+  if has('linux')
     set termguicolors
     colorscheme base16-chalk
     autocmd OptionSet guicursor noautocmd set guicursor=
-    let g:man_hardwrap=1
   endif
 endfunction
 call FixTerminal()

@@ -134,7 +134,7 @@ call plug#end()
 " -------------------------------------------------------------------------- }}}
 " {{{ Indicate vimplug installation is done.
 
-if g:not_finish_vimplug == "yes"
+if g:not_finish_vimplug
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -148,11 +148,14 @@ endif
 
 function! InitUmlSettings()
 
-  let g:puml_viewer_open = 0 let g:puml_wsl = (substitute(system('uname -r'),
-  '\n', '', '') =~ 'Microsoft')
+  let g:puml_viewer_open = 0 
+  let g:puml_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
 
-  if g:puml_wsl || has("win32unix") let g:puml_viewer = 'SumatraPDF.exe' else
-    let g:puml_viewer = 'okular' endif
+  if g:puml_wsl || has("win32unix")
+    let g:puml_viewer = 'SumatraPDF.exe'
+  else
+    let g:puml_viewer = 'okular'
+  endif
 
 endfunction
 

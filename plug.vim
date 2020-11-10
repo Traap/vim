@@ -22,7 +22,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
-Plug 'francoiscabrol/ranger.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
@@ -65,7 +64,6 @@ Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
-
 
 if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -123,6 +121,7 @@ Plug 'Traap/vim-bundle-wipeout'
 " {{{ Now order matters.
 
 Plug 'Traap/vim-bundle-colors'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'ryanoasis/vim-devicons'
 
@@ -250,6 +249,21 @@ function! FixTerminal()
   endif
 endfunction
 call FixTerminal()
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Lookup vimplug on Github 
+
+if exists('g:loaded_plug_lookup')
+  finish
+endif
+let g:loaded_plug_lookup = 1
+
+function! PlugLookup(pat)
+  if has('unix')
+    let url = "xdg-open https://github.com/" . a:pat . ".git"
+    call jobstart(url)
+  endif
+endfunction
 
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

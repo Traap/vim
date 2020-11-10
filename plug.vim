@@ -244,7 +244,9 @@ endif
 function! FixTerminal()
   if has('linux')
     set termguicolors
-    colorscheme base16-chalk
+    if exists('g:loaded_bundle_colors')
+      colorscheme base16-chalk
+    endif
     autocmd OptionSet guicursor noautocmd set guicursor=
   endif
 endfunction

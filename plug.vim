@@ -253,7 +253,7 @@ endfunction
 call FixTerminal()
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Lookup vimplug on Github 
+" {{{ vim-plug-lookup : Lookup a plugin on GitHub 
 
 if exists('g:loaded_plug_lookup')
   finish

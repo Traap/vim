@@ -3,6 +3,33 @@
 call plug#begin('~/.vim/bundle')
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Are we running WSL (windows Subsystem for Linux)
+"
+" uname prints system information.  The information below was captured while
+" running Ubuntu 18.04 from WSL2.
+"
+" uname        : Linux:
+"     kernel -s: Linux:
+"      node  -n: USLKZ6QQ6WT2:
+"   release  -r: 4.4.0-18362-Microsoft:
+"   version  -v: #476-Microsoft Fri Nov 01 16:53:00 PST 2019:
+"   machine  -m: x86_64:
+" processor  -p: x86_64:
+"  hardware  -i: x86_64:
+"        OS  -o: GNU/Linux
+
+" This check uses build-in nvim capabilities.  
+if has('unix') && has('nvim') && has('wsl')
+  let g:os_wsl = 1
+
+" This check pulls information from uname.
+elseif ('unix')
+  let g:os_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+else
+  let g:os_wsl = 0
+endif
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Preamble ... One Ring to Rule them All! 
 
 " Plugins loaded define global values needed by a community plugin.

@@ -25,6 +25,8 @@ if has('unix') && has('nvim') && has('wsl')
 " This check pulls information from uname.
 elseif ('unix')
   let g:os_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+
+" No wsl.
 else
   let g:os_wsl = 0
 endif
@@ -49,10 +51,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
-Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kevinoid/vim-jsonc'
@@ -63,6 +66,7 @@ Plug 'luochen1990/rainbow'
 Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
 Plug 'mechatroner/rainbow_csv'
+Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'ngmy/vim-rubocop'
 Plug 'rhysd/vim-grammarous'
@@ -71,11 +75,13 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/gem-browse'
+Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-surround'
@@ -85,11 +91,13 @@ Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
 Plug 'Traap/vimwiki', {'branch': 'dev'}
+Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-most-minimal-folds'
+Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
@@ -97,27 +105,15 @@ if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
-if has('python')
-  " Plug 'Traap/github-issues.vim'
-endif
 
 if has('macunix')
   Plug 'sjl/vitality.vim'
 endif
 
 if has('nvim')
+  Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
   Plug 'rbgrouleff/bclose.vim'
 endif
-
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim'
-Plug 'mileszs/ack.vim'
-
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-projectionist'
-
-Plug 'weirongxu/plantuml-previewer.vim'
-Plug 'tyru/open-browser.vim'
 
 " End community plugins ---------------------------------------------------- }}}
 " {{{ Begin my bundles

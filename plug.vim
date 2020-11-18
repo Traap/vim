@@ -102,7 +102,8 @@ Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
 if v:version >= 800
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neovim/nvim-lspconfig'
 endif
 
 
@@ -123,7 +124,7 @@ Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-airline'
 Plug 'Traap/vim-bundle-autocmd'
-Plug 'Traap/vim-bundle-coc'
+" Plug 'Traap/vim-bundle-coc'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-github-issues'
@@ -290,6 +291,13 @@ function! PlugLookup(pat)
     call jobstart(url)
   endif
 endfunction
+
+" -------------------------------------------------------------------------- }}}
+" {{{ nvim tsp server 
+
+if has('nvim')
+  lua require'nvim_lsp'.tsserver.setuo()
+endif
 
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

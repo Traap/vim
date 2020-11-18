@@ -5,10 +5,11 @@ call plug#begin('~/.vim/bundle')
 " -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
 
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/telescope.nvim'
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-lua/telescope.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " -------------------------------------------------------------------------- }}}
@@ -36,22 +37,22 @@ set timeoutlen=500
 " -------------------------------------------------------------------------- }}}
 " {{{ Minimal settings specific to nvim plugins.
 
-lua <<EOF
-require('telescope').setup {
-  defaults = {
-    shorten_path = false
-  }
-}
-EOF
+" lua <<EOF
+" require('telescope').setup {
+"   defaults = {
+"     shorten_path = false
+"   }
+" }
+" EOF
 
-nnoremap <Leader>gf <cmd>lua require'telescope.builtin'.git_files{}<cr>
-nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{}<cr>
-nnoremap <silent>gr <cmd>lua require'telescope.builtin'.lsp_references { shorten_path = true }<cr>
+" nnoremap <Leader>gf <cmd>lua require'telescope.builtin'.git_files{}<cr>
+" nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{}<cr>
+" nnoremap <silent>gr <cmd>lua require'telescope.builtin'.lsp_references { shorten_path = true }<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Indicate vimplug installation is done.
 
-if g:not_finish_vimplug == "yes"
+if g:not_finish_vimplug
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 

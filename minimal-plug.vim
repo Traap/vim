@@ -5,12 +5,17 @@ call plug#begin('~/.vim/bundle')
 " -------------------------------------------------------------------------- }}}
 " {{{ Begin community plugins
 
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
-" Plug 'nvim-lua/popup.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-lua/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-utils/vim-most-minimal-folds'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.
@@ -29,25 +34,9 @@ set foldmethod=marker
 set hlsearch
 set ignorecase
 set number
-set numberwidth=2
+set numberwidth=1
 set path+=**
-"set relativenumber
 set timeoutlen=500
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Minimal settings specific to nvim plugins.
-
-" lua <<EOF
-" require('telescope').setup {
-"   defaults = {
-"     shorten_path = false
-"   }
-" }
-" EOF
-
-" nnoremap <Leader>gf <cmd>lua require'telescope.builtin'.git_files{}<cr>
-" nnoremap <Leader>ff <cmd>lua require'telescope.builtin'.find_files{}<cr>
-" nnoremap <silent>gr <cmd>lua require'telescope.builtin'.lsp_references { shorten_path = true }<cr>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Indicate vimplug installation is done.
@@ -55,5 +44,20 @@ set timeoutlen=500
 if g:not_finish_vimplug
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+" -------------------------------------------------------------------------- }}}
+" {{{ vim-plug-lookup : Lookup a plugin on GitHub 
+
+if exists('g:loaded_plug_lookup')
+  finish
+endif
+let g:loaded_plug_lookup = 1
+
+function! PlugLookup(pat)
+  if has('unix')
+    let url = "xdg-open https://github.com/" . a:pat . ".git"
+    call jobstart(url)
+  endif
+endfunction
 
 " -------------------------------------------------------------------------- }}}

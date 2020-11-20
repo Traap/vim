@@ -163,7 +163,7 @@ if g:not_finish_vimplug
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Volatile experiments.  You have been warned.
+" {{{ Volatile Experiments.  You have been warned.
 "
 " This sections contains Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
@@ -191,7 +191,6 @@ endfunction
 
 " -------------------------------------------------------------------------- }}}
 " {{{ nvim has the last words.
-
 if has('nvim')
   let g:man_hardwrap=1
   let g:clipboard = { 
@@ -209,15 +208,14 @@ if has('nvim')
 endif
 
 function! FixTerminal()
-  if has('linux')
-    set termguicolors
-    if exists('g:loaded_bundle_colors')
-      colorscheme base16-chalk
-    endif
-    autocmd OptionSet guicursor noautocmd set guicursor=
+  set termguicolors
+  if exists('g:loaded_bundle_colors')
+    colorscheme base16-chalk
   endif
+  autocmd OptionSet guicursor noautocmd set guicursor=
 endfunction
-call FixTerminal()
+command! FixTerminal call FixTerminal()
+autocmd VimEnter * FixTerminal
 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug-lookup : Lookup a plugin on GitHub 

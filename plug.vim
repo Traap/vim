@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/bundle')
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Are we running WSL (windows Subsystem for Linux)
+" {{{ Are we running WSL (windows Subsystem for Linux) or Arch Linux
 "
 " uname prints system information.  The information below was captured while
 " running Ubuntu 18.04 from WSL2.
@@ -18,17 +18,17 @@ call plug#begin('~/.vim/bundle')
 "  hardware  -i: x86_64:
 "        OS  -o: GNU/Linux
 
-" This check uses build-in nvim capabilities.  
+" Establish defaults 
+let g:os_wsl = 0
+let g:os_arch = 0
+
 if has('unix') && has('nvim') && has('wsl')
+  " This check uses build-in nvim capabilities.  
   let g:os_wsl = 1
-
-" This check pulls information from uname.
-elseif ('unix')
-  let g:os_wsl = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
-
-" No wsl.
-else
-  let g:os_wsl = 0
+elseif has('unix')
+  " This check pulls information from uname.
+  let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+  let g:os_arch = (substitute(system('uname -r'), '\n', '', '') =~ 'arch')
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -208,11 +208,13 @@ if has('nvim')
 endif
 
 function! FixTerminal()
-  set termguicolors
-  if exists('g:loaded_bundle_colors')
-    colorscheme base16-chalk
+  if !g:os_arch
+    set termguicolors
+    if exists('g:loaded_bundle_colors')
+      colorscheme base16-chalk
+    endif
+    autocmd OptionSet guicursor noautocmd set guicursor=
   endif
-  autocmd OptionSet guicursor noautocmd set guicursor=
 endfunction
 command! FixTerminal call FixTerminal()
 autocmd VimEnter * FixTerminal

@@ -193,18 +193,20 @@ endfunction
 " {{{ nvim has the last words.
 if has('nvim')
   let g:man_hardwrap=1
-  let g:clipboard = { 
-        \   'name': 'myClipboard', 
-        \   'copy': { 
-        \      '+': 'xsel --nodetach -i -b', 
-        \      '*': 'xsel --nodetach -i -b', 
-        \    }, 
-        \   'paste': { 
-        \      '+': 'xsel -o -b', 
-        \      '*': 'xsel -o -b', 
-        \   }, 
-        \   'cache_enabled': 1, 
-        \ } 
+  if g:os_wsl
+    let g:clipboard = { 
+          \   'name': 'myClipboard', 
+          \   'copy': { 
+          \      '+': 'xsel --nodetach -i -b', 
+          \      '*': 'xsel --nodetach -i -b', 
+          \    }, 
+          \   'paste': { 
+          \      '+': 'xsel -o -b', 
+          \      '*': 'xsel -o -b', 
+          \   }, 
+          \   'cache_enabled': 1, 
+          \ } 
+  endif
 endif
 
 function! FixTerminal()

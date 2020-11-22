@@ -168,18 +168,18 @@ endif
 " This sections contains Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
 
-" {{{ TogglePostBuffer experiments. 
+  " {{{ TogglePostBuffer experiments. 
 
-let g:post_buffer_on=0
+  let g:post_buffer_on=0
 
-function! TogglePostBuffer()
-  if g:post_buffer_on 
-    let g:post_buffer_on=0 
-    let &columns=g:post_buffer_columns 
-    let &textwidth=g:post_buffer_textwidth
-    set nobreakindent
-  else
-    let g:post_buffer_on=1 
+  function! TogglePostBuffer()
+    if g:post_buffer_on 
+      let g:post_buffer_on=0 
+      let &columns=g:post_buffer_columns 
+      let &textwidth=g:post_buffer_textwidth
+      set nobreakindent
+    else
+      let g:post_buffer_on=1 
     let g:post_buffer_columns=&columns
     let g:post_buffer_textwidth=&textwidth
     set breakindent

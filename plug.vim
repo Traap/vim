@@ -168,7 +168,7 @@ endif
 " This sections contains Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
 
-  " {{{ TogglePostBuffer experiments. 
+" {{{ TogglePostBuffer experiments. 
 
   let g:post_buffer_on=0
 

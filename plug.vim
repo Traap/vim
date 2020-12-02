@@ -62,6 +62,8 @@ Plug 'kevinoid/vim-jsonc'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
+Plug 'lervag/wiki-ft.vim'
+Plug 'lervag/wiki.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
@@ -90,7 +92,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
-Plug 'Traap/vimwiki', {'branch': 'dev'}
+"Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -156,7 +158,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Indicate vimplug installation is done.
+" {{{ Idicate vimplug installation is done.
 
 if g:not_finish_vimplug
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -191,6 +193,7 @@ endfunction
 
 " -------------------------------------------------------------------------- }}}
 " {{{ nvim has the last words.
+
 if has('nvim')
   let g:man_hardwrap=1
   if g:os_wsl

@@ -143,7 +143,6 @@ Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
-
 " End my bundles ----------------------------------------------------------- }}}
 " {{{ Now order matters.
 
@@ -239,5 +238,67 @@ function! PlugLookup(pat)
   endif
 endfunction
 
+" -------------------------------------------------------------------------- }}}
+" {{{ junegunn URL tip
+"
+" https://github.com/junegunn/vim-plug/wiki/extra#gx-to-open-github-urls-on-browser
+
+" function! PlugEx()
+"   let g:line = getline('.')
+"   let g:sha  = matchstr(g:line, '^  \X*\zs\x\{7,9}\ze ')
+"   let g:name = empty(g:sha) ? matchstr(g:line, '^[-x+] \zs[^:]\+\ze:')
+"                           \ : getline(search('^- .*:$', 'bn'))[2:-2]
+"   let g:uri  = get(get(g:plugs, g:name, {}), 'uri', '')
+
+"   if g:uri !~ 'github.com'
+"     return
+"   endif
+"   let g:repo = matchstr(g:uri, '[^:/]*/'.g:name)
+"   let g:url  = empty(g:sha) ? 'https://github.com/'.g:repo
+"                       \ : printf('https://github.com/%s/commit/%s', g:repo, g:sha)
+"   call netrw#BrowseX(url, 0)
+" endfunction
+
+" noremap <buffer> <silent> gx :call PlugEx()<cr>
+
+" augroup autogroup_PlugGx
+"   autocmd!
+"   autocmd FileType vim-plug nnoremap <buffer> <silent> gx :call <sid>plug_gx()<cr>
+" augroup END
+
+function! s:plug_gx()
+  let line = getline('.')
+
+  echom "line: " . line
+
+  let sha  = matchstr(line, '^  \X*\zs\x\{7,9}\ze ')
+
+
+  echom "sha: " . sha
+
+  let name = empty(sha) ? matchstr(line, '^[-x+] \zs[^:]\+\ze:')
+                      \ : getline(search('^- .*:$', 'bn'))[2:-2]
+
+  echom "name: " . name
+
+  let uri  = get(get(g:plugs, name, {}), 'uri', '')
+
+  echom "uri" . uri
+
+  if uri !~ 'github.com'
+    return
+  endif
+  let repo = matchstr(uri, '[^:/]*/'.name)
+  let url  = empty(sha) ? 'https://github.com/'.repo
+                      \ : printf('https://github.com/%s/commit/%s', repo, sha)
+  call netrw#BrowseX(url, 0)
+endfunction
+
+" augroup PlugGx
+"   autocmd!
+"   autocmd FileType vim-plug nnoremap <buffer> <silent> gx :call <sid>plug_gx()<cr>
+" augroup END
+nnoremap <buffer> <silent> gx :call <sid>plug_gx()<cr>
+"
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

@@ -18,12 +18,12 @@ call plug#begin('~/.vim/bundle')
 "  hardware  -i: x86_64:
 "        OS  -o: GNU/Linux
 
-" Establish defaults 
+" Establish defaults
 let g:os_wsl = 0
 let g:os_arch = 0
 
 if has('unix') && has('nvim') && has('wsl')
-  " This check uses build-in nvim capabilities.  
+  " This check uses build-in nvim capabilities.
   let g:os_wsl = 1
 elseif has('unix')
   " This check pulls information from uname.
@@ -32,7 +32,7 @@ elseif has('unix')
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Preamble ... One Ring to Rule them All! 
+" {{{ Preamble ... One Ring to Rule them All!
 
 " Plugins loaded define global values needed by a community plugin.
 
@@ -107,7 +107,6 @@ if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
-
 if has('macunix')
   Plug 'sjl/vitality.vim'
 endif
@@ -169,23 +168,23 @@ endif
 " This sections contains Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
 
-" {{{ TogglePostBuffer experiments. 
+" {{{ TogglePostBuffer experiments.
 
   let g:post_buffer_on=0
 
   function! TogglePostBuffer()
-    if g:post_buffer_on 
-      let g:post_buffer_on=0 
-      let &columns=g:post_buffer_columns 
+    if g:post_buffer_on
+      let g:post_buffer_on=0
+      let &columns=g:post_buffer_columns
       let &textwidth=g:post_buffer_textwidth
       set nobreakindent
     else
-      let g:post_buffer_on=1 
+      let g:post_buffer_on=1
     let g:post_buffer_columns=&columns
     let g:post_buffer_textwidth=&textwidth
     set breakindent
     set breakindentopt=shift:2
-    set columns=50 
+    set columns=50
     set textwidth=0
   endif
 endfunction
@@ -196,18 +195,18 @@ endfunction
 if has('nvim')
   let g:man_hardwrap=1
   if g:os_wsl
-    let g:clipboard = { 
-          \   'name': 'myClipboard', 
-          \   'copy': { 
-          \      '+': 'xsel --nodetach -i -b', 
-          \      '*': 'xsel --nodetach -i -b', 
-          \    }, 
-          \   'paste': { 
-          \      '+': 'xsel -o -b', 
-          \      '*': 'xsel -o -b', 
-          \   }, 
-          \   'cache_enabled': 1, 
-          \ } 
+    let g:clipboard = {
+          \   'name': 'myClipboard',
+          \   'copy': {
+          \      '+': 'xsel --nodetach -i -b',
+          \      '*': 'xsel --nodetach -i -b',
+          \    },
+          \   'paste': {
+          \      '+': 'xsel -o -b',
+          \      '*': 'xsel -o -b',
+          \   },
+          \   'cache_enabled': 1,
+          \ }
   endif
 endif
 
@@ -224,81 +223,20 @@ command! FixTerminal call FixTerminal()
 autocmd VimEnter * FixTerminal
 
 " -------------------------------------------------------------------------- }}}
-" {{{ vim-plug-lookup : Lookup a plugin on GitHub 
+" {{{ vim-plug-lookup : Lookup a plugin on GitHub
 
 if exists('g:loaded_plug_lookup')
   finish
 endif
 let g:loaded_plug_lookup = 1
 
+nnoremap <silent> gx    :call PlugLookup(expand("<cWORD>"))<cr>
+xnoremap <silent> gx "gy:call PlugLookup(@g)<cr>gv
+
 function! PlugLookup(pat)
-  if has('unix')
-    let url = "xdg-open https://github.com/" . a:pat . ".git"
-    call jobstart(url)
-  endif
+  let url = "xdg-open https://github.com/" . a:pat . ".git"
+  call jobstart(url)
 endfunction
 
-" -------------------------------------------------------------------------- }}}
-" {{{ junegunn URL tip
-"
-" https://github.com/junegunn/vim-plug/wiki/extra#gx-to-open-github-urls-on-browser
-
-" function! PlugEx()
-"   let g:line = getline('.')
-"   let g:sha  = matchstr(g:line, '^  \X*\zs\x\{7,9}\ze ')
-"   let g:name = empty(g:sha) ? matchstr(g:line, '^[-x+] \zs[^:]\+\ze:')
-"                           \ : getline(search('^- .*:$', 'bn'))[2:-2]
-"   let g:uri  = get(get(g:plugs, g:name, {}), 'uri', '')
-
-"   if g:uri !~ 'github.com'
-"     return
-"   endif
-"   let g:repo = matchstr(g:uri, '[^:/]*/'.g:name)
-"   let g:url  = empty(g:sha) ? 'https://github.com/'.g:repo
-"                       \ : printf('https://github.com/%s/commit/%s', g:repo, g:sha)
-"   call netrw#BrowseX(url, 0)
-" endfunction
-
-" noremap <buffer> <silent> gx :call PlugEx()<cr>
-
-" augroup autogroup_PlugGx
-"   autocmd!
-"   autocmd FileType vim-plug nnoremap <buffer> <silent> gx :call <sid>plug_gx()<cr>
-" augroup END
-
-function! s:plug_gx()
-  let line = getline('.')
-
-  echom "line: " . line
-
-  let sha  = matchstr(line, '^  \X*\zs\x\{7,9}\ze ')
-
-
-  echom "sha: " . sha
-
-  let name = empty(sha) ? matchstr(line, '^[-x+] \zs[^:]\+\ze:')
-                      \ : getline(search('^- .*:$', 'bn'))[2:-2]
-
-  echom "name: " . name
-
-  let uri  = get(get(g:plugs, name, {}), 'uri', '')
-
-  echom "uri" . uri
-
-  if uri !~ 'github.com'
-    return
-  endif
-  let repo = matchstr(uri, '[^:/]*/'.name)
-  let url  = empty(sha) ? 'https://github.com/'.repo
-                      \ : printf('https://github.com/%s/commit/%s', repo, sha)
-  call netrw#BrowseX(url, 0)
-endfunction
-
-" augroup PlugGx
-"   autocmd!
-"   autocmd FileType vim-plug nnoremap <buffer> <silent> gx :call <sid>plug_gx()<cr>
-" augroup END
-nnoremap <buffer> <silent> gx :call <sid>plug_gx()<cr>
-"
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

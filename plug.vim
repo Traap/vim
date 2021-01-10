@@ -49,7 +49,10 @@ Plug 'aklt/plantuml-syntax'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
+
 Plug 'dbeniamine/cheat.sh-vim'
+" Plug 'RishabhRD/nvim-cheat.sh'
+
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
@@ -87,6 +90,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
@@ -157,7 +161,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Idicate vimplug installation is done.
+" {{{ Indicate vimplug installation is done.
 
 if g:not_finish_vimplug
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
@@ -171,16 +175,16 @@ endif
 
 " {{{ TogglePostBuffer experiments.
 
-  let g:post_buffer_on=0
+let g:post_buffer_on=0
 
-  function! TogglePostBuffer()
-    if g:post_buffer_on
-      let g:post_buffer_on=0
-      let &columns=g:post_buffer_columns
-      let &textwidth=g:post_buffer_textwidth
-      set nobreakindent
-    else
-      let g:post_buffer_on=1
+function! TogglePostBuffer()
+  if g:post_buffer_on
+    let g:post_buffer_on=0
+    let &columns=g:post_buffer_columns
+    let &textwidth=g:post_buffer_textwidth
+    set nobreakindent
+  else
+    let g:post_buffer_on=1
     let g:post_buffer_columns=&columns
     let g:post_buffer_textwidth=&textwidth
     set breakindent

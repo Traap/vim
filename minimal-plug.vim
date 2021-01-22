@@ -1,7 +1,11 @@
 " {{{ Tell Vim where our plugin manager is located.
 
 call plug#begin('~/.vim/bundle')
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenatry.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
 " -------------------------------------------------------------------------- }}}

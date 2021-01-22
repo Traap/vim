@@ -1,25 +1,7 @@
 " {{{ Tell Vim where our plugin manager is located.
 
 call plug#begin('~/.vim/bundle')
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Begin community plugins
-
-Plug 'chriskempson/base16-vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
-Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-utils/vim-most-minimal-folds'
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Done loading plugins.
-
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " -------------------------------------------------------------------------- }}}
@@ -36,6 +18,7 @@ set ignorecase
 set number
 set numberwidth=1
 set path+=**
+set signcolumn=yes
 set timeoutlen=500
 
 " -------------------------------------------------------------------------- }}}

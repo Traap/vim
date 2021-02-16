@@ -53,19 +53,31 @@ function! PlugLookup(pat)
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Minimial keybindings that I must have!!! 
+" {{{ Minimal keybindings that I must have!!! 
 
-" Copy
-nnoremap <silent>cc ggVGg_"+y        " See vaa keybindings below.
+" Copy entire buffer to "+y buffer.
+nnoremap <silent>cc ggVGg_"+y
+
+" Copy visual selection to "+y buffer.
 vnoremap <silent>cc "+y
 
 " Paste
 nnoremap <silent><leader>cv "+p
 
-"Delete line
+" Delete line
 map - dd
 
-" Map O to :only so that only one view is visable.
+" Select (charwise) the contents of the current line, excluding indentation.
+nnoremap vv ^vg_
+
+" Select entire buffer
+nnoremap vaa ggvGg_
+nnoremap Vaa ggVG
+
+" Easier linewise reselection of what you just pasted.
+nnoremap <leader>V V`]
+
+" Make only the current window visible. 
 nnoremap <silent> <leader>oo :only<cr>
 
 " Execute the current line of text as a shell command.

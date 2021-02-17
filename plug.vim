@@ -126,6 +126,8 @@ endif
 " Bundle specific settings
 Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-airline'
+
+" Disabled 2021-02-15
 " Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-autocmd'
 Plug 'Traap/vim-bundle-coc'
@@ -141,6 +143,8 @@ Plug 'Traap/vim-bundle-plantuml'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-settings'
+
+" Disabled 2021-02-15
 " Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'

@@ -231,20 +231,4 @@ command! FixTerminal call FixTerminal()
 autocmd VimEnter * FixTerminal
 
 " -------------------------------------------------------------------------- }}}
-" {{{ vim-plug-lookup : Lookup a plugin on GitHub
-
-if exists('g:loaded_plug_lookup')
-  finish
-endif
-let g:loaded_plug_lookup = 1
-
-nnoremap <silent> gx    :call PlugLookup(expand("<cWORD>"))<cr>
-xnoremap <silent> gx "gy:call PlugLookup(@g)<cr>gv
-
-function! PlugLookup(pat)
-  let url = "xdg-open https://github.com/" . a:pat . ".git"
-  call jobstart(url)
-endfunction
-
-" -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

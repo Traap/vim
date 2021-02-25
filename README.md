@@ -148,8 +148,9 @@ construct that was just another Vim plugin.
 
 I spend a significant amount of time breaking and rebuilding computers.  I have
 had four computers physically break within the last six months: motherboards,
-disk drives, monitors, and more.  Rebuilding computers quickly is in my DNA.
-The bottom line is simple, 'My computers are not Traap proof.'
+disk drives, monitors, and more. Rebuilding computers quickly is in my DNA.
+
+The bottom line is simple, *my computers are not Traap proof.*
 
 My goal was to type Vim have it automatically bootstrap itself.  I also want to
 experiment with Vim plugins and settings. Now that I use

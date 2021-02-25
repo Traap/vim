@@ -50,9 +50,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 
-Plug 'dbeniamine/cheat.sh-vim'
-" Plug 'RishabhRD/nvim-cheat.sh'
-
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
@@ -78,25 +75,17 @@ Plug 'rhysd/vim-grammarous'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-" Plug 'tpope/gem-browse'
-Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-rbenv'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
-"Plug 'Traap/vimwiki', {'branch': 'dev'}
 Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -115,6 +104,19 @@ if has('macunix')
   Plug 'sjl/vitality.vim'
 endif
 
+" Lighten the load when using mingw64
+if !exists("$MSYSTEM")
+  Plug 'dbeniamine/cheat.sh-vim'
+  Plug 'RishabhRD/nvim-cheat.sh'
+  Plug 'tmux-plugins/vim-tmux-focus-events'
+  Plug 'tpope/gem-browse'
+  Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-projectionist'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rake'
+  Plug 'tpope/vim-rbenv'
+endif 
+
 if has('nvim')
   Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
   Plug 'rbgrouleff/bclose.vim'
@@ -123,7 +125,7 @@ endif
 " End community plugins ---------------------------------------------------- }}}
 " {{{ Begin my bundles
 
-" Bundle specific settings
+" My goal is to customize a community plugin after it has been loaded.
 Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-airline'
 
@@ -150,6 +152,7 @@ Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
+
 " End my bundles ----------------------------------------------------------- }}}
 " {{{ Now order matters.
 

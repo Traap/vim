@@ -81,7 +81,7 @@ of plugins:
    personalization for one or more community plugin.   As an example,
    [vim-bundle-settings](https://github.com/Traap/vim-bundle-settings) was
    heavily inspired by [Steve Losh](https://github.com/sjl).
-3. 3. Automatically install plugins when needed is detected in plug.vim.  The
+3. Automatically install plugins when needed is detected in plug.vim.  The
    code snippet is shown below.
 ```vim
 if g:not_finish_vimplug

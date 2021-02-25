@@ -16,10 +16,10 @@
 " {{{ Initialize my Vim Personalization.  
 
 " s:vim_home defines the location of my Vim preferences.
-let s:vim_home = '~/git/vim/'
+let s:vim_home = '$HOME/git/vim/'
 
 " s:vim_ssh represents the private repository for my public and private keys. 
-let s:vim_ssh = '~/git/ssh/'
+let s:vim_ssh = '$HOME/git/ssh/'
 
 " s:config_list concatenates s:vim_home or s:vim_ssh with the appropriate
 " component. 

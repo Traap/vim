@@ -23,18 +23,13 @@ files listed below are sourced by vimrc.  The installation follows a precise
 order to orchestrate the setup.
 
 ### vimrc
-1. *s:vim_home* defines the location of my Vim preferences.
-2. *s:vim_ssh* represents the private repository for my public and private keys.
-3. *s:config_list* concatenates s:vim_home or s:vim_ssh with the appropriate
-   component.
-4. Iterate *s:config_list* to kick-start Vim.
 
 ```vim
 " s:vim_home defines the location of my Vim preferences.
-let s:vim_home = '~/git/vim/'
+let s:vim_home = '$HOME/git/vim/'
 
 " s:vim_ssh represents the private repository for my public and private keys. 
-let s:vim_ssh = '~/git/ssh/'
+let s:vim_ssh = '$HOME/git/ssh/'
 
 " s:config_list concatenates s:vim_home or s:vim_ssh with the appropriate
 " component. 

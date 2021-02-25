@@ -29,6 +29,31 @@ order to orchestrate the setup.
    component.
 4. Iterate *s:config_list* to kick-start Vim.
 
+```vim
+" s:vim_home defines the location of my Vim preferences.
+let s:vim_home = '~/git/vim/'
+
+" s:vim_ssh represents the private repository for my public and private keys. 
+let s:vim_ssh = '~/git/ssh/'
+
+" s:config_list concatenates s:vim_home or s:vim_ssh with the appropriate
+" component. 
+let s:config_list = 
+                \ [ s:vim_home . 'bootstrap.vim'
+                \ , s:vim_home . 'autoload/plug.vim'
+                \ , s:vim_home . 'plug.vim'
+                \ , s:vim_ssh  . 'config.vim'
+                \ ]
+
+" Iterate s:config_list to kick-start Vim. 
+for files in s:config_list
+  for f in split(expand(files), '\n')
+    exec 'source '.f
+  endfor
+endfor
+
+``` 
+
 ### bootstrap.vim
 I use [vim-plug](https://github.com/junegunn/vim-plug) to manage Vim plugins.
 bootstrap.vim installs [vim-plug](https://github.com/junegunn/vim-plug) when

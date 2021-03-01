@@ -225,13 +225,39 @@ function! FixTerminal()
   if !g:os_arch
     set termguicolors
     if exists('g:loaded_bundle_colors')
-      colorscheme base16-chalk
+      colorscheme base16-ia-dark
     endif
     autocmd OptionSet guicursor noautocmd set guicursor=
   endif
 endfunction
 command! FixTerminal call FixTerminal()
 autocmd VimEnter * FixTerminal
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Ripgrep experiments.
+
+" https://github.com/alejandrogallo/vim-ripgrep
+function! Xg(...)
+
+  let l:list = 
+    \ split(
+    \   system("rg --vimgrep ".join(a:000, " ")), 
+    \   "\n")
+
+  let l:ql = []
+
+  for l:item in l:list
+    let sit = split(l:item, ":")
+    call add(l:ql,
+        \ {"filename": sit[0], "lnum": sit[1], "col": sit[2], "text": sit[3]})
+  endfor
+
+  call setqflist(l:ql, 'r')
+
+  echo 'Rg results: '.len(l:ql)
+
+endfunction
+command! -nargs=* Xg call Xg(<q-args>)
 
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

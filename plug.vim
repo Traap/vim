@@ -55,6 +55,7 @@ Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
+Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'

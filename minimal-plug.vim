@@ -2,10 +2,33 @@
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'neovim/nvim-lspconfig'
+" Must have
+
+Plug 'chriskempson/base16-vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
+Plug 'lervag/wiki-ft.vim'
+Plug 'lervag/wiki.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'vim-utils/vim-most-minimal-folds'
 
+" Now experiment.
+Plug 'neovim/nvim-lspconfig'
+
 call plug#end()
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Indicate vimplug installation is done.
+
+if g:not_finish_vimplug
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Minimal setting 
@@ -26,13 +49,6 @@ set textwidth=80
 set timeoutlen=500
 
 colorscheme desert
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Indicate vimplug installation is done.
-
-if g:not_finish_vimplug
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ vim-plug-lookup : Lookup a plugin on GitHub 
@@ -80,11 +96,11 @@ nnoremap <leader>V V`]
 " Make only the current window visible. 
 nnoremap <silent> <leader>oo :only<cr>
 
-" Execute the current line of text as a shell command.
-noremap <leader>E !!$SHELL<cr>
-
-"  KJV keybindings
+" verse lookup.
 nnoremap gk 0mMvg_"ky :exec "r!kjv  -b -d -w 65" getreg("k")<cr>
+
+" Markdown highlights and indentation.
+vmap gs S*v)3>
 
 " -------------------------------------------------------------------------- }}}
 " {{{ ???

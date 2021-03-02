@@ -11,9 +11,9 @@ if !filereadable(vimplug_exists)
   echo ""
   silent !\curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  let g:not_finish_vimplug = 1 
+  let g:traap_pluginstall = 1 
 else
-  let g:not_finish_vimplug = 0 
+  let g:traap_pluginstall = 0 
 endif
 
 " ---------------------------------------------------------------------------}}}

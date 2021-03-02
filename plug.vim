@@ -146,9 +146,7 @@ Plug 'Traap/vim-bundle-plantuml'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
 Plug 'Traap/vim-bundle-settings'
-
-" Disabled 2021-02-15
-" Plug 'Traap/vim-bundle-terminal'
+Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-wildignore'

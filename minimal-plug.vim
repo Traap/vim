@@ -4,6 +4,7 @@ call plug#begin("$HOME/.vim/bundle")
 
 " Must have
 
+Plug 'ajh17/VimCompletesMe'
 Plug 'chriskempson/base16-vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}

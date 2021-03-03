@@ -1,4 +1,4 @@
-" {{{ Tell Vim where our plugin manager is located.
+" {{{ Tell vim-plug where out plugins are located. 
 
 call plug#begin('~/.vim/bundle')
 
@@ -49,7 +49,6 @@ Plug 'aklt/plantuml-syntax'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
-
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
@@ -60,7 +59,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-easy-align'
-" Plug 'kevinoid/vim-jsonc'
+Plug 'kevinoid/vim-jsonc'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'lervag/vimtex'
@@ -96,6 +95,7 @@ Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+"Plug 'ycm-core/YouCompleteMe'
 
 if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -116,7 +116,7 @@ if !exists("$MSYSTEM")
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-rake'
   Plug 'tpope/vim-rbenv'
-endif 
+endif
 
 if has('nvim')
   Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
@@ -238,10 +238,7 @@ autocmd VimEnter * FixTerminal
 " https://github.com/alejandrogallo/vim-ripgrep
 function! Xg(...)
 
-  let l:list = 
-    \ split(
-    \   system("rg --vimgrep ".join(a:000, " ")), 
-    \   "\n")
+  let l:list = split(system("rg --vimgrep " . join(a:000, " ")), "\n")
 
   let l:ql = []
 
@@ -257,6 +254,11 @@ function! Xg(...)
 
 endfunction
 command! -nargs=* Xg call Xg(<q-args>)
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Your next experiment goes here.
+
+
 
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

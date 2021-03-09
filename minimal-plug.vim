@@ -1,11 +1,11 @@
-" {{{ Tell vim-plug where our plugins are located.
+" {{{ Minimum plugings.
 
 call plug#begin("$HOME/.vim/bundle")
 
-" Must have
-
-Plug 'ajh17/VimCompletesMe'
+Plug 'ajh17/vimcompletesme'
 Plug 'chriskempson/base16-vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
@@ -17,16 +17,11 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-utils/vim-most-minimal-folds'
 
 call plug#end()
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Indicate vimplug installation is done.
-
-if g:traap_pluginstall
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Minimal setting
@@ -46,8 +41,11 @@ set signcolumn=yes
 set textwidth=80
 set timeoutlen=500
 
-colorscheme desert
+let g:airline_symbols = {}
+let g:airline_symbols.space = "\ua0"
 
+let g:airline_powerline_fonts = 1
+let g:airline_theme='violet'
 " -------------------------------------------------------------------------- }}}
 " {{{ Minimal keybindings that I must have!!!
 
@@ -131,12 +129,54 @@ nnoremap <leader>gP :Git pull<cr>
 nnoremap <leader>gs :G<cr>gg<c-n><c-n>
 nnoremap <leader>gD :Gvdiff<cr>
 
+" Sort current buffer. 
+nnoremap <leader>s vip:!sort<cr>
+
+" Sort visual selection.
+vnoremap <leader>s :!sort<cr>
+
+" Sort visual seclection unique
+vnoremap <leader>u :sort u<cr>
+
 " Update and upgrade vim-plug.
 command! PU PlugUpdate |
        \    PlugUpgrade
 
 " -------------------------------------------------------------------------- }}}
-" {{{ vim-plug-lookup : Lookup a plugin on GitHub
+" {{{ Minimal color settings. 
+
+" Use visible search highlighting.
+highlight! link Visual Search
+
+" Clear some items.
+highlight clear SpellBad
+highlight clear Conceal
+
+" Adjust background color so I can read highlighted text better. 
+highlight DiffAdd    cterm=bold      ctermfg=10  ctermbg=19 gui=none guifg=bg guibg=Red
+highlight DiffChange cterm=bold      ctermfg=5   ctermbg=19 gui=none guifg=bg guibg=Red
+highlight DiffDelete cterm=bold      ctermfg=9   ctermbg=19 gui=none guifg=bg guibg=Red
+highlight search     cterm=bold      ctermfg=16  ctermbg=19 gui=none guifg=bg guibg=Red
+highlight DiffText   cterm=bold      ctermfg=155 ctermbg=19 gui=none guifg=bg guibg=Red
+highlight Folded                     ctermfg=100 ctermbg=19 gui=none guifg=bg guibg=Red
+highlight SpellBad   cterm=underline ctermfg=3   ctermbg=19 gui=undercurl
+
+highlight ColorColumn ctermbg=18
+highlight SignColumn  ctermbg=19
+
+highlight clear Folded
+highlight Folded ctermfg=12
+highlight Comment ctermfg=12
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Auto install plugins 
+
+if g:traap_pluginstall
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Lookup a plugin on GitHub
 
 if exists('g:loaded_plug_lookup')
   finish
@@ -149,10 +189,5 @@ function! PlugLookup(pat)
     call jobstart(url)
   endif
 endfunction
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Your next experiment goes here. 
-
-
 
 " -------------------------------------------------------------------------- }}}

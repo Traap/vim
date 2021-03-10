@@ -2,12 +2,16 @@
 
 call plug#begin("$HOME/.vim/bundle")
 
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 Plug 'ajh17/vimcompletesme'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'jremmen/vim-ripgrep'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'lervag/wiki-ft.vim'
@@ -46,6 +50,8 @@ let g:airline_symbols.space = "\ua0"
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='violet'
+
+let g:fzf_preview_window = ['right:50%', 'ctrl-/']
 " -------------------------------------------------------------------------- }}}
 " {{{ Minimal keybindings that I must have!!!
 
@@ -107,9 +113,9 @@ map <silent><a-k> :resize -1<cr>
 map <silent><a-l> :vertical resize +1<cr>
 
 " Traditional FZF
-nnoremap <silent> <leader>ff :FZF<CR>
-nnoremap <silent> <leader>fg :FZF ~/git/<CR>
-nnoremap <silent> <leader>fv :FZF ~/git/vim/<CR>
+nnoremap <silent> <leader>ff :Files <CR>
+nnoremap <silent> <leader>fg :Files ~/git/<CR>
+nnoremap <silent> <leader>fv :Files ~/git/vim/<CR>
 
 " Wiki.wim FZF
 nnoremap <silent> <leader>fw :WikiFzfPages<cr>
@@ -137,6 +143,12 @@ vnoremap <leader>s :!sort<cr>
 
 " Sort visual seclection unique
 vnoremap <leader>u :sort u<cr>
+
+" Telescope command-line sugar.
+nnoremap <leader>tf <cmd>Telescope find_files<cr>
+nnoremap <leader>tg <cmd>Telescope live_grep<cr>
+nnoremap <leader>tb <cmd>Telescope buffers<cr>
+nnoremap <leader>th <cmd>Telescope help_tags<cr>
 
 " Update and upgrade vim-plug.
 command! PU PlugUpdate |

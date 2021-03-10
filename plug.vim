@@ -97,9 +97,9 @@ Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 "Plug 'ycm-core/YouCompleteMe'
 
-" if v:version >= 800
-"   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" endif
+if v:version >= 800
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
 
 if has('macunix')
   Plug 'sjl/vitality.vim'

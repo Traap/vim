@@ -96,6 +96,8 @@ Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 "Plug 'ycm-core/YouCompleteMe'
+Plug 'PProvost/vim-ps1'
+Plug 'plasticboy/vim-markdown'
 
 if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}

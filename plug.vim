@@ -176,7 +176,7 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Volatile Experiments.  You have been warned.
 "
-" This sections contains Vim snippets that maybe deleted my next push, or mature
+" These sections contain Vim snippets that maybe deleted my next push, or mature
 " into a vim-bundle-xyz.
 
 " {{{ TogglePostBuffer experiments.
@@ -203,24 +203,6 @@ endfunction
 " -------------------------------------------------------------------------- }}}
 " {{{ nvim has the last words.
 
-if has('nvim')
-  let g:man_hardwrap=1
-  if g:os_wsl
-    let g:clipboard = {
-          \   'name': 'myClipboard',
-          \   'copy': {
-          \      '+': 'xsel --nodetach -i -b',
-          \      '*': 'xsel --nodetach -i -b',
-          \    },
-          \   'paste': {
-          \      '+': 'xsel -o -b',
-          \      '*': 'xsel -o -b',
-          \   },
-          \   'cache_enabled': 1,
-          \ }
-  endif
-endif
-
 function! FixTerminal()
   if !g:os_arch
     set termguicolors
@@ -232,29 +214,6 @@ function! FixTerminal()
 endfunction
 command! FixTerminal call FixTerminal()
 autocmd VimEnter * FixTerminal
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Ripgrep experiments.
-
-" https://github.com/alejandrogallo/vim-ripgrep
-function! Xg(...)
-
-  let l:list = split(system("rg --vimgrep " . join(a:000, " ")), "\n")
-
-  let l:ql = []
-
-  for l:item in l:list
-    let sit = split(l:item, ":")
-    call add(l:ql,
-        \ {"filename": sit[0], "lnum": sit[1], "col": sit[2], "text": sit[3]})
-  endfor
-
-  call setqflist(l:ql, 'r')
-
-  echo 'Rg results: '.len(l:ql)
-
-endfunction
-command! -nargs=* Xg call Xg(<q-args>)
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.

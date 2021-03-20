@@ -201,21 +201,6 @@ function! TogglePostBuffer()
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ nvim has the last words.
-
-function! FixTerminal()
-  if !g:os_arch
-    set termguicolors
-    if exists('g:loaded_bundle_colors')
-      colorscheme base16-ia-dark
-    endif
-    autocmd OptionSet guicursor noautocmd set guicursor=
-  endif
-endfunction
-command! FixTerminal call FixTerminal()
-autocmd VimEnter * FixTerminal
-
-" -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 
 

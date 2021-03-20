@@ -99,7 +99,7 @@ my Vim environment is controlled.
 ## History
 I started using Vim during my Christmas 2015 work break.  I chose Vim because I
 needed an editor that I could use consistently across various Linux, OSX, and
-Windows environments.  I only know how to start and exit Vim.  I could not do
+Windows environments.  I only knew how to start and exit Vim.  I could not do
 the same with Emacs.  
 
 I started my journey searching [YouTube](https://www.youtube.com) for Vim.  I

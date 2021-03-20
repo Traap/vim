@@ -3,3 +3,4 @@ _build/
 bundle/
 .netrwhist
 undodir/
+undodir-nvim/

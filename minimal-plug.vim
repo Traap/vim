@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -36,9 +37,11 @@ let maplocalleader = ','
 
 set clipboard+=unnamedplus
 set colorcolumn=+1
+set complete=.,w,b,u,t,i,kspell
 set foldmethod=marker
 set hlsearch
 set ignorecase
+set lazyredraw
 set number
 set numberwidth=1
 set path+=**
@@ -53,6 +56,9 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='violet'
 
 let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
+let g:most_minimal_folds_line_count = 1 
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Minimal keybindings that I must have!!!
 

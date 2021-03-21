@@ -157,7 +157,7 @@ experiment with Vim plugins and settings. Now that I use
 [vim-plug](https://github.com/junegunn/vim-plug), I can safely comment out a few
 [plug](https://github.com/Traap/vim/blob/master/plug.vim)  lines without much
 effort.  I have
-a [minimal]((https://github.com/Traap/vim/blob/master/minimial-plug.vim) setup
+a [minimal](https://github.com/Traap/vim/blob/master/minimial-plug.vim) setup
 I use to help people learn vim or neovim.
 
 I centrally located my

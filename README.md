@@ -8,7 +8,7 @@ win32unix.  I set up Vim with following simple steps.
 
 ```bash
 cd 
-mkdir git
+mkdir -p git
 cd ~/git
 rm -rf ~/git/vim
 git clone https://github.com:Traap/vim.git
@@ -156,11 +156,13 @@ My goal was to type Vim have it automatically bootstrap itself.  I also want to
 experiment with Vim plugins and settings. Now that I use
 [vim-plug](https://github.com/junegunn/vim-plug), I can safely comment out a few
 [plug](https://github.com/Traap/vim/blob/master/plug.vim)  lines without much
-effort.
+effort.  I have
+a [minimal]((https://github.com/Traap/vim/blob/master/minimial-plug.vim) setup
+I use to help people learn vim or neovim.
 
 I centrally located my
 [vim-bundle-keybindings](https://github.com/Traap/vim-bundle-keybindings/blob/master/plugin/bundle-keybindings.vim).
-LaTeX the primary language I use for writtiig documents.  I personalized
+LaTeX the primary language I use for writing documents.  I personalized
 [vimtex](https://github.com/lervag/vimtex) with
 [vim-bundle-vimtex](https://github.com/Traap/vim-bundle-vimtex/blob/master/plugin/bundle-vimtex.vim).
 These simple abstractions support [loose

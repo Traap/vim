@@ -156,9 +156,11 @@ My goal was to type Vim have it automatically bootstrap itself.  I also want to
 experiment with Vim plugins and settings. Now that I use
 [vim-plug](https://github.com/junegunn/vim-plug), I can safely comment out a few
 [plug](https://github.com/Traap/vim/blob/master/plug.vim)  lines without much
-effort.  I have
-a [minimal](https://github.com/Traap/vim/blob/master/minimial-plug.vim) setup
-I use to help people learn vim or neovim.
+effort.  
+
+[minimalrc](https://github.com/Traap/vim/blob/master/minimalrc) and
+[minimal-plug](https://github.com/Traap/vim/blob/master/minimal-plug.vim) are used
+a learning aids.
 
 I centrally located my
 [vim-bundle-keybindings](https://github.com/Traap/vim-bundle-keybindings/blob/master/plugin/bundle-keybindings.vim).

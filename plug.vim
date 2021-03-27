@@ -203,7 +203,23 @@ endfunction
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 
+function! MyDebug()
+  echom "g:vimtex_view_general_viewer: " . g:vimtex_view_general_viewer
+  echom "                    g:os_wsl: " . has('g:os_wsl')
+  echom "                 gui_running: " . has('gui_running')
+  echom "                       linux: " . has('linux')
+  echom "                        unix: " . has('unix')
+  echom "                      system: " . has('system')
+  echom "               termguicolors: " . has('termguicolors')
+  echom "                    terminal: " . has('terminal')
+  echom "                    terminfo: " . has('terminfo')
+  echom "                termresponse: " . has('termresponse')
+  echom "                     tgetent: " . has('tgetent')
+  echom "                   win32unix: " . has('win32unix')
+  echom "                       win32: " . has('win32')
+  echom "                       win64: " . has('win64')
+endfunction
 
-
+nnoremap <silent> ,md :call MyDebug()<cr>
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

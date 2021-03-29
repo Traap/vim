@@ -95,12 +95,15 @@ Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+" 2021-03-25 Neovim use buildin lsp. YouCompleteMe: vim candidate only.
 " Plug 'ycm-core/YouCompleteMe'
 Plug 'PProvost/vim-ps1'
+" 2021-03-25 Defaults setting are not appling to me. 
 " Plug 'plasticboy/vim-markdown'
 
+" 2021-03-25 Disabled to check a wsl2 / terminal display issue.
 if v:version >= 800
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 if has('macunix')
@@ -135,7 +138,8 @@ Plug 'Traap/vim-bundle-airline'
 " Disabled 2021-02-15
 " Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-autocmd'
-Plug 'Traap/vim-bundle-coc'
+" 2021-03-25 Disabled to check a wsl2 / terminal display issue.
+" Plug 'Traap/vim-bundle-coc'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-github-issues'

@@ -54,6 +54,7 @@ Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
+Plug 'itchyny/lightline.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
@@ -87,17 +88,18 @@ Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
 Plug 'tyru/open-browser.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+
 " 2021-03-25 Neovim use buildin lsp. YouCompleteMe: vim candidate only.
 " Plug 'ycm-core/YouCompleteMe'
+
 Plug 'PProvost/vim-ps1'
+
 " 2021-03-25 Defaults setting are not appling to me. 
 " Plug 'plasticboy/vim-markdown'
 
@@ -138,8 +140,10 @@ Plug 'Traap/vim-bundle-airline'
 " Disabled 2021-02-15
 " Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-autocmd'
+
 " 2021-03-25 Disabled to check a wsl2 / terminal display issue.
 " Plug 'Traap/vim-bundle-coc'
+
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-github-issues'
@@ -205,7 +209,7 @@ function! TogglePostBuffer()
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Your next experiment goes here.
+" {{{ echom debug information. 
 
 function! MyDebug()
   echom "g:vimtex_view_general_viewer: " . g:vimtex_view_general_viewer
@@ -225,5 +229,23 @@ function! MyDebug()
 endfunction
 
 nnoremap <silent> ,md :call MyDebug()<cr>
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Light line testing. 
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ } 
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Your next experiment goes here.
+
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

@@ -72,6 +72,10 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'ngmy/vim-rubocop'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'rhysd/vim-grammarous'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -135,7 +139,6 @@ endif
 
 " My goal is to customize a community plugin after it has been loaded.
 Plug 'Traap/vim-bundle-abbreviate'
-Plug 'Traap/vim-bundle-airline'
 
 " Disabled 2021-02-15
 " Plug 'Traap/vim-bundle-ale'

@@ -248,6 +248,15 @@ let g:lightline = {
       \ } 
 
 " -------------------------------------------------------------------------- }}}
+" {{{ Windoz 32 or Windoz 64 check.
+
+if (has('win32') || has('win64')) && has('termguicolors')
+  set termguicolors
+  colorscheme base16-chalk
+  cd ~/git
+endif
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 
 " -------------------------------------------------------------------------- }}}

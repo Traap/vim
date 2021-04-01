@@ -72,7 +72,6 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'ngmy/vim-rubocop'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -116,7 +115,7 @@ if has('macunix')
   Plug 'sjl/vitality.vim'
 endif
 
-" Lighten the load when using mingw64
+" Lighten the load when using msys (Git Bash). 
 if !exists("$MSYSTEM")
   Plug 'dbeniamine/cheat.sh-vim'
   Plug 'RishabhRD/nvim-cheat.sh'
@@ -131,6 +130,7 @@ endif
 
 if has('nvim')
   Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
+  Plug 'nvim-lua/plenary.nvim'
   Plug 'rbgrouleff/bclose.vim'
 endif
 

@@ -259,5 +259,9 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 
+" Use Ripgrep to perform a recursive directory case insensitive file search
+" for any file contining the information on the current line.
+"
+nnoremap gr 0mMvg_"ky :exec "r!rg '" . getreg("k") . "' -i ." <cr>
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

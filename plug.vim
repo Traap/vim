@@ -103,12 +103,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
 Plug 'PProvost/vim-ps1'
 
-" 2021-03-25 Defaults setting are not appling to me. 
-" Plug 'plasticboy/vim-markdown'
-
-" 2021-03-25 Disabled to check a wsl2 / terminal display issue.
+" 2021-03-25 Eenabled to check Microsoft Termial display issues. 
 if v:version >= 800
-  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 if has('macunix')

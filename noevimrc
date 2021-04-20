@@ -26,7 +26,7 @@ let s:vim_ssh = '~/git/ssh/'
 let s:config_list = 
                 \ [ s:vim_home . 'bootstrap.vim'
                 \ , s:vim_home . 'autoload/plug.vim'
-                \ , s:vim_home . 'minimal-plug.vim'
+                \ , s:vim_home . 'nplug.vim'
                 \ , s:vim_ssh  . 'config.vim'
                 \ ]
 

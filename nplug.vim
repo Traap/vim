@@ -62,10 +62,10 @@ let g:most_minimal_folds_line_count = 1
 " {{{ Minimal keybindings that I must have!!!
 
 " Copy entire buffer to "+y buffer.
-nnoremap <silent>cc ggVGg_"+y
+nnoremap <silent><leader>cc ggVGg_"+y
 
 " Copy visual selection to "+y buffer.
-vnoremap <silent>cc "+y
+vnoremap <silent><leader>cc "+y
 
 " Paste
 nnoremap <silent><leader>cv "+p

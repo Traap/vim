@@ -1,3 +1,9 @@
+" {{{ Archlinux and Windows Subsystem for Linux check 
+
+let g:os_arch = (substitute(system('uname -r'), '\n', '', '') =~ 'arch')
+let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Tell vim-plug where out plugins are located. 
 
 call plug#begin('~/.vim/bundle')
@@ -34,15 +40,11 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Preamble ... One Ring to Rule them All!
 
-" Plugins loaded define global values needed by a community plugin.
-
-Plug 'Traap/vim-bundle-vimwiki'
-
 " vimtex needs to know default file format.
 let g:tex_flavor = 'latex'
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Begin community plugins
+" {{{ vim or neovim community plugins. 
 
 Plug 'ajh17/VimCompletesMe'
 Plug 'aklt/plantuml-syntax'
@@ -72,9 +74,6 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'ngmy/vim-rubocop'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'rhysd/vim-grammarous'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -102,17 +101,24 @@ Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 " Plug 'ycm-core/YouCompleteMe'
 
 Plug 'PProvost/vim-ps1'
-
-" 2021-03-25 Eenabled to check Microsoft Termial display issues. 
-if v:version >= 800
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+" -------------------------------------------------------------------------- }}}
+" {{{ macunix plugins
 
 if has('macunix')
   Plug 'sjl/vitality.vim'
 endif
 
-" Lighten the load when using msys (Git Bash). 
+" -------------------------------------------------------------------------- }}}
+" {{{ Vim 8 or greater
+
+"  2021-03-25 Eenabled to check Microsoft Termial display issues. 
+if v:version >= 800
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+endif
+
+" -------------------------------------------------------------------------- }}}
+" {{{ Lighten the load when using msys (Git Bash). 
+
 if !exists("$MSYSTEM")
   Plug 'dbeniamine/cheat.sh-vim'
   Plug 'RishabhRD/nvim-cheat.sh'
@@ -125,13 +131,18 @@ if !exists("$MSYSTEM")
   Plug 'tpope/vim-rbenv'
 endif
 
+" -------------------------------------------------------------------------- }}}
+" {{{ neovim only plugins
 if has('nvim')
   Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
   Plug 'rbgrouleff/bclose.vim'
 endif
 
-" End community plugins ---------------------------------------------------- }}}
+" -------------------------------------------------------------------------- }}}
 " {{{ Begin my bundles
 
 " My goal is to customize a community plugin after it has been loaded.
@@ -159,10 +170,11 @@ Plug 'Traap/vim-bundle-settings'
 Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
+Plug 'Traap/vim-bundle-vimwiki'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 
-" End my bundles ----------------------------------------------------------- }}}
+" -------------------------------------------------------------------------- }}}
 " {{{ Now order matters.
 
 Plug 'Traap/vim-bundle-colors'

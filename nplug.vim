@@ -1,7 +1,14 @@
+" {{{ Archlinux and Windows Subsystem for Linux check 
+
+let g:os_arch = (substitute(system('uname -r'), '\n', '', '') =~ 'arch')
+let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+
+" -------------------------------------------------------------------------- }}}
 " {{{ Minimum plugings.
 
 call plug#begin("$HOME/.vim/bundle")
 
+" Community plugins
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -25,6 +32,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-utils/vim-most-minimal-folds'
+
+" Customize community plugin. 
+
+Plug 'Traap/vim-bundle-vimtex'
+Plug 'Traap/vim-bundle-vimwiki'
 
 call plug#end()
 

@@ -73,6 +73,8 @@ Plug 'mbbill/undotree'
 Plug 'mechatroner/rainbow_csv'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
+Plug 'mhinz/vim-rfc'
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 Plug 'ngmy/vim-rubocop'
 Plug 'rhysd/vim-grammarous'
 Plug 'rust-lang/rust.vim'
@@ -92,6 +94,7 @@ Plug 'Traap/vim-ide'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
+"Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
@@ -264,13 +267,8 @@ if (has('win32') || has('win64')) && has('termguicolors')
   colorscheme base16-chalk
   cd ~/git
 endif
-
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 
-" Use Ripgrep to perform a recursive directory case insensitive file search
-" for any file contining the information on the current line.
-"
-nnoremap gr 0mMvg_"ky :exec "r!rg '" . getreg("k") . "' -i ." <cr>
 " -------------------------------------------------------------------------- }}}
 " -------------------------------------------------------------------------- }}}

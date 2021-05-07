@@ -74,7 +74,6 @@ Plug 'mechatroner/rainbow_csv'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'mhinz/vim-rfc'
-Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
 Plug 'ngmy/vim-rubocop'
 Plug 'rhysd/vim-grammarous'
 Plug 'rust-lang/rust.vim'
@@ -136,8 +135,10 @@ endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ neovim only plugins
+
 if has('nvim')
   Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
+  Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
@@ -267,6 +268,17 @@ if (has('win32') || has('win64')) && has('termguicolors')
   colorscheme base16-chalk
   cd ~/git
 endif
+" -------------------------------------------------------------------------- }}}
+" {{{ ThePrimeagen : Clear registers 
+
+fun! EmptyRegisters()
+    let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
+    for r in regs
+        call setreg(r, [])
+    endfor
+    echo "Registers cleared."
+endfun
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 

@@ -1,41 +1,14 @@
 " {{{ Archlinux and Windows Subsystem for Linux check 
 
-let g:os_arch = (substitute(system('uname -r'), '\n', '', '') =~ 'arch')
-let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
+let g:os_arch = trim(system("cat /etc/issue | rg 'Arch Linux' -c"))
+let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft') ||
+              \ (substitute(system('uname -r'), '\n', '', '') =~ 'WSL2') 
+             
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Tell vim-plug where out plugins are located. 
 
 call plug#begin('~/.vim/bundle')
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Are we running WSL (windows Subsystem for Linux) or Arch Linux
-"
-" uname prints system information.  The information below was captured while
-" running Ubuntu 18.04 from WSL2.
-"
-" uname        : Linux:
-"     kernel -s: Linux:
-"      node  -n: USLKZ6QQ6WT2:
-"   release  -r: 4.4.0-18362-Microsoft:
-"   version  -v: #476-Microsoft Fri Nov 01 16:53:00 PST 2019:
-"   machine  -m: x86_64:
-" processor  -p: x86_64:
-"  hardware  -i: x86_64:
-"        OS  -o: GNU/Linux
-
-" Establish defaults
-let g:os_wsl = 0
-let g:os_arch = 0
-
-if has('unix') && has('nvim') && has('wsl')
-  " This check uses build-in nvim capabilities.
-  let g:os_wsl = 1
-elseif has('unix')
-  " This check pulls information from uname.
-  let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft')
-  let g:os_arch = (substitute(system('uname -r'), '\n', '', '') =~ 'arch')
-endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Preamble ... One Ring to Rule them All!
@@ -229,7 +202,9 @@ endfunction
 
 function! MyDebug()
   echom "g:vimtex_view_general_viewer: " . g:vimtex_view_general_viewer
-  echom "                    g:os_wsl: " . has('g:os_wsl')
+  echom "                   g:os_arch: " . g:os_arch
+  echom "                    g:os_wsl: " . g:os_wsl
+  echom "                         wsl: " . has('wsl')
   echom "                 gui_running: " . has('gui_running')
   echom "                       linux: " . has('linux')
   echom "                        unix: " . has('unix')

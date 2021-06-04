@@ -258,7 +258,6 @@ endif
 
 if !has('nvim')
    set termguicolors
-   colorscheme base16-chalk
 endif
 
 " -------------------------------------------------------------------------- }}}

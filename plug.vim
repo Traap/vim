@@ -21,15 +21,12 @@ let g:tex_flavor = 'latex'
 
 Plug 'ajh17/VimCompletesMe'
 Plug 'aklt/plantuml-syntax'
-Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
-Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
-Plug 'itchyny/lightline.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
@@ -48,6 +45,7 @@ Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
 Plug 'mhinz/vim-rfc'
 Plug 'ngmy/vim-rubocop'
+Plug 'rbgrouleff/bclose.vim'
 Plug 'rhysd/vim-grammarous'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
@@ -70,12 +68,12 @@ Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
-Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 
 " 2021-03-25 Neovim use buildin lsp. YouCompleteMe: vim candidate only.
 " Plug 'ycm-core/YouCompleteMe'
 
 Plug 'PProvost/vim-ps1'
+
 " -------------------------------------------------------------------------- }}}
 " {{{ macunix plugins
 
@@ -88,7 +86,7 @@ endif
 
 "  2021-03-25 Eenabled to check Microsoft Termial display issues. 
 if v:version >= 800
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -111,12 +109,42 @@ endif
 
 if has('nvim')
   Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
+  Plug 'glepnir/galaxyline.nvim'
+  Plug 'hrsh7th/nvim-compe'
+  Plug 'kabouzeid/nvim-lspinstall'
+  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'norcalli/snippets.nvim'
   Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
+  Plug 'nvim-lua/completion-nvim'
   Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-lua/plenary.nvim',
   Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/popup.nvim',
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  Plug 'nvim-telescope/telescope-media-files.nvim',
+  Plug 'nvim-telescope/telescope-snippets.nvim',
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'rbgrouleff/bclose.vim'
+  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'tjdevries/nlua.nvim'
+  Plug 'sbdchd/neoformat'
+  Plug 'tweekmonster/startuptime.vim'
+else
+  " Vim only plugsins
+  Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
+  Plug 'chriskempson/base16-vim'
+  Plug 'itchyny/lightline.vim'
+  Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
+  Plug 'ryanoasis/vim-devicons'
+  " Do my stuff last. :)
+  Plug 'Traap/vim-bundle-colors'
+  Plug 'Traap/vim-bundle-keybindings'
+  Plug 'Traap/vim-bundle-nerdtree'
+  Plug 'Traap/vim-bundle-settings'
+  Plug 'Traap/vim-bundle-terminal'
+  Plug 'Traap/vim-bundle-vimtex'
+  Plug 'Traap/vim-bundle-vimwiki'
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -139,24 +167,12 @@ Plug 'Traap/vim-bundle-grammarous'
 Plug 'Traap/vim-bundle-haskell'
 Plug 'Traap/vim-bundle-lmgtfy'
 Plug 'Traap/vim-bundle-macunix'
-Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-plantuml'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
-Plug 'Traap/vim-bundle-settings'
-Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
-Plug 'Traap/vim-bundle-vimtex'
-Plug 'Traap/vim-bundle-vimwiki'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Now order matters.
-
-Plug 'Traap/vim-bundle-colors'
-Plug 'Traap/vim-bundle-keybindings'
-Plug 'ryanoasis/vim-devicons'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.
@@ -224,25 +240,27 @@ nnoremap <silent> ,md :call MyDebug()<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Light line testing. 
 
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ } 
+if !has('nvim')
+  let g:lightline = {
+        \ 'colorscheme': 'jellybeans',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead'
+        \ },
+        \ } 
+endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Windoz 32 or Windoz 64 check.
 
-if (has('win32') || has('win64')) && has('termguicolors')
-  set termguicolors
-  colorscheme base16-chalk
-  cd ~/git
+if !has('nvim')
+   set termguicolors
+   colorscheme base16-chalk
 endif
+
 " -------------------------------------------------------------------------- }}}
 " {{{ ThePrimeagen : Clear registers 
 
@@ -257,5 +275,8 @@ endfun
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 
-" -------------------------------------------------------------------------- }}}
+if has('nvim')
+  lua require('config')
+endif 
+
 " -------------------------------------------------------------------------- }}}

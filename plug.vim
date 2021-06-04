@@ -19,9 +19,6 @@ let g:tex_flavor = 'latex'
 " -------------------------------------------------------------------------- }}}
 " {{{ vim 
 
-Plug 'Traap/vim-dragvisuals'
-Plug 'Traap/vim-helptags'
-Plug 'Traap/vim-ide'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'ajh17/VimCompletesMe'
 Plug 'aklt/plantuml-syntax'
@@ -59,6 +56,9 @@ Plug 'rust-lang/rust.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
+Plug 'Traap/vim-dragvisuals'
+Plug 'Traap/vim-helptags'
+Plug 'Traap/vim-ide'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -74,7 +74,7 @@ Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ macunix plugins
@@ -119,26 +119,29 @@ Plug 'Traap/vim-bundle-autocmd'
 " 2021-03-25 Disabled to check a wsl2 / terminal display issue.
 " Plug 'Traap/vim-bundle-coc'
 
-Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-github-issues'
 Plug 'Traap/vim-bundle-grammarous'
 Plug 'Traap/vim-bundle-haskell'
-Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-lmgtfy'
 Plug 'Traap/vim-bundle-macunix'
 Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-plantuml'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
-Plug 'Traap/vim-bundle-settings'
-Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
 Plug 'Traap/vim-bundle-vimtex'
 Plug 'Traap/vim-bundle-vimwiki'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
+
+" Last words.
+Plug 'Traap/vim-bundle-colors'
+Plug 'Traap/vim-bundle-keybindings'
+Plug 'Traap/vim-bundle-settings'
+Plug 'Traap/vim-bundle-terminal'
+
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.

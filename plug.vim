@@ -17,16 +17,23 @@ call plug#begin('~/.vim/bundle')
 let g:tex_flavor = 'latex'
 
 " -------------------------------------------------------------------------- }}}
-" {{{ vim or neovim community plugins. 
+" {{{ vim 
 
+Plug 'Traap/vim-dragvisuals'
+Plug 'Traap/vim-helptags'
+Plug 'Traap/vim-ide'
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'ajh17/VimCompletesMe'
 Plug 'aklt/plantuml-syntax'
+Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/vim-asterisk'
+Plug 'itchyny/lightline.vim'
+Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
 Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
 Plug 'junegunn/fzf.vim'
@@ -41,13 +48,15 @@ Plug 'lervag/wiki.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mbbill/undotree'
 Plug 'mechatroner/rainbow_csv'
+Plug 'mhinz/vim-rfc'
 Plug 'mileszs/ack.vim'
 Plug 'moll/vim-bbye'
-Plug 'mhinz/vim-rfc'
+Plug 'PProvost/vim-ps1'
 Plug 'ngmy/vim-rubocop'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'rhysd/vim-grammarous'
 Plug 'rust-lang/rust.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-commentary'
@@ -58,21 +67,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'Traap/vim-dragvisuals'
-Plug 'Traap/vim-helptags'
-Plug 'Traap/vim-ide'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
-"Plug 'vim-utils/vim-man'
+Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
-
-" 2021-03-25 Neovim use buildin lsp. YouCompleteMe: vim candidate only.
-" Plug 'ycm-core/YouCompleteMe'
-
-Plug 'PProvost/vim-ps1'
+Plug 'ycm-core/YouCompleteMe'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ macunix plugins
@@ -86,7 +88,7 @@ endif
 
 "  2021-03-25 Eenabled to check Microsoft Termial display issues. 
 if v:version >= 800
-"  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 " -------------------------------------------------------------------------- }}}
@@ -105,49 +107,6 @@ if !exists("$MSYSTEM")
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ neovim only plugins
-
-if has('nvim')
-  Plug 'glacambre/firenvim', {'do': {_ -> firenvim#install(27)}}
-  Plug 'glepnir/galaxyline.nvim'
-  Plug 'hrsh7th/nvim-compe'
-  Plug 'kabouzeid/nvim-lspinstall'
-  Plug 'kyazdani42/nvim-tree.lua'
-  Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'norcalli/snippets.nvim'
-  Plug 'npxbr/glow.nvim', {'do': ':GlowInstall'}
-  Plug 'nvim-lua/completion-nvim'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-lua/plenary.nvim',
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/popup.nvim',
-  Plug 'nvim-telescope/telescope-fzy-native.nvim'
-  Plug 'nvim-telescope/telescope-media-files.nvim',
-  Plug 'nvim-telescope/telescope-snippets.nvim',
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter'
-  Plug 'tjdevries/nlua.nvim'
-  Plug 'sbdchd/neoformat'
-  Plug 'tweekmonster/startuptime.vim'
-else
-  " Vim only plugsins
-  Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
-  Plug 'chriskempson/base16-vim'
-  Plug 'itchyny/lightline.vim'
-  Plug 'ivalkeen/nerdtree-execute', {'on': 'NERDTreeToggle'}
-  Plug 'ryanoasis/vim-devicons'
-  " Do my stuff last. :)
-  Plug 'Traap/vim-bundle-colors'
-  Plug 'Traap/vim-bundle-keybindings'
-  Plug 'Traap/vim-bundle-nerdtree'
-  Plug 'Traap/vim-bundle-settings'
-  Plug 'Traap/vim-bundle-terminal'
-  Plug 'Traap/vim-bundle-vimtex'
-  Plug 'Traap/vim-bundle-vimwiki'
-endif
-
-" -------------------------------------------------------------------------- }}}
 " {{{ Begin my bundles
 
 " My goal is to customize a community plugin after it has been loaded.
@@ -160,17 +119,24 @@ Plug 'Traap/vim-bundle-autocmd'
 " 2021-03-25 Disabled to check a wsl2 / terminal display issue.
 " Plug 'Traap/vim-bundle-coc'
 
+Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-github-issues'
 Plug 'Traap/vim-bundle-grammarous'
 Plug 'Traap/vim-bundle-haskell'
+Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-lmgtfy'
 Plug 'Traap/vim-bundle-macunix'
+Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-plantuml'
 Plug 'Traap/vim-bundle-rainbow'
 Plug 'Traap/vim-bundle-resume'
+Plug 'Traap/vim-bundle-settings'
+Plug 'Traap/vim-bundle-terminal'
 Plug 'Traap/vim-bundle-tmux-runner'
+Plug 'Traap/vim-bundle-vimtex'
+Plug 'Traap/vim-bundle-vimwiki'
 Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 
@@ -240,18 +206,16 @@ nnoremap <silent> ,md :call MyDebug()<cr>
 " -------------------------------------------------------------------------- }}}
 " {{{ Light line testing. 
 
-if !has('nvim')
-  let g:lightline = {
-        \ 'colorscheme': 'jellybeans',
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-        \ },
-        \ 'component_function': {
-        \   'gitbranch': 'FugitiveHead'
-        \ },
-        \ } 
-endif
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ } 
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Windoz 32 or Windoz 64 check.
@@ -274,8 +238,5 @@ endfun
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 
-if has('nvim')
-  lua require('config')
-endif 
 
 " -------------------------------------------------------------------------- }}}

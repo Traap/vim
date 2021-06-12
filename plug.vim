@@ -221,13 +221,6 @@ let g:lightline = {
       \ } 
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Windoz 32 or Windoz 64 check.
-
-" if !has('nvim')
-"    set termguicolors
-" endif
-
-" -------------------------------------------------------------------------- }}}
 " {{{ ThePrimeagen : Clear registers 
 
 fun! EmptyRegisters()

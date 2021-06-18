@@ -1,12 +1,12 @@
-" {{{ Archlinux and Windows Subsystem for Linux check 
+" {{{ Archlinux and Windows Subsystem for Linux check
 
 let g:os_arch = trim(system("cat /etc/issue | rg 'Arch Linux' -c"))
 let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft') ||
-              \ (substitute(system('uname -r'), '\n', '', '') =~ 'WSL2') 
-             
+              \ (substitute(system('uname -r'), '\n', '', '') =~ 'WSL2')
+
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Tell vim-plug where out plugins are located. 
+" {{{ Tell vim-plug where out plugins are located.
 
 call plug#begin('~/.vim/bundle')
 
@@ -17,7 +17,7 @@ call plug#begin('~/.vim/bundle')
 let g:tex_flavor = 'latex'
 
 " -------------------------------------------------------------------------- }}}
-" {{{ vim 
+" {{{ vim
 
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'ajh17/VimCompletesMe'
@@ -25,6 +25,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'chriskempson/base16-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
+Plug 'dkarter/bullets.vim'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ecomba/vim-ruby-refactoring', {'branch': 'main'}
 Plug 'haya14busa/incsearch.vim'
@@ -86,13 +87,13 @@ endif
 " -------------------------------------------------------------------------- }}}
 " {{{ Vim 8 or greater
 
-"  2021-03-25 Eenabled to check Microsoft Termial display issues. 
+"  2021-03-25 Eenabled to check Microsoft Termial display issues.
 if v:version >= 800
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 endif
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Lighten the load when using msys (Git Bash). 
+" {{{ Lighten the load when using msys (Git Bash).
 
 if !exists("$MSYSTEM")
   Plug 'dbeniamine/cheat.sh-vim'
@@ -183,7 +184,7 @@ function! TogglePostBuffer()
 endfunction
 
 " -------------------------------------------------------------------------- }}}
-" {{{ echom debug information. 
+" {{{ echom debug information.
 
 function! MyDebug()
   echom "g:vimtex_view_general_viewer: " . g:vimtex_view_general_viewer
@@ -207,7 +208,7 @@ endfunction
 nnoremap <silent> ,md :call MyDebug()<cr>
 
 " -------------------------------------------------------------------------- }}}
-" {{{ Light line testing. 
+" {{{ Light line testing.
 
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
@@ -218,10 +219,10 @@ let g:lightline = {
       \ 'component_function': {
       \   'gitbranch': 'FugitiveHead'
       \ },
-      \ } 
+      \ }
 
 " -------------------------------------------------------------------------- }}}
-" {{{ ThePrimeagen : Clear registers 
+" {{{ ThePrimeagen : Clear registers
 
 fun! EmptyRegisters()
     let regs=split('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/-"', '\zs')
@@ -231,6 +232,16 @@ fun! EmptyRegisters()
     echo "Registers cleared."
 endfun
 
+" -------------------------------------------------------------------------- }}}
+" {{{ Bullets
+
+let g:bullets_enabled_file_types = [
+    \ 'gitcommit',
+    \ 'markdown',
+    \ 'scratch',
+    \ 'text',
+    \ 'wiki'
+    \]
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 

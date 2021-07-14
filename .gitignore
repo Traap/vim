@@ -1,6 +1,9 @@
-autoload/
-_build/
-bundle/
 .netrwhist
-undodir/
+_build/
+autoload/
+bundle/
+gvimrc
 undodir-nvim/
+undodir/
+viminfo
+vimrc_background

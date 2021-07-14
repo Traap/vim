@@ -1,3 +1,0 @@
-if !exists('g:colors_name') || g:colors_name != 'base16-icy'
-  colorscheme base16-icy
-endif

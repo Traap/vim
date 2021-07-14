@@ -88,9 +88,9 @@ endif
 " {{{ Vim 8 or greater
 
 "  2021-03-25 Eenabled to check Microsoft Termial display issues.
-if v:version >= 800
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-endif
+" if v:version >= 800
+"   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Lighten the load when using msys (Git Bash).

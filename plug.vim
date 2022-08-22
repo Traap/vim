@@ -74,7 +74,6 @@ Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
-" Plug 'ycm-core/YouCompleteMe'
 
 " -------------------------------------------------------------------------- }}}
 " {{{ macunix plugins
@@ -82,14 +81,6 @@ Plug 'will133/vim-dirdiff'
 if has('macunix')
   Plug 'sjl/vitality.vim'
 endif
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Vim 8 or greater
-
-"  2021-03-25 Eenabled to check Microsoft Termial display issues.
-" if v:version >= 800
-"   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" endif
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Lighten the load when using msys (Git Bash).
@@ -112,20 +103,13 @@ endif
 " My goal is to customize a community plugin after it has been loaded.
 Plug 'Traap/vim-bundle-abbreviate'
 
-" Disabled 2021-02-15
-" Plug 'Traap/vim-bundle-ale'
 Plug 'Traap/vim-bundle-autocmd'
-
-" 2021-03-25 Disabled to check a wsl2 / terminal display issue.
-" Plug 'Traap/vim-bundle-coc'
-
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-fzf'
 Plug 'Traap/vim-bundle-github-issues'
 Plug 'Traap/vim-bundle-grammarous'
 Plug 'Traap/vim-bundle-haskell'
 Plug 'Traap/vim-bundle-lmgtfy'
-Plug 'Traap/vim-bundle-macunix'
 Plug 'Traap/vim-bundle-nerdtree'
 Plug 'Traap/vim-bundle-plantuml'
 Plug 'Traap/vim-bundle-rainbow'
@@ -137,10 +121,10 @@ Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 
 " Last words.
-Plug 'Traap/vim-bundle-colors'
+" Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-settings'
-Plug 'Traap/vim-bundle-terminal'
+" Plug 'Traap/vim-bundle-terminal'
 
 
 " -------------------------------------------------------------------------- }}}
@@ -210,7 +194,7 @@ nnoremap <silent> ,md :call MyDebug()<cr>
 " {{{ Light line testing.
 
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'darcula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -241,6 +225,7 @@ let g:bullets_enabled_file_types = [
     \ 'text',
     \ 'wiki'
     \]
+
 " -------------------------------------------------------------------------- }}}
 " {{{ Your next experiment goes here.
 

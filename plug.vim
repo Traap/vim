@@ -121,7 +121,7 @@ Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 
 " Last words.
-" Plug 'Traap/vim-bundle-colors'
+Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-settings'
 " Plug 'Traap/vim-bundle-terminal'

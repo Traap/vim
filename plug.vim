@@ -22,7 +22,8 @@ let g:tex_flavor = 'latex'
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
 Plug 'ajh17/VimCompletesMe'
 Plug 'aklt/plantuml-syntax'
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
+Plug 'rafi/awesome-vim-colorschemes'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'dkarter/bullets.vim'
@@ -121,7 +122,7 @@ Plug 'Traap/vim-bundle-wildignore'
 Plug 'Traap/vim-bundle-wipeout'
 
 " Last words.
-Plug 'Traap/vim-bundle-colors'
+" Plug 'Traap/vim-bundle-colors'
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-settings'
 " Plug 'Traap/vim-bundle-terminal'
@@ -194,7 +195,7 @@ nnoremap <silent> ,md :call MyDebug()<cr>
 " {{{ Light line testing.
 
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'selenized_dark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

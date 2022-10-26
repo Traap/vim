@@ -59,17 +59,30 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 Plug 'Traap/vim-dragvisuals'
 Plug 'Traap/vim-helptags'
 Plug 'Traap/vim-ide'
+Plug 'RishabhRD/nvim-cheat.sh'
+Plug 'dbeniamine/cheat.sh-vim'
 Plug 'thoughtbot/vim-rspec'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
+Plug 'tpope/gem-browse'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'tyru/open-browser.vim'
+
 Plug 'tweekmonster/startuptime.vim'
+Plug 'tyru/open-browser.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
@@ -82,21 +95,6 @@ Plug 'will133/vim-dirdiff'
 
 if has('macunix')
   Plug 'sjl/vitality.vim'
-endif
-
-" -------------------------------------------------------------------------- }}}
-" {{{ Lighten the load when using msys (Git Bash).
-
-if !exists("$MSYSTEM")
-  Plug 'dbeniamine/cheat.sh-vim'
-  Plug 'RishabhRD/nvim-cheat.sh'
-  Plug 'tmux-plugins/vim-tmux-focus-events'
-  Plug 'tpope/gem-browse'
-  Plug 'tpope/vim-bundler'
-  Plug 'tpope/vim-projectionist'
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-rake'
-  Plug 'tpope/vim-rbenv'
 endif
 
 " -------------------------------------------------------------------------- }}}

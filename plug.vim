@@ -1,9 +1,7 @@
 " {{{ Archlinux and Windows Subsystem for Linux check
 
 let g:os_arch = trim(system("cat /etc/issue | rg 'Arch Linux' -c"))
-let g:os_wsl  = (substitute(system('uname -r'), '\n', '', '') =~ 'Microsoft') ||
-              \ (substitute(system('uname -r'), '\n', '', '') =~ 'WSL2')
-
+let g:os_wsl = (getenv('WSL_DISTRO_NAME') =~ v:null)
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Tell vim-plug where out plugins are located.

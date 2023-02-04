@@ -1,7 +1,7 @@
 " {{{ Archlinux and Windows Subsystem for Linux check
 
 let g:os_arch = trim(system("cat /etc/issue | rg 'Arch Linux' -c"))
-let g:os_wsl = (getenv('WSL_DISTRO_NAME') =~ v:null)
+let g:os_wsl = !exists(getenv('WSL_DISTRO_NAME'))
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Tell vim-plug where out plugins are located.
@@ -171,7 +171,6 @@ function! MyDebug()
   echom "g:vimtex_view_general_viewer: " . g:vimtex_view_general_viewer
   echom "                   g:os_arch: " . g:os_arch
   echom "                    g:os_wsl: " . g:os_wsl
-  echom "                         wsl: " . has('wsl')
   echom "                 gui_running: " . has('gui_running')
   echom "                       linux: " . has('linux')
   echom "                        unix: " . has('unix')

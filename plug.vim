@@ -227,5 +227,6 @@ let g:bullets_enabled_file_types = [
 " {{{ Your next experiment goes here.
 
 inoremap ;; <esc>
+cnoremap ;; <esc>
 
 " -------------------------------------------------------------------------- }}}

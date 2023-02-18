@@ -96,8 +96,8 @@ endif
 " {{{ Begin my bundles
 
 " My goal is to customize a community plugin after it has been loaded.
-Plug 'Traap/vim-bundle-abbreviate'
 
+Plug 'Traap/vim-bundle-abbreviate'
 Plug 'Traap/vim-bundle-autocmd'
 Plug 'Traap/vim-bundle-dispatch'
 Plug 'Traap/vim-bundle-fzf'
@@ -123,7 +123,6 @@ Plug 'Traap/vim-ide'
 Plug 'Traap/vim-bundle-keybindings'
 Plug 'Traap/vim-bundle-settings'
 " Plug 'Traap/vim-bundle-terminal'
-
 
 " -------------------------------------------------------------------------- }}}
 " {{{ Done loading plugins.

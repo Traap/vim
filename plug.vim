@@ -18,7 +18,6 @@ let g:tex_flavor = 'latex'
 " {{{ vim
 
 Plug 'Xuyuanp/nerdtree-git-plugin', {'on': 'NERDTreeToggle'}
-Plug 'ajh17/VimCompletesMe'
 Plug 'aklt/plantuml-syntax'
 " Plug 'chriskempson/base16-vim'
 Plug 'rafi/awesome-vim-colorschemes'
@@ -82,6 +81,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/gitignore'
 Plug 'vim-utils/vim-man'
 Plug 'vim-utils/vim-most-minimal-folds'
+Plug 'ward/VimCompletesMe'
 Plug 'weirongxu/plantuml-previewer.vim'
 Plug 'will133/vim-dirdiff'
 
